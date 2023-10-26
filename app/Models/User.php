@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -26,7 +27,9 @@ class User extends Authenticatable
         'middlename',
         'login',
         'phone',
-        'avatar'
+        'avatar',
+        'verivi_code',
+        'verivied'
     ];
 
     /**
@@ -47,9 +50,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        
     ];
 
     protected $attributes =[
       
     ];
+
+    public function Role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }

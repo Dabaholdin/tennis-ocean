@@ -1,4 +1,4 @@
-<x-form class="registration-form" action="{{route('register.add')}}" method="POST">
+<x-form class="registration-form" method="POST">
     @csrf
    
     <div class="row">
@@ -32,14 +32,10 @@
         </div>
         <div class="col-12 mb-30 p-0">
             <label for="password-confirmation" class="grey-text mb-1">Повторите пароль</label>
-            <input type="password" name="password-confirmation" class="w-100 input" id="password-confirmation">
+            <input type="password" name="cpassword" class="w-100 input" id="password-confirmation">
         </div>
-        {{-- <div class="col-12 mb-30 p-0">
-            <label for="cupon" class="grey-text mb-1">Купон</label>
-            <input type="text" name="cupon" class="w-100 input" id="cupon">
-        </div> --}}
         <div class="col-12 mb-3 mt-3 mt-md-0 p-0">
-            <button class="button w-100 next-step" data-step=".registration" data-next-step=".activation">Далее</button>
+            <button class="button button-fn w-100" data-target="registration" data-next-step="activation">Далее</button>
         </div>
         <div class="col-12 mb-3 p-0">
             <p class="text-center fs-14">
@@ -48,8 +44,9 @@
                 </span>
             </p>
         </div>
-        <div class="col-sm-12">
-            <p class="text-center">Уже есть аккаунт? <a href="">Войти</a></p>
-        </div>
+        
     </div>
 </x-form>
+<div class="col-sm-12">
+    <p class="text-center">Уже есть аккаунт? <button class="link button-fn" data-target="login-form">Войти</button></p>
+</div>

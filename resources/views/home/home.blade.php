@@ -7,7 +7,7 @@
 
 <section class="section_title">
     <div class="container">
-        <div class="section_title_wrapper position-relative row">
+        <div class="section_title_wrapper position-relative z-0 row">
             <div class="text_container_wrapper z-1 col-xs-12 col-sm-12 col-md-7 col-lg-5 col-xl-5">
                 <div class="text_title_wrapper w-sm-100">
                     <h1 class="text_title">Современная школа <br><span class="counter_text uppercase">тенниса</span></h1>
@@ -15,7 +15,7 @@
                 <p class="p_text fs-4">Мы совмещаем традиции и технологии, чтобы сделать вас лучше</p>
                 <div class="row w-100">
                     <div class="button_get_tich_wrapper p-0 my-0 text-center mb-3 ms-md-0 col-7  col-lg-6">
-                        <button data-href="/trenirovki" class="white-ball pr-50 position-relative button button-link fw-bold d-inline-block">Начать
+                        <button data-href="/trenirovki" class="white-ball pr-50 position-relative z-0 button button-link fw-bold d-inline-block">Начать
                             обучение</button>
                     </div>
                     <div class="text-center my-0 mb-5 ms-md-0 col-5  col-lg-6 ">
@@ -33,7 +33,7 @@
 <section class="what_section">
     <div class="container">
         <div class="what_wrapper justify-content-center row">
-            <div class="what_image_wrapper position-relative col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+            <div class="what_image_wrapper position-relative z-0 col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                 <img class="whatimg img-fluid" src="https://tennis-ocean.ru/wp-content/uploads/2023/05/whatimg.png" alt="">
                 <img class="beforewhatimg img-fluid position-absolute" src="https://tennis-ocean.ru/wp-content/uploads/2023/05/beforewhatimg.png" alt="">
             </div>
@@ -116,14 +116,14 @@
 <p>Нам&nbsp;удалось совместить на одной платформе такие спортивные виды деятельности, которые не только помогут вам быстрее и качественней освоить навыки тенниса, но и  поддерживать своё тело в оптимальной форме. Также, вы не заскучаете в нашей академии благодаря множеству разновидности тренировок.</p>
 <p></p>
             </div>
-            <div class="info-img-wrapper position-relative col-xs-12 col-sm-12 col-md-7 col-lg-6 col-xl-6 d-flex justify-content-end pr-105">
+            <div class="info-img-wrapper position-relative z-0 col-xs-12 col-sm-12 col-md-7 col-lg-6 col-xl-6 d-flex justify-content-end pr-105">
                 <img class="img-fluid" src="https://tennis-ocean.ru/wp-content/uploads/2023/05/right.png" alt="">
                 <img class="img-fluid position-absolute info-container-elipse-right" src="https://tennis-ocean.ru/wp-content/uploads/2023/05/right2.png" alt="">
             </div>
         </div>
 
         <div class="info-container row align-items-center justify-content-md-center">
-            <div class="info-img-wrapper mb-3 mb-md-0 position-relative col-xs-12 col-sm-12 col-md-7 col-lg-6 col-xl-6 d-flex justify-content-start pl-105">
+            <div class="info-img-wrapper mb-3 mb-md-0 position-relative z-0 col-xs-12 col-sm-12 col-md-7 col-lg-6 col-xl-6 d-flex justify-content-start pl-105">
                 <img class="img-fluid" src="https://tennis-ocean.ru/wp-content/uploads/2023/05/left.png" alt="">
                 <img class="img-fluid position-absolute info-container-elipse-left" src="https://tennis-ocean.ru/wp-content/uploads/2023/05/left2.png" alt="">
             </div>
@@ -196,7 +196,7 @@
 
             <div class="d-flex col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 justify-content-center align-items-center">
                 <div class="button_get_tich_wrapper">
-                    <button class="button white-ball pr-50 position-relative">Записаться на тренировку</button>
+                    <button class="button white-ball pr-50 position-relative z-0">Записаться на тренировку</button>
                 </div>
             </div>
         </div>
@@ -212,7 +212,7 @@
 <p>Здесь вы&nbsp;найдёте единомышленников, друзей и&nbsp;тех, кто&nbsp;вас будет побуждать на&nbsp;достижение новых самых смелых целей в&nbsp;спорте или&nbsp;в&nbsp;личностном развитии. Мы&nbsp;делаем все, чтобы&nbsp;каждый член нашей команды чувствовал себя комфортно и&nbsp;с&nbsp;интересом относился ко&nbsp;всему, что&nbsp;происходит в&nbsp;академии.</p>
 </div>
             </div>
-            <div class="friendly_community_img col-xs-12 col-sm-12 col-md-7 col-lg-6 col-xl-6 position-relative">
+            <div class="friendly_community_img col-xs-12 col-sm-12 col-md-7 col-lg-6 col-xl-6 position-relative z-0">
             
                 <img class="elips_img_position elips1 position-absolute" src="https://tennis-ocean.ru/wp-content/uploads/2023/05/ellipse-1.png" alt="">
                 <img class="elips_img_position elips2 position-absolute" src="https://tennis-ocean.ru/wp-content/uploads/2023/05/ellipse-1.png" alt="">
@@ -227,7 +227,7 @@
     <div class="container">
         <h3 class="text-center mb-80 group_classes_for_children_title">Групповые занятия<span class="counter_text"> для детей</span></h3>
         <div class="mb-60 flex row justify-content-between">
-            <div class="group_img mb-3 mb-md-0 mx-auto position-relative col-xs-12 col-sm-12 col-md-7 col-lg-6 col-xl-6 p-0">
+            <div class="group_img mb-3 mb-md-0 mx-auto position-relative z-0 col-xs-12 col-sm-12 col-md-7 col-lg-6 col-xl-6 p-0">
                 <div class="row p-0 justify-content-center">
                     <div class="row p-0">
                         <div class="col-12 p-0 group-bg">
@@ -250,7 +250,7 @@
                 <div class="row">
                                         <div class="col-12 mb-30">
                         <div class="p-0 ms-20p mb-11 d-flex justify-content-md-start">
-                            <div class="blue-ball position-relative">
+                            <div class="blue-ball position-relative z-0">
                                 <h3 class="fs-18 text-center text-md-start pl-35">Полная физическая нагрузка</h3>
                             </div>
                         </div>
@@ -258,7 +258,7 @@
                     </div>
                                         <div class="col-12 mb-30">
                         <div class="p-0 ms-20p mb-11 d-flex justify-content-md-start">
-                            <div class="blue-ball position-relative">
+                            <div class="blue-ball position-relative z-0">
                                 <h3 class="fs-18 text-center text-md-start pl-35">Уникальная методика школы</h3>
                             </div>
                         </div>
@@ -266,7 +266,7 @@
                     </div>
                                         <div class="col-12 mb-30">
                         <div class="p-0 ms-20p mb-11 d-flex justify-content-md-start">
-                            <div class="blue-ball position-relative">
+                            <div class="blue-ball position-relative z-0">
                                 <h3 class="fs-18 text-center text-md-start pl-35">Опытный тренерский состав</h3>
                             </div>
                         </div>
@@ -274,7 +274,7 @@
                     </div>
                                         <div class="col-12 mb-30">
                         <div class="p-0 ms-20p mb-11 d-flex justify-content-md-start">
-                            <div class="blue-ball position-relative">
+                            <div class="blue-ball position-relative z-0">
                                 <h3 class="fs-18 text-center text-md-start pl-35">Уникальные тренировки в игровой форме</h3>
                             </div>
                         </div>
@@ -282,7 +282,7 @@
                     </div>
                                         <div class="col-12 mb-30">
                         <div class="p-0 ms-20p mb-11 d-flex justify-content-md-start">
-                            <div class="blue-ball position-relative">
+                            <div class="blue-ball position-relative z-0">
                                 <h3 class="fs-18 text-center text-md-start pl-35">Легкие ракетки и специальные мечи</h3>
                             </div>
                         </div>
@@ -294,7 +294,7 @@
         </div>
         <div class="button_center row">
             <div class="text-center col-12">
-                <button class="button white-ball pr-50 position-relative">Записаться</button>
+                <button class="button white-ball pr-50 position-relative z-0">Записаться</button>
             </div>
         </div>
     </div>
@@ -311,7 +311,7 @@
                     регистрации и заполните поля ввода данных</p>
             </div>
             <div class="mt-3 mt-mb-0  col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-sm-3 d-flex justify-content-center">
-                <button class="button position-relative white-ball pr-50" data-auth="false">Зарегистрироваться</button>
+                <button class="button position-relative z-0 white-ball pr-50" data-auth="false">Зарегистрироваться</button>
             </div>
         </div>
         <div class="step mb-20 p-30 row d-flex align-items-center">

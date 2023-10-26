@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('phone')->unique()->nullable();
             $table->string('avatar')->nullable();
             $table->timestamp('email_verified_at')->nullable();
+            $table->integer('verivi_code');
+            $table->boolean('verivied')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

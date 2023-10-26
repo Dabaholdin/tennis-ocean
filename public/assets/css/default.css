@@ -17,6 +17,46 @@
 	--icon-blue-ball: url(/assets/img/icons/image16Traced.png);
 	--icon-arrow: url(/assets/img/icons/arrowtog.svg);
 }
+
+.li-nav {
+    list-style: none;
+	border-bottom: 1px solid #2c3e5014;
+    padding: 10px 15px 10px 15px;
+    list-style: none;
+}
+
+.li-nav:last-child{
+	border: none;
+}
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Lobster', cursive;
+	font-size: 78px;
+}
+
+h3 {
+	font-family: 'Lobster', cursive;
+	font-size: 40px;
+}
+
+h1 span {
+	font-family: 'Lobster', cursive;
+	font-size: 78px;
+}
+
+*{
+	/* z-index: 0 !important; */
+}
+
+button.link {
+    border: 0;
+    color: #189ae5;
+    background: none;
+    text-decoration: underline;
+}
+
 .uppercase {
     text-transform: uppercase;
 }
@@ -217,6 +257,10 @@ html {
 	padding-left: 6.563rem;
 }
 
+.fs-12{
+	font-size: 12px;
+}
+
 .fs-14 {
 	font-size: 14px;
 }
@@ -375,176 +419,65 @@ h3 {
 /* * BUTTONS */
 /* HEADER */
 .header {
-	/* height: 80px; */
-	/* width: 100%; */
+	
 	display: flex;
-	/* justify-content: space-between; */
+	z-index: 2 !important;
 	align-items: center;
 	background-color: #ffffff;
 	box-shadow: #40404830 0px 0px 9px 0px;
 }
-
+.header_fixed{
+	top: 0;
+	position: fixed;
+	width: 100%;
+}
 .navbard {
 	background: none !important;
 }
 
+.menu-container {
+	padding: 0 15px 15px 15px;
+    position: absolute;
+	transition: 0.5s;
+	width: 0px;
+	height: 0px;
+    top: 0;
+    right: 0;
+}
 /* HEADER */
 
-/* аватарка  */
-.header_account_image {
-	display: flex;
-	flex-direction: row;
-	/* justify-content: center; */
-	/* align-items    : center; */
-	width: 38px;
-	height: 38px;
-	/* position       : relative; */
+/* AVA */
+.round-image {
+	cursor: pointer;
+    overflow: hidden;
+    border-radius: 100%;
+    width: 38px;
+    height: 38px;
+}
+/* AVA */
+
+
+
+/* AccMenu */
+.user-menu-wrap{
+	height: 55px;
+	position: relative;
+}
+.cmenu{
+	background: #ffffff;
 	overflow: hidden;
-	border-radius: 100%;
+    text-wrap: nowrap;
+    transition: 0.7s;
+    width: 0px;
+	height: 0px;
+	opacity: 0;
 }
-
-.header_account_image img {
+.open{
+	opacity: 1;
 	width: 100%;
 	height: 100%;
 }
-
-/* аватарка  */
-
-.header_account_image_closed {
-	display: flex;
-	z-index: 1;
-}
-
-.header_account_image_opened {
-	position: relative;
-	z-index: 1;
-
-}
-
-.header_account_image_opened_row {
-	display: flex;
-	margin-bottom: 10px;
-	margin-left: 10px;
-}
-
-.header_vertical_menu_wrapper {
-	padding: 15px;
-	/* background: #FFFFFF; */
-	/* box-shadow: 0px 0px 25px rgb(0 0 0 / 5%); */
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: auto;
-	z-index: 1;
-}
-
-.link_my_cabbinet {
-	display: flex;
-	text-decoration: none;
-}
-
-.link_my_cabbinet:hover {
-	text-decoration: none;
-}
-
-.header_account_image {
-	display: flex;
-}
-
-p.ava_text {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: #189AE5;
-	color: #ffffff;
-	text-transform: uppercase;
-	font-weight: 800;
-}
-
-.nav_account_menu,
-.acc_info {
-	display: none;
-}
-
-.acc_info {
-	padding-left: 10px;
-}
-
-.account_name_text {
-	margin: 0;
-	font-family: 'Open Sans';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 14px;
-	line-height: 19px;
-	color: #36363C;
-}
-
-.account_mail_text {
-	margin: 0;
-	font-family: 'Open Sans';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 160%;
-	color: #8E8E8E;
-}
-
-.nav_account_menu ul li {
-	padding: 10px 10px 10px 0;
-	display: flex;
-	align-items: center;
-	position: relative;
-}
-
-.nav_account_menu ul li a:hover {
-	background: rgba(24, 154, 229, 0.05);
-	border-radius: 20px;
-	width: 100%;
-}
-
-.nav_account_menu a {
-	font-family: 'Open Sans';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 14px;
-	line-height: 19px;
-	color: #36363C;
-	padding: 10px 15px 10px 10px;
-	text-decoration: none;
-}
-
-.nav_account_menu ul li::before {
-	content: '';
-	width: 100%;
-	position: absolute;
-	border: 1px solid rgba(44, 62, 80, 0.1);
-	top: 0;
-	left: 0;
-
-}
-
-.top_header_account {
-	padding: 0;
-	width: 260px;
-}
-
-.header_button {
-	border-radius: 20px;
-	background: #189AE5;
-	font-size: 16px;
-	font-weight: 600;
-	color: #ffffff;
-	border: none;
-	padding: 9px 30px 9px 30px;
-	text-decoration: none;
-}
-
-/* Аватарка */
-
-
+/* AccMenu End */
 
 /*! Section start */
 
@@ -964,17 +897,16 @@ section {
 }
 
 /* Popup start */
-.popup_background {
+
+.popub-background {
+	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
-	position: fixed;
-	background: #000000e6;
-	top: 77px;
-	left: 0;
-	z-index: 1;
-	display: none;
-	justify-content: center;
-	align-items: center;
+	z-index: 999999 !important;
+	background-color: #000000a6;
+	overflow: auto;
 }
 
 .popup_registration {
@@ -1139,7 +1071,7 @@ section {
 	background-repeat: no-repeat;
 }
 
-.popup_wrapper_img {
+/* .popup_wrapper_img {
 	overflow-y: auto;
 	padding-top: 126px;
 	position: fixed;
@@ -1149,7 +1081,7 @@ section {
 	top: 0;
 	z-index: 2;
 	padding-bottom: 100px;
-}
+} */
 
 .close_album_btn_wrapper {
 	display: flex;
@@ -1218,9 +1150,6 @@ section {
 
 /* Popup end */
 
-.ac-nav-menu {
-	padding: 10px 30px 10px 15px;
-}
 
 .blue-border {
 	border: 1px solid var(--color1);
@@ -1234,6 +1163,10 @@ section {
 	overflow: hidden;
 	width: 159px;
 	height: 159px;
+}
+.cab-img img{
+	width: 100%;
+	height: 100%;
 }
 
 /* Input style */
@@ -1329,24 +1262,14 @@ input[type="button"]:active {
 	align-items: center;
 }
 
-.popub-background {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 999999;
-	background-color: #000000a6;
-	overflow: auto;
-}
+
 
 .popup-form {
 	position: absolute;
-	top: 150%;
+	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	max-width: 650px;
-	transition: 0.5s;
 	display: none;
 }
 
@@ -1418,9 +1341,14 @@ button.auth-link{
     text-decoration: none;
 	text-align: center;
 }
-
-
-
+.step-progress {
+    display: flex;
+}
+/*erors*/
+.input-error{
+	border: 1px solid red;
+}
+/*erors end*/
 
 /* Mobile */
 @media (max-width: 770px) {
@@ -1524,9 +1452,6 @@ button.auth-link{
 		margin-right: 0;
 	}
 
-	.card-c {
-		
-	}
 
 	.elips_for_center {
 		top: 200px;

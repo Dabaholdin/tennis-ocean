@@ -1,25 +1,22 @@
-<x-form method="POST" action="{{@route('login.enter')}}">
+<x-form class="login-form" method="post">
     <div class="row">
         @csrf
-        @auth
-        1 
-            @else
-        2
-        @endif
-        <h3 class="text-center mb-30">Регистрация</h3>
-        <div class="col-sm-1 p-0">
-            <img src="https://tennis-ocean.ru/wp-content/themes/tennisocean/assets/img/icons/userregistrationstart.png" alt="">
-        </div>
-        <div class="col-sm-4 "></div>
-        <div class="col-sm-1 mx-auto p-0">
-            <img src="https://tennis-ocean.ru/wp-content/themes/tennisocean/assets/img/icons/mailverefied.png" alt="">
-        </div>
-        <div class="col-sm-4"></div>
-        <div class="col-sm-1 p-0 mb-40">
-            <img src="https://tennis-ocean.ru/wp-content/themes/tennisocean/assets/img/icons/registrationredy.png" alt="">
+        <h3 class="text-center mb-30 step-title">Регистрация</h3>
+        <div class="step-progress">
+            <div class="col-sm-1 p-0">
+                <img src="https://tennis-ocean.ru/wp-content/themes/tennisocean/assets/img/icons/userregistrationstart.png" alt="">
+            </div>
+            <div class="col-sm-4 "></div>
+            <div class="col-sm-1 mx-auto p-0">
+                <img src="https://tennis-ocean.ru/wp-content/themes/tennisocean/assets/img/icons/mailverefied.png" alt="">
+            </div>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1 p-0 mb-40">
+                <img src="https://tennis-ocean.ru/wp-content/themes/tennisocean/assets/img/icons/registrationredy.png" alt="">
+            </div>
         </div>
         <div class="col-sm-12 mb-3 p-0">
-            <p class="text-center text-bold">
+            <p class="text-center text-bold congrat-text">
                 Регистрация прошла успешно! Теперь вы можете войти в свой аккаунт
             </p>
         </div>
@@ -31,6 +28,6 @@
             <label for="acc-psw" class="grey-text mb-1">Пароль</label>
             <input type="password" class="w-100 input" name="password" id="acc-psw">
         </div>
-        <button class="button signon">Вход</button>
+        <button class="button button-fn w-100" data-target="login">Вход</button>
     </div>
 </x-form>

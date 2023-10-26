@@ -1,4 +1,4 @@
-<header class="header pb-4 sticky-lg-top pt-4">
+<header class="header pb-4 pt-4">
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="mb-0 mb-md-0 col-6 order-2 order-lg-1 col-xs-12 col-md-4  col-lg-3 ">
@@ -32,9 +32,15 @@
                     </div>
                 </nav>
             </div>
-            <div class="col-3 order-3 order-lg-3 col-xs-12 col-md-4  col-lg-2 col-xl-2 text-center position-relative p-0">
-                <button class="button reg-form">Войти</button>
-            </div>
+            
+                @auth
+                    @include('menu.account')
+                @else
+                <div class="col-3 order-3 order-lg-3 col-xs-12 col-md-4  col-lg-2 col-xl-2 text-center position-relative p-0">
+                    <x-button class="button button-fn" data-target="open-popup" data-to="pop">Войти</x-button>
+                </div>
+                @endauth
+            
         </div>
     </div>
 </header>
