@@ -19,15 +19,27 @@
 }
 
 .li-nav {
-    list-style: none;
+	list-style: none;
 	border-bottom: 1px solid #2c3e5014;
-    padding: 10px 15px 10px 15px;
-    list-style: none;
+	padding: 10px 0;
+	list-style: none;
 }
 
-.li-nav:last-child{
+.li-nav a {
+	display: block;
+	padding: 10px 15px 10px 15px;
+}
+
+.li-nav a:hover {
+
+	border-radius: 500px;
+	background-color: #189AE50D;
+}
+
+.li-nav:last-child {
 	border: none;
 }
+
 h1,
 h2,
 h3,
@@ -46,26 +58,29 @@ h1 span {
 	font-size: 78px;
 }
 
-*{
+* {
 	/* z-index: 0 !important; */
 }
 
 button.link {
-    border: 0;
-    color: #189ae5;
-    background: none;
-    text-decoration: underline;
+	border: 0;
+	color: #189ae5;
+	background: none;
+	text-decoration: underline;
 }
 
 .uppercase {
-    text-transform: uppercase;
+	text-transform: uppercase;
 }
+
 .display-none {
 	display: none;
 }
-button:focus{
+
+button:focus {
 	outline: none;
 }
+
 .active {
 	background: none;
 }
@@ -80,10 +95,12 @@ body,
 html {
 	height: 100%;
 }
-.active-button{
+
+.active-button {
 	color: #ffffff !important;
 	background-color: #189ae3 !important;
 }
+
 .wrapper {
 	display: flex;
 	flex-direction: column;
@@ -257,7 +274,7 @@ html {
 	padding-left: 6.563rem;
 }
 
-.fs-12{
+.fs-12 {
 	font-size: 12px;
 }
 
@@ -419,64 +436,72 @@ h3 {
 /* * BUTTONS */
 /* HEADER */
 .header {
-	
+
 	display: flex;
 	z-index: 2 !important;
 	align-items: center;
 	background-color: #ffffff;
 	box-shadow: #40404830 0px 0px 9px 0px;
 }
-.header_fixed{
+
+.header_fixed {
 	top: 0;
 	position: fixed;
 	width: 100%;
 }
+
 .navbard {
 	background: none !important;
 }
 
 .menu-container {
 	padding: 0 15px 15px 15px;
-    position: absolute;
+	position: absolute;
 	transition: 0.5s;
 	width: 0px;
 	height: 0px;
-    top: 0;
-    right: 0;
+	top: 0;
+	right: 0;
 }
+
 /* HEADER */
 
 /* AVA */
 .round-image {
 	cursor: pointer;
-    overflow: hidden;
-    border-radius: 100%;
-    width: 38px;
-    height: 38px;
+	overflow: hidden;
+	border-radius: 100%;
+	width: 38px;
+	height: 38px;
 }
+
 /* AVA */
 
 
 
 /* AccMenu */
-.user-menu-wrap{
+.user-menu-wrap {
 	height: 55px;
 	position: relative;
 }
-.cmenu{
+
+.cmenu {
+	z-index: 1;
 	background: #ffffff;
 	overflow: hidden;
-    text-wrap: nowrap;
-    transition: 0.7s;
-    width: 0px;
+	text-wrap: nowrap;
+	transition: 0.7s;
+	width: 0px;
 	height: 0px;
 	opacity: 0;
 }
-.open{
+
+.open {
 	opacity: 1;
 	width: 100%;
 	height: 100%;
 }
+
 /* AccMenu End */
 
 /*! Section start */
@@ -654,9 +679,11 @@ section {
 .white-text {
 	color: var(--color-white);
 }
-.white-text>p{
+
+.white-text>p {
 	color: var(--color-white);
 }
+
 .button_see_all {
 	border-color: var(--color-white);
 	padding: 13px 30px;
@@ -665,19 +692,22 @@ section {
 .text_lots_of_learning_wrapper {
 	background: rgba(255, 255, 255, 0.05);
 }
-.card-c-w{
+
+.card-c-w {
 	border: none;
 	border-radius: 0;
 	padding: 0;
 	width: 282px !important;
 	height: 100%;
 }
-.card-c-w img{
+
+.card-c-w img {
 	object-fit: cover;
 	max-width: 282px;
 	height: 309px;
 	border-radius: 0;
 }
+
 .card-c,
 .card-cc {
 	border: none;
@@ -686,12 +716,14 @@ section {
 	width: 386px !important;
 	height: 100%;
 }
-.card-cc img{
+
+.card-cc img {
 	object-fit: cover;
 	max-width: 386px;
 	height: 447px;
 	border-radius: 0;
 }
+
 .card-c img {
 	object-fit: cover;
 	max-width: 386px;
@@ -1164,7 +1196,8 @@ section {
 	width: 159px;
 	height: 159px;
 }
-.cab-img img{
+
+.cab-img img {
 	width: 100%;
 	height: 100%;
 }
@@ -1311,43 +1344,49 @@ input[type="button"]:active {
 .edu-cart-container {
 	min-height: 354px;
 }
-.button-carusel{
+
+.button-carusel {
 	display: flex;
 	position: absolute;
 	left: 0;
 	overflow: hidden;
 	transition: 1s;
 }
-.free-text{
+
+.free-text {
 	min-height: 100%;
 }
-button.auth-link{
+
+button.auth-link {
 	border: none;
-    background: none;
-    color: #0d6efd;
-    text-decoration: underline;
+	background: none;
+	color: #0d6efd;
+	text-decoration: underline;
 }
 
-.button_g{
-	
+.button_g {
+
 	width: 30%;
-    border-radius: 20px;
-    background: #189AE5;
-    font-size: 16px;
-    font-weight: 600;
-    color: #ffffff;
-    border: none;
-    padding: 9px 30px 9px 30px;
-    text-decoration: none;
+	border-radius: 20px;
+	background: #189AE5;
+	font-size: 16px;
+	font-weight: 600;
+	color: #ffffff;
+	border: none;
+	padding: 9px 30px 9px 30px;
+	text-decoration: none;
 	text-align: center;
 }
+
 .step-progress {
-    display: flex;
+	display: flex;
 }
+
 /*erors*/
-.input-error{
+.input-error {
 	border: 1px solid red;
 }
+
 /*erors end*/
 
 /* Mobile */
@@ -1388,15 +1427,17 @@ button.auth-link{
 		padding: 0;
 		font-size: 14px;
 	}
-	.how-to-find-us-section{
+
+	.how-to-find-us-section {
 		background-size: 100% 38%;
 		padding-top: 40px;
 	}
+
 	.lots_of_learning,
 	.our-team-section,
 	.friendly_community_section,
 	.about_us_title_section {
-		
+
 		background-size: 100% 38%;
 		padding-top: 40px;
 		padding-bottom: 40px;
@@ -1492,6 +1533,7 @@ button.auth-link{
 	.mb-20 {
 		margin-bottom: 0.25rem;
 	}
+
 	.mb-40 {
 		margin-bottom: 1.5rem;
 	}
@@ -1501,93 +1543,117 @@ button.auth-link{
 	.lastname {
 		max-width: 140px;
 	}
+
 	.elips1 {
 		top: 28px;
 		left: 10px;
 		max-width: 102px;
 	}
+
 	.elips2 {
 		bottom: 24px;
 		left: 0;
 		width: 102px;
 	}
+
 	.elips3 {
 		top: 90px;
 		left: 115px;
 		max-width: 164px;
 	}
+
 	.elips4 {
 		top: 0;
 		right: 46px;
 		max-width: 102px;
 	}
+
 	.elips5 {
 		bottom: 0;
 		right: 0;
 		max-width: 102px;
 	}
+
 	.friendly_community_img {
 		height: 290px;
 	}
+
 	.dropdown-container {
 		padding: 20px 20px 0px 20px;
 		position: absolute;
 		left: 0;
 	}
-	.ms-20p{
-		margin-left:20%;
+
+	.ms-20p {
+		margin-left: 20%;
 	}
+
 	.reg-form {
 		font-size: 12px;
 		font-weight: 600;
 		padding: 10px 20px 10px 20px;
 	}
+
 	.nav-tab-btn {
 		padding: 6px 15px !important;
 	}
+
 	.logo-intext {
 		max-width: 150px;
 	}
+
 	.frame {
 		width: 100%;
 		height: auto;
 	}
-	.education_container{
+
+	.education_container {
 		height: auto;
 	}
+
 	.no_photo_text {
 		font-size: 25px;
 	}
+
 	.wrapper_title_img {
 		position: absolute;
 		right: -46px;
 		top: 0;
 		width: 200px;
 	}
+
 	.button {
 		font-size: 14px;
 		padding: 8px 15px;
 	}
+
 	.white-ball::before {
 		right: 15px;
 		top: 8px;
 	}
-	.btn-transparent{
+
+	.btn-transparent {
 		height: auto;
 	}
+
 	.card-title {
 		font-size: 14px;
 	}
-	.fan_left_img,.fan_right_img {
+
+	.fan_left_img,
+	.fan_right_img {
 		width: 35%;
 	}
-	.fan_center_img{
+
+	.fan_center_img {
 		width: 45%;
 	}
+
 	.our-team-section {
-	background-color: var(--color-white);
+		background-color: var(--color-white);
 	}
-	.mb-80{
+
+	.mb-80 {
 		margin-bottom: 40px;
 	}
 }

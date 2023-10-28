@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\UserChildren;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Http\Request;
 use Response;
@@ -105,9 +108,15 @@ class SessionController extends Controller
     }
 
     
-    public function show(string $id)
-    {
-        //
+    public function show(User $auth)
+    {   
+        
+        $user = auth()->user();
+        $userchilds = auth()->user()->childrens;
+      
+        $firstname = $user->firstname;
+        $lastname = $user->lastname;
+        return view('cabinet.setings', compact('firstname','lastname','userchilds'));
     }
 
     
@@ -139,8 +148,5 @@ class SessionController extends Controller
              ]);
             return $user->verivied;
         }else{  return false;}
-            
-        
-        
     }
 }

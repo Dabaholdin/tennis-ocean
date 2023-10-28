@@ -1,77 +1,5 @@
 
-/* DATEPICKER */
-.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all {
-	position: relative;
-}
 
-table.ui-datepicker-calendar a {
-	display: flex;
-	border-radius: 100%;
-	margin: 5px;
-	height: 42px;
-	width: 42px;
-	justify-content: center;
-	align-items: center;
-}
-
-.ui-datepicker-today a {
-	background: #FFFFFF !important;
-	box-shadow: 0px 2px 15px rgb(0 0 0 / 10%) !important;
-}
-
-.ui-datepicker-calendar th,
-td {
-	text-align: center;
-}
-
-.ui-datepicker-title {
-	text-align: center;
-	padding: 5px;
-	font-family: 'Open Sans';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 16px;
-	line-height: 160%;
-	color: #36363C;
-}
-
-.ui-datepicker-calendar {
-	margin-top: 20px;
-	width: 354px;
-	height: 320px;
-}
-
-.ui-icon-circle-triangle-w,
-.ui-icon-circle-triangle-e {
-	width: 35px;
-	display: block !important;
-	height: 35px;
-	position: absolute;
-	background-position: center center;
-	background-repeat: no-repeat;
-}
-
-.ui-icon-circle-triangle-w {
-	background-image: url(/assets/img/icons/datepickerW.png);
-}
-
-.ui-icon-circle-triangle-e {
-	top: 0;
-	right: 0;
-	background-image: url(/assets/img/icons/datepickerE.png);
-}
-
-.ui-datepicker-calendar tbody>tr>td a {
-	color: #36363C;
-	font-family: 'Open Sans';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 160%;
-	text-align: center;
-}
-
-/* DATEPICKER */
 
 /* *SPECIAL */
 .text_for_outline {
@@ -2960,7 +2888,7 @@ ul#menu-osnovnoe-header {
 }
 
 #children_data-wrapper {
-	display: none;
+	/* display: none; */
 }
 
 .my_children_title {

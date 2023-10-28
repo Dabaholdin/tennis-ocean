@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('password');
             $table->string('login')->unique()->nullable();
             $table->string('phone')->unique()->nullable();
+            $table->timestamp('birthdate')->unique()->nullable();
+            $table->string('gender')->nullable();
             $table->string('avatar')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->integer('verivi_code');

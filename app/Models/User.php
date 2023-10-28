@@ -18,18 +18,21 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'firstname',
-        'lastname',
-        'email',
-        'password',
-        'role_id',
-        'middlename',
-        'login',
-        'phone',
-        'avatar',
-        'verivi_code',
-        'verivied'
+    protected $fillable = [    
+            'role_id',
+            'firstname',
+            'lastname',
+            'middlename',
+            'email',
+            'password',
+            'login',
+            'phone',
+            'birthdate',
+            'gender',
+            'avatar',
+            'email_verified_at',
+            'verivi_code',
+            'verivied',
     ];
 
     /**
@@ -50,7 +53,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'bithdate'=>'date',
         
+    ];
+
+    protected $dates=[
+        'birthdate',
     ];
 
     protected $attributes =[
@@ -60,5 +68,8 @@ class User extends Authenticatable
     public function Role()
     {
         return $this->belongsTo(Role::class);
+    }
+    public function childrens() {
+        return $this->hasMany(UserChildren::class);
     }
 }
