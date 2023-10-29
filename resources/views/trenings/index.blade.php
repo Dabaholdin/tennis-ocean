@@ -23,7 +23,11 @@
                 <a class="text-decoration-none black-text" href="{{@route('trenings.show',['cat_id'=>$Trening_category->name,'type'=>'offline'])}}">
                     <div class="row p-30 bg-white mb-4">
                         <div class="col-xs-12 col-sm-12 col-md-7 col-lg-5 col-xl-5">
-                            <img class="img-fluid" src="{{ $Trening_category->category_img }}" alt="">
+                            @if ($Trening_category->category_img != "")
+                                <img class="img-fluid" src="{{ @asset($Trening_category->category_img) }}" alt="">
+                            @else
+                                <img class="img-fluid" src="{{ @asset('storage/category/defimg.png') }}" alt="">
+                            @endif   
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6 col-xl-6">
                             <div class="row">

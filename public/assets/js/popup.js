@@ -21,11 +21,6 @@ $(document).ready(function () {
     }
 
     $('.button-fn').click('button', function (e) {
-
-
-
-
-
         //Проверям что атрибут есть
         if ($(e.target).data('target') != undefined) {
 
@@ -101,13 +96,19 @@ $(document).ready(function () {
                     dataType: 'json',
                     data: form_data,
                     success: function (data) {
-                        console.log(data)
-                        $('.activation').fadeOut(600);
-                        $('.login').fadeIn(600);
+                        if(data.verivied_code){
+                            console.log(data)
+                            $('.activation').fadeOut(600);
+                            $('.login').fadeIn(600);
+                        }else if (!data.verivied_code){
+                            $('.activation-form input[name="code"]').addClass('input-error')
+                        }
                     }
                 })
                 return
             }
+
+
             if (e_target == 'login') {
                 e.preventDefault();
                 let form_data = {
@@ -130,8 +131,11 @@ $(document).ready(function () {
                             window.location.replace(data.link)
                         }
                         if (!data.verivied) {
+                            new_user = data.uid;
                             $('.login').fadeOut(600);
                             $('.activation').fadeIn(600);
+                            $('.login-form input[name="email"]').val('')
+                            $('.login-form input[name="password"]').val('')
                         }
 
                     }

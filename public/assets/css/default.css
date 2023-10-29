@@ -101,6 +101,17 @@ html {
 	background-color: #189ae3 !important;
 }
 
+.grey-button {
+	background: #C6C9CE !important;
+	color: #FFFFFF !important;
+	outline: none !important;
+	border: none !important;
+}
+
+.br500 {
+	border-radius: 500px;
+}
+
 .wrapper {
 	display: flex;
 	flex-direction: column;

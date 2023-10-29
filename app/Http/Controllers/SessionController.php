@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class SessionController extends Controller
@@ -71,7 +72,9 @@ class SessionController extends Controller
 
     public function login(Request $request){
         $formFields = $request->only(['email','password']);
+        $uid = false;
         if(Auth::attempt($formFields)){
+            $uid = Auth::user()->id;
             if(Auth::user()->verivied){
                 return response()->json([
                     'status'=>200,
@@ -83,7 +86,8 @@ class SessionController extends Controller
                 Auth::logout();
             return response()->json([
                 'status'=>400,
-                'verivied'=>false
+                'verivied'=>false,
+                'uid' => $uid,
             ]);
             }
 
@@ -102,15 +106,13 @@ class SessionController extends Controller
         return redirect(Route('home.index'));
     }
    
-    public function store(Request $request)
-    {
-        //
-    }
 
     
+
     public function show(User $auth)
     {   
         
+        //dd(Storage::allFiles());
         $user = auth()->user();
         $userchilds = auth()->user()->childrens;
       
@@ -120,9 +122,9 @@ class SessionController extends Controller
     }
 
     
-    public function edit(string $id)
+    public function edit(Request $request)
     {
-        //
+        return $request;
     }
 
     
@@ -146,7 +148,15 @@ class SessionController extends Controller
              $user->update([
                 'verivied' => true,
              ]);
-            return $user->verivied;
-        }else{  return false;}
+             return response()->json([
+                'status'=>200,
+                'verivied_code'=>true
+            ]);
+        }else{ 
+            return response()->json([
+                'status'=>400,
+                'verivied_code'=>false
+            ]);
+        }
     }
 }

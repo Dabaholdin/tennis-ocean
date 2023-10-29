@@ -49,6 +49,7 @@ Route::prefix('/user')->group(function(){
     Route::controller(SessionController::class)->group(function(){
         Route::get('/cabinet','index')->name('cabinet.index')->middleware('auth');
         Route::get('/cabinet/setings','show')->name('cabinet.setings')->middleware('auth');
+        Route::post('/cabinet/setings/edit','edit')->name('cabinet.edit');
     });
 });
 

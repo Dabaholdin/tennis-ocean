@@ -3,7 +3,7 @@
 @section('title', 'Настройки пользователя')
 
 @section('content')
-{{-- {{ asset('')}} --}}
+    {{-- {{ asset('')}} --}}
     <div class="container">
         <h1 class="user_setings_title">Настройки</h1>
 
@@ -42,12 +42,12 @@
                                 <div class="input_wrapper">
                                     <label class="setings_label" for="user_first_name">Ваше имя</label>
                                     <input id="user_first_name" class="setings_input" name="user_first_name" type="text"
-                                        placeholder="{{$firstname}}">
+                                        placeholder="{{ $firstname }}">
                                 </div>
                                 <div class="input_wrapper">
                                     <label class="setings_label" for="user_last_name">Ваша фамилия</label>
                                     <input id="user_last_name" class="setings_input" name="user_last_name" type="text"
-                                        placeholder="{{$lastname}}">
+                                        placeholder="{{ $lastname }}">
                                 </div>
                             </div>
 
@@ -144,129 +144,71 @@
                     <h2>Мои дети</h2>
                     <p>Вносите реальные данные</p>
                 </div>
-                <form id="add_n_change_children_info" name="add_n_change_children_info" enctype="multipart/form-data"
-                    action="" method="post">
-
-
-                    {{-- <div class="children_wrapper">
-
-                        <div class="change_image_user_container">
-                            <div class="change_image_user_wrapper">
-                                <div class="image_wrapper">
-                                    <img class="aj_img_acc"
-                                        src="https://tennis-ocean.ru/wp-content/uploads/2022/11/201408190045-more-u-ostrova-sulavesi-indoneziya-kashamalasha-com-150x150.jpg"
-                                        alt="">
-                                </div>
-                                <div class="add_user_image_wrapper">
-                                    <label for="user_1" class="add_user_image"><img
-                                            src="https://tennis-ocean.ru/wp-content/themes/tennisocean/assets/img/icons/editicon.png"
-                                            alt=""></label>
-                                </div>
-                                <input class="input_image_user user_img" id="user_1" name="user_image" type="file"
-                                    accept="image/*,image/jpeg">
-                            </div>
-                        </div>
-                        <div class="user_edit_form_wrapper">
-                            <div class="inputs_wrapper_child">
-                                <div class="input_wrapper">
-                                    <label class="setings_label" for="children_first_name">Ваше имя</label>
-                                    <p id="children_first_name" class="setings_input_children"
-                                        name="children_first_name">Дмитрий </p>
-                                </div>
-                                <div class="input_wrapper">
-                                    <label class="setings_label" for="children_last_name">Ваша фамилия</label>
-                                    <p id="children_last_name" class="setings_input_children" name="children_last_name">
-                                        Русин</p>
-                                </div>
-                            </div>
-                            <div class="inputs_wrapper_child">
-                                <div class="input_wrapper">
-                                    <label class="setings_label" for="children_birth_date">Дата рождения</label>
-                                    <p id="children_birth_date" class="setings_input_children"
-                                        name="children_birth_date">12.09.2003</p>
-                                    <p>
-                                    </p>
-                                </div>
-                                <div class="input_wrapper">
-                                    <label class="setings_label" for="children_male">Пол</label>
-                                    <div class="check_chose_send_gender_wrapper ">
-                                        <div class="radio_container">
-                                            <input class="check_chose_send" type="radio" value="Мужской"
-                                                id="children_male_1" name="chose_gender_1" checked="">
-                                            <label class="radio_contact_user" for="male_1">Мужской</label>
-                                        </div>
-                                        <div class="radio_container">
-                                            <input class="check_chose_send" type="radio" value="Женский"
-                                                id="children_female_1" name="children_female_1">
-                                            <label class="radio_contact_user" for="children_female_1">Женский</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
+                <form class="edit-child">
+                    @csrf
                     @foreach ($userchilds as $child)
-                        <br>
-                    
-                    <div class="children_wrapper">
-                        <div class="change_image_user_container">
-                            <div class="change_image_user_wrapper">
-                                <div class="image_wrapper">
-                                    <img class="aj_img_acc"
-                                        src="https://tennis-ocean.ru/wp-content/uploads/2022/11/1614334889_43-p-fon-raznotsvetnogo-kosmosa-49-150x150.jpg"
-                                        alt="">
-                                </div>
-                                <div class="add_user_image_wrapper">
-                                    <label for="user_2" class="add_user_image"><img
-                                            src="https://tennis-ocean.ru/wp-content/themes/tennisocean/assets/img/icons/editicon.png"
-                                            alt=""></label>
-                                </div>
-                                <input class="input_image_user user_img" id="user_2" name="user_image" type="file"
-                                    accept="image/*,image/jpeg">
-                            </div>
-                        </div>
-                        <div class="user_edit_form_wrapper">
-                            <div class="inputs_wrapper_child">
-                                <div class="input_wrapper">
-                                    <label class="setings_label" for="children_first_name">Ваше имя</label>
-                                    <p id="children_first_name" class="setings_input_children"
-                                        name="children_first_name">{{$child->firstname}} </p>
-                                </div>
-                                <div class="input_wrapper">
-                                    <label class="setings_label" for="children_last_name">Ваша фамилия</label>
-                                    <p id="children_last_name" class="setings_input_children" name="children_last_name">
-                                        {{$child->lastname}}</p>
+                        <div class="children_wrapper">
+                            <input type="hidden" name="uid" value="{{ $child->id }}">
+                            <div class="change_image_user_container">
+                                <div class="change_image_user_wrapper">
+                                    <div class="image_wrapper">
+                                        <img class="aj_img_acc"
+                                            src="https://tennis-ocean.ru/wp-content/uploads/2022/11/1614334889_43-p-fon-raznotsvetnogo-kosmosa-49-150x150.jpg"
+                                            alt="">
+                                    </div>
+                                    <div class="add_user_image_wrapper">
+                                        <label for="user_image" class="child_image"><img
+                                                src="https://tennis-ocean.ru/wp-content/themes/tennisocean/assets/img/icons/editicon.png"
+                                                alt=""></label>
+                                    </div>
+                                    <input class="input_image_user user_img" name="child_image" type="file"
+                                        accept="image/*,image/jpeg">
                                 </div>
                             </div>
-                            <div class="inputs_wrapper_child">
-                                <div class="input_wrapper">
-                                    <label class="setings_label" for="children_birth_date">Дата рождения</label>
-                                    <p id="children_birth_date" class="setings_input_children"
-                                        name="children_birth_date">{{$child->birthdate->format('d.m.Y')}}</p>
-                                    <p>
-                                    </p>
+                            <div class="user_edit_form_wrapper">
+                                <div class="inputs_wrapper_child">
+                                    <div class="input_wrapper">
+                                        <label class="setings_label" for="first_name">Имя</label>
+                                        <input class="setings_input_children" name="first_name"
+                                            value="{{ $child->firstname }}">
+                                    </div>
+                                    <div class="input_wrapper">
+                                        <label class="setings_label" for="last_name">Фамилия</label>
+                                        <input class="setings_input_children" name="last_name"
+                                            value="{{ $child->lastname }}">
+
+                                    </div>
                                 </div>
-                                <div class="input_wrapper">
-                                    <label class="setings_label" for="children_male">Пол</label>
-                                    <div class="check_chose_send_gender_wrapper ">
-                                        <div class="radio_container">
-                                            <input class="check_chose_send" type="radio" value="Мужской"
-                                                id="children_male_2" name="chose_gender_2">
-                                            <label class="radio_contact_user" for="male_2">Мужской</label>
-                                        </div>
-                                        <div class="radio_container">
-                                            <input class="check_chose_send" type="radio" value="Женский"
-                                                id="children_female_2" name="children_female_2" checked="">
-                                            <label class="radio_contact_user" for="children_female_2">Женский</label>
+                                <div class="inputs_wrapper_child">
+                                    <div class="input_wrapper">
+                                        <label class="setings_label" for="birth_date">Дата рождения</label>
+                                        <input class="setings_input_children" type="text" name="birth_date"
+                                            value="{{ $child->birthdate->format('d.m.Y') }}">
+                                    </div>
+                                    <div class="input_wrapper">
+                                        <label class="setings_label" for="children_male">Пол</label>
+                                        <div class="check_chose_send_gender_wrapper ">
+                                            <div class="radio_container">
+                                                <input class="check_chose_send" type="radio" value="Мужской"
+                                                    name="gender_male" {{ $child->gender == 'Мужской' ? 'checked' : '' }}>
+                                                <label class="radio_contact_user" for="gender_male">Мужской</label>
+                                            </div>
+                                            <div class="radio_container">
+                                                <input class="check_chose_send" type="radio" value="Женский"
+                                                    name="gender_female"
+                                                    {{ $child->gender == 'Женский' ? 'checked' : '' }}>
+                                                <label class="radio_contact_user" for="gender_female">Женский</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @endforeach
-
-                    {{-- edit --}}
+                </form>
+                {{-- edit --}}
+                <form class="childform" enctype="multipart/form-data">
+                    @csrf
                     <div class="user_children_edit_wrapper">
                         <div class="change_image_user_container">
                             <div class="change_image_user_wrapper">
@@ -277,8 +219,8 @@
                                             src="https://tennis-ocean.ru/wp-content/themes/tennisocean/assets/img/icons/add_icon.png"
                                             alt=""></label>
                                 </div>
-                                <input class="input_image_user" id="children_add_img" name="children_add_img"
-                                    type="file" accept="image/*,image/jpeg">
+                                <input class="input_file" style="display:none;" id="children_add_img"
+                                    name="children_add_img" type="file" accept="image/*,image/jpeg">
                             </div>
                         </div>
                         <div class="user_edit_form_wrapper">
@@ -320,10 +262,11 @@
                     </div>
 
                     <div class="inputs_wrapper children_button">
-                        <input id="add_children" type="button" value="Добавить ребенка">
+                        <button class="button" data-func="addChild" type="button">Добавить ребенка</button>
                     </div>
                     <div class="inputs_wrapper save_children_button">
-                        <input class="setings_send_button save_settings_user_info" value="Сохранить">
+                        <button class="grey-button br500 fs-16 button cl" data-func="saveChild"
+                            data-form="childform">Сохранить</button>
                     </div>
                 </form>
             </div>
