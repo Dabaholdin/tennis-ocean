@@ -5,10 +5,10 @@
                 <div class="col-3">
                     <div class="round-image toggle">
                         <img class="accminimg" width="38" height="38"
-                            src="https://tennis-ocean.ru/wp-content/uploads/2022/09/1c3c1f7865a8505dbff6e416696927f9-2-150x150.jpg">
+                            src="{{ @asset('storage/'.auth()->user()->avatar) }}">
                     </div>
                 </div>
-
+                
                 <div class="col-9">
                     <div class="cmenu">
                         <div>

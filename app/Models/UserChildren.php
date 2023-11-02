@@ -16,6 +16,7 @@ class UserChildren extends Model
         'middlename',
         'gender',
         'birthdate',
+        'avatar',
     ];
     protected $casts=[
         'birthdate' => 'date',

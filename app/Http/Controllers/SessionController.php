@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Backtrace\File;
 
 class SessionController extends Controller
 {
@@ -118,13 +119,46 @@ class SessionController extends Controller
       
         $firstname = $user->firstname;
         $lastname = $user->lastname;
-        return view('cabinet.setings', compact('firstname','lastname','userchilds'));
+        $gender = $user->gender;
+        $uid = $user->id;
+        $birthdate = $user->birthdate;
+        return view('cabinet.setings', compact('uid','firstname','lastname','userchilds','gender','birthdate','user'));
     }
 
     
-    public function edit(Request $request)
+    public function edit(Request $request, $id)
     {
-        return $request;
+
+        $path = '';
+        if($request->hasFile('user_image')){
+            $file = $request->file('user_image');
+            $path = $file->store('user');
+        };
+        
+        $user = User::find($id);
+
+        $user->firstname = ($request->user_first_name != $user->firstname && $request->user_first_name !='')?$request->user_first_name : $user->firstname;
+        $user->lastname = ($request->user_last_name != $request->user_last_name) ? $request->user_last_name : $user->lastname;
+        $user->birthdate = ($request->user_birth_date != $request->user_birth_date) ? $request->user_birth_date : $user->birthdate;
+        $user->gender = ($request->chose_gender != $request->chose_gender) ? $request->chose_gender : $user->gender;
+        $user->email = ($request->user_email_change != $request->user_email_change) ? $request->user_email_change : $user->email;
+        $user->phone = ($request->user_tel != $request->user_tel) ? $request->user_tel : $user->phone;
+        if($request->hasFile('user_image')){
+            if($user->avatar !=''){
+                Storage::delete($user->avatar);
+            }
+            $user->avatar = $path ;
+        }
+        
+        $user->save();
+
+        if($user){
+            return response()->json([
+                'status'=>200,
+                'changed'=>true
+            ]);
+        }
+        
     }
 
     
