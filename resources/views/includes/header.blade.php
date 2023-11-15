@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="mb-0 mb-md-0 col-6 order-2 order-lg-1 col-xs-12 col-md-4  col-lg-3 ">
-                <a class="navbar-brand d-flex justify-content-center" href="{{@route('home.index')}}"><img class="logo img-fluid" src="/assets/img/logo/logo.png" alt=""></a>
+                <a class="navbar-brand d-flex justify-content-center" href="{{@route('home.index')}}"><img class="logo img-fluid" src="{{@asset('assets/img/logo/logo.png')}}" alt=""></a>
             </div>
             <div class="mb-0 mb-md-0 col-3 order-1 order-lg-2 col-xs-12 col-md-4  col-lg-7 d-flex justify-content-center">
                 <nav class="navbard navbar navbar-expand-lg bg-body-tertiary ">
@@ -37,7 +37,7 @@
                     @include('menu.account')
                 @else
                 <div class="col-3 order-3 order-lg-3 col-xs-12 col-md-4  col-lg-2 col-xl-2 text-center position-relative p-0">
-                    <x-button class="button button-fn" data-target="open-popup" data-to="pop">Войти</x-button>
+                    <x-button class="button button-fn" data-target="open-popup">Войти</x-button>
                 </div>
                 @endauth
             

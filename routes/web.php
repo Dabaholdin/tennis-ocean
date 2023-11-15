@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChildrenController;
 use App\Http\Controllers\CourtController;
 use App\Http\Controllers\FeesController;
@@ -58,9 +59,12 @@ Route::prefix('/user')->group(function(){
         Route::patch('/cabinet/setings/children/{id}','update')->name('children.update');
     });
 });
+Route::prefix('/admin')->middleware(['auth'])->group(function(){
+    Route::controller(AdminController::class)->middleware(['admin'])->group(function(){
+        Route::get('/','index')->name('admin.home');
+        Route::get('/users','users')->name('admin.users');
+        Route::get('/trenings','trenings')->name('admin.trenings');
+        Route::get('/corts','corts')->name('admin.corts');
 
-
-// Route::post('/registration',[RegisterController::class , 'add'])->name('register.add');
-
-// Route::post('/login',[LoginController::class , 'login'])->name('login.enter');
-// Route::put('/activation',[LoginController::class , 'activation'])->name('login.activation');
+    });
+});

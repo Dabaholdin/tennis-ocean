@@ -21,6 +21,16 @@
 a{
 	text-decoration: none;
 }
+.link-td-none{
+	text-decoration: none !important;
+}
+.link-td-none:hover{
+ color: #ffffff;
+}
+
+.txt-bold{
+	font-weight: bold !important;
+}
 
 .li-nav {
 	list-style: none;
@@ -169,6 +179,9 @@ html {
 
 .grey-text {
 	color: var(--color8) !important;
+}
+.white-text{
+	color: var(--color-white);
 }
 
 .black-text {
@@ -984,7 +997,7 @@ section {
 
 /* Popup start */
 
-.popub-background {
+.popub-background, .modal-background {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -1451,6 +1464,17 @@ button.auth-link {
 }
 
 /*erors end*/
+
+
+/* Admin Panel */
+.fo{
+	width: 34px;
+	height: 34px;
+	display: flex;
+}
+/* Admin Panel */
+
+
 
 /* Mobile */
 @media (max-width: 770px) {

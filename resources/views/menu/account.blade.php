@@ -39,6 +39,14 @@
                                         class="text-decoration-none black-text ac-nav-menu ">Выход</a>
                                 </div>
                             </li>
+                            @can('view', auth()->user())
+                            <li class="li-nav">
+                                <div class="nav-wrap ">
+                                    <a href="{{ @Route('admin.home') }}"
+                                        class="text-decoration-none black-text ac-nav-menu ">Адимн панель</a>
+                                </div>
+                            </li>
+                            @endcan
                         </ul>
                     </nav>
                 </div>
