@@ -20,7 +20,7 @@ class TreningController extends Controller
     {
         
     }
-1
+
    
     public function store(Request $request)
     {
