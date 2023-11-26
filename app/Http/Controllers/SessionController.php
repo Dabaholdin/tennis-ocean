@@ -11,7 +11,9 @@ use Illuminate\Http\Request;
 use Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Backtrace\File;
 
 class SessionController extends Controller
 {
@@ -71,7 +73,9 @@ class SessionController extends Controller
 
     public function login(Request $request){
         $formFields = $request->only(['email','password']);
+        $uid = false;
         if(Auth::attempt($formFields)){
+            $uid = Auth::user()->id;
             if(Auth::user()->verivied){
                 return response()->json([
                     'status'=>200,
@@ -83,7 +87,8 @@ class SessionController extends Controller
                 Auth::logout();
             return response()->json([
                 'status'=>400,
-                'verivied'=>false
+                'verivied'=>false,
+                'uid' => $uid,
             ]);
             }
 
@@ -102,24 +107,25 @@ class SessionController extends Controller
         return redirect(Route('home.index'));
     }
    
-    public function store(Request $request)
-    {
-        //
-    }
 
     
+
     public function show(User $auth)
     {   
         
+        //dd(Storage::allFiles());
         $user = auth()->user();
         $userchilds = auth()->user()->childrens;
-        return view('cabinet.setings', compact('user','userchilds'));
+      
+        $firstname = $user->firstname;
+        $lastname = $user->lastname;
+        return view('cabinet.setings', compact('firstname','lastname','userchilds'));
     }
 
     
     public function edit(string $id)
     {
-        return 'sadsada';
+        //
     }
 
     
@@ -143,7 +149,15 @@ class SessionController extends Controller
              $user->update([
                 'verivied' => true,
              ]);
-            return $user->verivied;
-        }else{  return false;}
+             return response()->json([
+                'status'=>200,
+                'verivied_code'=>true
+            ]);
+        }else{ 
+            return response()->json([
+                'status'=>400,
+                'verivied_code'=>false
+            ]);
+        }
     }
 }

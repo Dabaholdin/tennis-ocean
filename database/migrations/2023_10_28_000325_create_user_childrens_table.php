@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('user_childrens', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->string('firstname')->nullable();
-            $table->string('lastname')->nullable();
+            $table->string('firstname');
+            $table->string('lastname');
             $table->string('middlename')->nullable();
-            $table->boolean('gender')->nullable();
+            $table->string('gender')->nullable();
             $table->date('birthdate')->nullable();
             $table->string('avatar')->nullable();
             $table->timestamps();

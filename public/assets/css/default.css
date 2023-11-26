@@ -18,6 +18,20 @@
 	--icon-arrow: url(/assets/img/icons/arrowtog.svg);
 }
 
+a{
+	text-decoration: none;
+}
+.link-td-none{
+	text-decoration: none !important;
+}
+.link-td-none:hover{
+ color: #ffffff;
+}
+
+.txt-bold{
+	font-weight: bold !important;
+}
+
 .li-nav {
 	list-style: none;
 	border-bottom: 1px solid #2c3e5014;
@@ -101,6 +115,17 @@ html {
 	background-color: #189ae3 !important;
 }
 
+.grey-button {
+	background: #C6C9CE !important;
+	color: #FFFFFF !important;
+	outline: none !important;
+	border: none !important;
+}
+
+.br500 {
+	border-radius: 500px;
+}
+
 .wrapper {
 	display: flex;
 	flex-direction: column;
@@ -154,6 +179,9 @@ html {
 
 .grey-text {
 	color: var(--color8) !important;
+}
+.white-text{
+	color: var(--color-white);
 }
 
 .black-text {
@@ -374,10 +402,15 @@ html {
 }
 
 body {
+	display: flex;
+	flex-direction: column;
 	background-color: var(--color4);
 	font-family: 'Open Sans';
 }
 
+.container{
+	flex-grow: 1;
+}
 .none {
 	display: none !important;
 }
@@ -399,7 +432,40 @@ h3 {
 	font-size: 40px;
 }
 
-/* * BUTTONS */
+/* BUTTONS */
+.tab_btn {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 150%;
+	color: #189AE5;
+	background: none;
+	padding: 13px 30px;
+	border: 1.7px solid #189AE5;
+	border-radius: 500px;
+	margin-right: 20px;
+}
+
+.tab_btn:last-child {
+	margin-right: 0;
+}
+
+a.button_about_us {
+	background: transparent;
+	border: 1.7px solid #1E1F28;
+	border-radius: 500px;
+	font-weight: 600;
+	font-size: 16px;
+	height: 50px;
+	padding: 13px 30px;
+	display: block;
+}
+a.button_about_us {
+	text-decoration: none;
+	
+}
+
 .button {
 	border-radius: 500px;
 	padding: 13px 30px;
@@ -468,6 +534,7 @@ h3 {
 .lock-at-map-button {
 	padding: 13px 79.5px 13px 79.5px;
 }
+
 
 /* * BUTTONS */
 /* HEADER */
@@ -966,7 +1033,7 @@ section {
 
 /* Popup start */
 
-.popub-background {
+.popub-background, .modal-background {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -1417,13 +1484,33 @@ button.auth-link {
 .step-progress {
 	display: flex;
 }
-
+.user_children_edit_wrapper {
+	max-height: 185px;
+	overflow: hidden;
+	margin-bottom: 20px;
+	display: none;
+	border-bottom: 1px solid #C6C9CE;
+}
+.disabled{
+	display: none;
+}
 /*erors*/
 .input-error {
 	border: 1px solid red;
 }
 
 /*erors end*/
+
+
+/* Admin Panel */
+.fo{
+	width: 34px;
+	height: 34px;
+	display: flex;
+}
+/* Admin Panel */
+
+
 
 /* Mobile */
 @media (max-width: 770px) {

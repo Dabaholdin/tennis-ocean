@@ -15,11 +15,17 @@
                 <p class="p_text fs-4">Мы совмещаем традиции и технологии, чтобы сделать вас лучше</p>
                 <div class="row w-100">
                     <div class="button_get_tich_wrapper p-0 my-0 text-center mb-3 ms-md-0 col-7  col-lg-6">
-                        <button data-href="/trenirovki" class="white-ball pr-50 position-relative z-0 button button-link fw-bold d-inline-block">Начать
-                            обучение</button>
+                        @auth
+                        <a  class="white-ball pr-50 position-relative z-0 button button-link fw-bold d-inline-block" href="{{ @route('trenings.index') }}">Начать
+                            обучение</a>
+                        @else 
+                        <button data-href="/trenirovki" class="white-ball pr-50 position-relative z-0 button button-link fw-bold d-inline-block button button-fn" data-target="open-popup">Начать
+                            обучение</button>   
+                        @endauth
+                        
                     </div>
                     <div class="text-center my-0 mb-5 ms-md-0 col-5  col-lg-6 ">
-                        <button class=" button-link btn-transparent button button_about_us" data-href="/o-nas">Узнать о нас</button>
+                        <a class=" button-link btn-transparent button button_about_us" href="{{@route('aboutus.index')}}">Узнать о нас</a>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ChildrenController;
 use App\Http\Controllers\CourtController;
 use App\Http\Controllers\FeesController;
 use App\Http\Controllers\GalleryController;
@@ -26,7 +28,7 @@ Route::get('/', [HomeController::class,'index'])->name('home.index');
 Route::get('/fees', [FeesController::class,'index'])->name('fees.index');
 Route::get('/gallery', [GalleryController::class,'index'])->name('gallery.index');
 Route::get('/courts', [CourtController::class,'index'])->name('courts.index');
-Route::get('/about-us', [AboutUsController::class , 'index'])->name('aboutus.index')->middleware('auth');
+Route::get('/about-us', [AboutUsController::class , 'index'])->name('aboutus.index');
 
 Route::prefix('/')->group(function(){
     Route::controller(TreningController::class)->group(function(){
@@ -49,11 +51,20 @@ Route::prefix('/user')->group(function(){
     Route::controller(SessionController::class)->group(function(){
         Route::get('/cabinet','index')->name('cabinet.index')->middleware('auth');
         Route::get('/cabinet/setings','show')->name('cabinet.setings')->middleware('auth');
+        Route::patch('/cabinet/setings/edit/{id}','edit')->name('cabinet.edit');
+        
+    });
+    Route::controller(ChildrenController::class)->group(function(){
+        Route::post('/cabinet/setings/addchildren','create')->name('children.create');
+        Route::patch('/cabinet/setings/children/{id}','update')->name('children.update');
     });
 });
+Route::prefix('/admin')->middleware(['auth'])->group(function(){
+    Route::controller(AdminController::class)->middleware(['admin'])->group(function(){
+        Route::get('/','index')->name('admin.home');
+        Route::get('/users','users')->name('admin.users');
+        Route::get('/trenings','trenings')->name('admin.trenings');
+        Route::get('/corts','corts')->name('admin.corts');
 
-
-// Route::post('/registration',[RegisterController::class , 'add'])->name('register.add');
-
-// Route::post('/login',[LoginController::class , 'login'])->name('login.enter');
-// Route::put('/activation',[LoginController::class , 'activation'])->name('login.activation');
+    });
+});
