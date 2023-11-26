@@ -2731,19 +2731,7 @@ ul#menu-osnovnoe-header {
 	margin-bottom: 40px;
 }
 
-.tab_btn_user_setings {
-	font-family: 'Open Sans';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 16px;
-	line-height: 150%;
-	color: #189AE5;
-	background: none;
-	padding: 13px 30px;
-	border: 1.7px solid #189AE5;
-	border-radius: 500px;
-	margin-right: 20px;
-}
+
 
 .setings_tab_wrapper {
 	margin-bottom: 40px;
@@ -2754,10 +2742,7 @@ ul#menu-osnovnoe-header {
 	margin-right: 0;
 }
 
-.active_tab {
-	background-color: #189AE5;
-	color: #ffffff;
-}
+
 
 .login_data_title p {
 	font-family: 'Open Sans';
@@ -2798,10 +2783,6 @@ ul#menu-osnovnoe-header {
 
 .user_edit_wrapper {
 	display: flex;
-}
-
-.change_image_user_container {
-	margin-right: 40px;
 }
 
 .input_wrapper {
@@ -2869,25 +2850,9 @@ ul#menu-osnovnoe-header {
 	margin: 0;
 }
 
-.setings_send_button {
-	padding: 13px 30px;
-	width: 148px;
-	height: 50px;
-	background: #C6C9CE;
-	border-radius: 500px;
-	outline: none;
-	border: none;
-	font-weight: 600;
-	font-size: 16px;
-	line-height: 150%;
-	color: #FFFFFF;
-}
+
 
 #edit_settings_user {
-	/* display: none; */
-}
-
-#children_data-wrapper {
 	/* display: none; */
 }
 
@@ -2913,10 +2878,10 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 .user_children_edit_wrapper {
-	height: 201px;
+	/* height: 201px; */
 	overflow: hidden;
 	margin-bottom: 20px;
-	display: none;
+	/* display: none; */
 	border-bottom: 1px solid #C6C9CE;
 }
 

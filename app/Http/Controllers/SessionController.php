@@ -18,8 +18,8 @@ class SessionController extends Controller
    
     public function index()
     { 
-       
-       return view('cabinet.index');
+       $user_data = auth()->user(); 
+       return view('cabinet.index', compact('user_data'));
        
     }
 
@@ -113,16 +113,13 @@ class SessionController extends Controller
         
         $user = auth()->user();
         $userchilds = auth()->user()->childrens;
-      
-        $firstname = $user->firstname;
-        $lastname = $user->lastname;
-        return view('cabinet.setings', compact('firstname','lastname','userchilds'));
+        return view('cabinet.setings', compact('user','userchilds'));
     }
 
     
     public function edit(string $id)
     {
-        //
+        return 'sadsada';
     }
 
     

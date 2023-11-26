@@ -8,24 +8,7 @@ $(document).ready(function () {
         }
     })
 
-
-    function inputClear(arr) {
-        $.each(arr, function (i, obj) {
-            if (obj.name != '_token') {
-                if (obj.value != '') {
-                    obj.value = '';
-                }
-            }
-        })
-
-    }
-
     $('.button-fn').click('button', function (e) {
-
-
-
-
-
         //Проверям что атрибут есть
         if ($(e.target).data('target') != undefined) {
 
@@ -164,12 +147,4 @@ $(document).ready(function () {
             }
         })
     })
-
-    
-
-
-
-
-
-
 })
