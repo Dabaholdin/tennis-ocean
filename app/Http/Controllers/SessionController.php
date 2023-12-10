@@ -17,13 +17,28 @@ use Spatie\Backtrace\File;
 
 class SessionController extends Controller
 {
-   
     public function index()
-    { 
-       
-       return view('cabinet.index');
+    {
+        $mytr = Auth()->user()->Trenings;
+        $trenigs_activiti=[];
+        foreach($mytr as $trening){
+            $trenigs_activiti[]=[
+                'day'=> $trening->date_start->format('d'),
+                'month'=> $trening->date_start->format('m'),
+                'year'=> $trening->date_start->format('Y'),
+                'status'=> $trening->status,
+            ];
+            //array_push($trenigs_act,$trenigs_act);
+        };
+        $trenigs_activiti = json_encode($trenigs_activiti);
+        
+        //dd($trenigs_activiti);
+    //dd($mytr[0]->date_start->format('Y'));
+       return view('cabinet.index',compact('trenigs_activiti'));
        
     }
+
+    
 
     public function create(Request $request)
     {
@@ -193,4 +208,11 @@ class SessionController extends Controller
             ]);
         }
     }
+
+    
+
+
+
+
+
 }

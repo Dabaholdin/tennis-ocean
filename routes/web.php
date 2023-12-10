@@ -50,7 +50,11 @@ Route::prefix('/')->group(function(){
 Route::prefix('/user')->group(function(){
     Route::controller(SessionController::class)->group(function(){
         Route::get('/cabinet','index')->name('cabinet.index')->middleware('auth');
+
+
         Route::get('/cabinet/setings','show')->name('cabinet.setings')->middleware('auth');
+
+        
         Route::patch('/cabinet/setings/edit/{id}','edit')->name('cabinet.edit');
         
     });

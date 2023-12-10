@@ -64,12 +64,12 @@
                                     <div class="check_chose_send_gender_wrapper ">
                                         <div class="radio_container">
                                             <input class="check_chose_send" type="radio" value="Мужской" id="male"
-                                                name="chose_gender" {{ $gender == 'Мужской' ? 'checked' : '' }}>
+                                                name="chose_gender" {{ $gender ? 'checked' : '' }}>
                                             <label class="radio_contact_user" for="male">мужской</label>
                                         </div>
                                         <div class="radio_container">
                                             <input class="check_chose_send" type="radio" value="female" id="female"
-                                                name="chose_gender" {{ $gender == 'Женский' ? 'checked' : '' }}>
+                                                name="chose_gender" {{ !$gender  ? 'checked' : '' }}>
                                             <label class="radio_contact_user" for="female">Женский</label>
                                         </div>
                                     </div>

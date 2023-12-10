@@ -65,12 +65,166 @@
                         </div>
                     </div>
 
-                    <div class="mb-4 training" style="display:none;" role="tabpanel" aria-labelledby="tofline-tab">
-                        2
+                    <div class="mb-4 training" style="display: none" role="tabpanel" aria-labelledby="tofline-tab">
+                        <div class="row bgw p-4">
+                            <div class="col-sm-4 p-0">
+                                <div id="calendar"></div>
+                            </div>
+                            <div class="col-8">
+                                <div class="row mb-4">
+                                    <div class="col-sm-3">
+                                        <input type="text" class="input w-100" value="За всё время">
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="input w-100" value="{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}">
+                                    </div>
+                                    <div class="col-sm-4"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="todo-list pe-4">
+                                        
+                                            
+                                                <div class="row p-2 blue-border mb-2 todo-item">
+                                                    <div class="col-10 p-0">
+                                                        <div class="row">
+                                                            <span class="trening-title">
+                                                                Групповая тренировка
+                                                            </span>
+                                                        </div>
+                                                        <div class="row">
+                                                            <span>
+                                                                Суббота, 30 апреля, 15:50. Tennis Siti (Крокус сити)
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2 p-0">
+                                                        <div class="status-wrapper h-100 d-flex align-items-center justify-content-end">
+                                                            <p class="p-0 m-0 fs-14 bold status-new">
+                                                                Новый
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row p-2 blue-border mb-2 todo-item">
+                                                    <div class="col-10 p-0">
+                                                        <div class="row">
+                                                            <span class="trening-title">
+                                                                Групповая тренировка
+                                                            </span>
+                                                        </div>
+                                                        <div class="row">
+                                                            <span>
+                                                                Суббота, 30 апреля, 15:50. Tennis Siti (Крокус сити)
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2 p-0">
+                                                        <div class="status-wrapper h-100 d-flex align-items-center justify-content-end">
+                                                            <p class="p-0 m-0 fs-14 bold status-await-pay">
+                                                                Ожидает оплаты
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row p-2 blue-border mb-2 todo-item">
+                                                    <div class="col-10 p-0">
+                                                        <div class="row">
+                                                            <span class="trening-title">
+                                                                Групповая тренировка
+                                                            </span>
+                                                        </div>
+                                                        <div class="row">
+                                                            <span>
+                                                                Суббота, 30 апреля, 15:50. Tennis Siti (Крокус сити)
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2 p-0">
+                                                        <div class="status-wrapper h-100 d-flex align-items-center justify-content-end">
+                                                            <p class="p-0 m-0 fs-14 bold status-not-confirmed">
+                                                                Не подтверждено
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row p-2 blue-border mb-2 todo-item">
+                                                    <div class="col-10 p-0">
+                                                        <div class="row">
+                                                            <span class="trening-title">
+                                                                Групповая тренировка
+                                                            </span>
+                                                        </div>
+                                                        <div class="row">
+                                                            <span>
+                                                                Суббота, 30 апреля, 15:50. Tennis Siti (Крокус сити)
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2 p-0">
+                                                        <div class="status-wrapper h-100 d-flex align-items-center justify-content-end">
+                                                            <p class="p-0 m-0 fs-14 bold status-confirmed">
+                                                                Подтверждено
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row p-2 blue-border mb-2 todo-item">
+                                                    <div class="col-10 p-0">
+                                                        <div class="row">
+                                                            <span class="trening-title">
+                                                                Групповая тренировка
+                                                            </span>
+                                                        </div>
+                                                        <div class="row">
+                                                            <span>
+                                                                Суббота, 30 апреля, 15:50. Tennis Siti (Крокус сити)
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2 p-0">
+                                                        <div class="status-wrapper h-100 d-flex align-items-center justify-content-end">
+                                                            <p class="p-0 m-0 fs-14 bold status-new">
+                                                                Новый
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    <script src="/assets/js/air-datepicker.js"></script>
+<script>
+    let today = new Date();
+    let dates = '{!!$trenigs_activiti!!}';
+    // let dates = null;
+    dates = (dates)?JSON.parse(dates):false;
+    console.log(today)
+new AirDatepicker('#calendar', {
+    // Handle render process
+    // Select 10th day of the month
+    // selectedDates: new Date(today.getFullYear(), today.getMonth(), today.getDay()),
+    toggleSelected:false,
+        onRenderCell({date, cellType}) {
+            for(let i=0;i<dates.length;i++){
+                    //console.log(date.getMonth()+1)
+                    if(date.getMonth()+1 == dates[i]['month'] && date.getDate() == dates[i]['day']){
+                        console.log(i)
+                    return{
+                        classes:dates[i]['status']
+                    }
+                }
+                
+            }
+        }
+    
+});
+</script>
 @endsection

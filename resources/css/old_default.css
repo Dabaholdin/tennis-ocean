@@ -272,14 +272,6 @@ h1 {
 
 }
 
-.button {
-	padding: 13px 30px 13px 30px;
-	border-radius: 25px;
-	border: none;
-	width: auto;
-	height: auto;
-}
-
 .button_invite {
 	position: relative;
 	background-color: #189AE5;
@@ -307,15 +299,7 @@ h1 {
 	border-radius: 500px;
 }
 
-.button_about_us {
-	background: transparent;
-	border: 1.7px solid #1E1F28;
-	border-radius: 500px;
-	font-weight: 600;
-	font-size: 16px;
-	height: 50px;
-	padding: 13px 30px;
-}
+
 
 /* .button_get_tich_wrapper {
 	position: relative;
@@ -1041,7 +1025,7 @@ p.info_text_p {
 	background-position: center center;
 	width: 20px;
 	content: '';
-	background-image: url(/assets/img/icons/V.png);
+	background-image: url(assets/img/icons/v.png);
 	position: absolute;
 	right: 0;
 	top: 7px;
@@ -1410,7 +1394,7 @@ p.info_text_p {
 	font-weight: 600;
 }
 
-.todo-item {
+.to_do_list_item {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -1419,22 +1403,22 @@ p.info_text_p {
 	margin-bottom: 10px;
 }
 
-.todo-list {
-	/* padding-right: 10px; */
+.to_do_list {
+	padding-right: 10px;
 	height: 342px;
 	overflow-y: auto;
-	/* margin-top: 15px; */
+	margin-top: 15px;
 
 }
 
-.todo-list::-webkit-scrollbar {
+.to_do_list::-webkit-scrollbar {
 	width: 3px;
 	background: rgba(24, 154, 229, 0.15);
 	opacity: 0.65;
 	transform: rotate(90deg);
 }
 
-.todo-list::-webkit-scrollbar-thumb {
+.to_do_list::-webkit-scrollbar-thumb {
 	background: #189AE5;
 	transform: rotate(90deg);
 	width: 3px;
@@ -2698,6 +2682,24 @@ ul#menu-osnovnoe-header {
 
 /* инпкты */
 
+/* Статусы */
+.new {
+	color: #8e8e8e;
+}
+
+.await_pay {
+	color: #79C95F;
+}
+
+.not_confirmed {
+	color: #E94F4F;
+}
+
+.confirmed {
+	color: #189AE5;
+}
+
+/* Статусы END*/
 /* Страница настроек пользователя */
 .user_setings_section {
 	padding: 40px 0 170px 0;
@@ -2713,28 +2715,13 @@ ul#menu-osnovnoe-header {
 	margin-bottom: 40px;
 }
 
-.tab_btn_user_setings {
-	font-family: 'Open Sans';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 16px;
-	line-height: 150%;
-	color: #189AE5;
-	background: none;
-	padding: 13px 30px;
-	border: 1.7px solid #189AE5;
-	border-radius: 500px;
-	margin-right: 20px;
-}
+
 
 .setings_tab_wrapper {
 	margin-bottom: 40px;
 }
 
-.tab_btn_user_setings:last-child {
 
-	margin-right: 0;
-}
 
 .active_tab {
 	background-color: #189AE5;
@@ -2851,27 +2838,6 @@ ul#menu-osnovnoe-header {
 	margin: 0;
 }
 
-.setings_send_button {
-	padding: 13px 30px;
-	width: 148px;
-	height: 50px;
-	background: #C6C9CE;
-	border-radius: 500px;
-	outline: none;
-	border: none;
-	font-weight: 600;
-	font-size: 16px;
-	line-height: 150%;
-	color: #FFFFFF;
-}
-
-#edit_settings_user {
-	/* display: none; */
-}
-
-#children_data-wrapper {
-	/* display: none; */
-}
 
 .my_children_title {
 	font-weight: 400;
@@ -2892,27 +2858,6 @@ ul#menu-osnovnoe-header {
 
 input[type=date]::-webkit-calendar-picker-indicator {
 	opacity: 0;
-}
-
-.user_children_edit_wrapper {
-	height: 201px;
-	overflow: hidden;
-	margin-bottom: 20px;
-	display: none;
-	border-bottom: 1px solid #C6C9CE;
-}
-
-#add_children {
-	text-align: center;
-	color: #FFFFFF;
-	border: none;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	padding: 13px 30px;
-	background: #189AE5;
-	border-radius: 500px;
 }
 
 .children_wrapper {

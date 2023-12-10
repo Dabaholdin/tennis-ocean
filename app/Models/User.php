@@ -72,4 +72,7 @@ class User extends Authenticatable
     public function childrens() {
         return $this->hasMany(UserChildren::class);
     }
+    public function Trenings(){
+        return $this->hasMany(TreiningActiviti::class);
+    }
 }

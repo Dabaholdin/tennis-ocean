@@ -17,28 +17,7 @@
 	--icon-blue-ball: url(/assets/img/icons/image16Traced.png);
 	--icon-arrow: url(/assets/img/icons/arrowtog.svg);
 }
-/* Status */
-.new{
-	border: 1px solid grey;
-    border-radius: 100px !important;
-}
-.status-new{
-	color: grey;
-}
 
-.status-await-pay {
-	color: #79C95F;
-}
-
-.status-not-confirmed {
-	color: #E94F4F;
-}
-
-.status-confirmed {
-	color: #189AE5;
-}
-
-/* Status */
 a{
 	text-decoration: none;
 }
@@ -122,13 +101,10 @@ button:focus {
 
 .input {
 	padding: 12px 10px 12px 14px;
-	border: 2px solid #8E8E8E;
-	outline: none;
+	border: 2px solid #189AE5;
 	border-radius: 5px;
 }
-.input:focus{
-	border: 2px solid #189AE5;
-}
+
 body,
 html {
 	height: 100%;
