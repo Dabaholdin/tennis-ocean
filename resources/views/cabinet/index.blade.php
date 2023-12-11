@@ -82,29 +82,32 @@
                                 </div>
                                 <div class="row">
                                     <div class="todo-list pe-4">
-                                        
-                                            
-                                                <div class="row p-2 blue-border mb-2 todo-item">
-                                                    <div class="col-10 p-0">
-                                                        <div class="row">
-                                                            <span class="trening-title">
-                                                                Групповая тренировка
-                                                            </span>
-                                                        </div>
-                                                        <div class="row">
-                                                            <span>
-                                                                Суббота, 30 апреля, 15:50. Tennis Siti (Крокус сити)
-                                                            </span>
-                                                        </div>
+                                        @foreach ($trenings as $trening)
+                                            <div class="row p-2 blue-border mb-2 todo-item">
+                                                <div class="col-10 p-0">
+                                                    <div class="row">
+                                                        <span class="trening-title">
+                                                            Групповая тренировка
+                                                        </span>
                                                     </div>
-                                                    <div class="col-2 p-0">
-                                                        <div class="status-wrapper h-100 d-flex align-items-center justify-content-end">
-                                                            <p class="p-0 m-0 fs-14 bold status-new">
-                                                                Новый
-                                                            </p>
-                                                        </div>
+                                                    <div class="row">
+                                                        <span>
+                                                            Суббота, 30 апреля, 15:50. Tennis Siti (Крокус сити)
+                                                        </span>
                                                     </div>
                                                 </div>
+                                                <div class="col-2 p-0">
+                                                    <div class="status-wrapper h-100 d-flex align-items-center justify-content-end">
+                                                        <p class="p-0 m-0 fs-14 bold status-new">
+                                                            Новый
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {{$trening->id}}
+                                        @endforeach
+                                            
+                                                
                                                 <div class="row p-2 blue-border mb-2 todo-item">
                                                     <div class="col-10 p-0">
                                                         <div class="row">

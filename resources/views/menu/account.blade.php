@@ -3,9 +3,15 @@
         <div class="col menu-container">
             <div class="row um">
                 <div class="col-3">
-                    <div class="round-image toggle">
+                    <div class="round-image toggle {{ empty(auth()->user()->avatar)? 'bbg accminimg white-text bold d-flex justify-content-center align-items-center':''}}">
+                        @empty(auth()->user()->avatar)
+                            {{mb_substr(auth()->user()->firstname,0,1)}}{{mb_substr(auth()->user()->lastname,0,1)}}
+                            
+                        @else
                         <img class="accminimg" width="38" height="38"
-                            src="{{ @asset('storage/'.auth()->user()->avatar) }}">
+                        src="{{ @asset('storage/'.auth()->user()->avatar) }}">
+                        @endempty
+                        
                     </div>
                 </div>
                 

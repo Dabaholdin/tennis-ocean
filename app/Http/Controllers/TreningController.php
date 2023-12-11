@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Training;
+use App\Models\Treining;
 use App\Models\Trening_category;
 use Illuminate\Http\Request;
 
@@ -12,7 +12,9 @@ class TreningController extends Controller
     public function index()
     {
         $Trening_categorys = Trening_category::all();
+        
         return view('trenings.index',compact('Trening_categorys'));
+        
     }
 
     
@@ -31,8 +33,8 @@ class TreningController extends Controller
     {
         $Trening_categorys = Trening_category::query()->get()
         ->where('name',$category)->first();
-        $trenings = Training::query()->get()
-        ->where('type','=',$type)
+        $trenings = Treining::query()->get()
+        ->where('trening_method','=',$type)
         ->where('category_id','=',$Trening_categorys->id); 
         return view('trenings.show', compact('category','type','trenings'));
     }

@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Training;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class TreiningActiviti extends Model
 {
@@ -25,4 +26,7 @@ class TreiningActiviti extends Model
     protected $dates=[
         'date_start',
     ];
+    public function TreningInfo(){
+        return $this->belongsTo(Training::class);
+    }
 }

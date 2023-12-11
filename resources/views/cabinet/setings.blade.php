@@ -26,13 +26,18 @@
                         <div class="change_image_user_container">
                             <div class="change_image_user_wrapper">
                                 <div class="image_wrapper">
-                                    <img class="aj_img_acc"
+                                    @empty($user->avatar)
+                                    {{mb_substr(auth()->user()->firstname,0,1)}}{{mb_substr(auth()->user()->lastname,0,1)}}
+                                    @else
+                                        <img class="aj_img_acc"
                                         src="{{ @asset('storage/'.$user->avatar) }}">
+                                    @endempty
+                                    
 
                                 </div>
                                 <div class="add_user_image_wrapper">
                                     <label for="user_img" class="add_user_image"><img
-                                            src="https://tennis-ocean.ru/wp-content/themes/tennisocean/assets/img/icons/add_icon.png"
+                                            src="{{@asset('assets/img/icons/add_icon.png')}}"
                                             alt=""></label>
                                 </div>
                                 <input class="input_image_user input_file user_img" id="user_img" name="user_image" type="file"
@@ -44,31 +49,31 @@
                                 <div class="input_wrapper">
                                     <label class="setings_label" for="user_first_name">Ваше имя</label>
                                     <input id="user_first_name" class="setings_input" name="user_first_name" type="text"
-                                        placeholder="{{ $firstname }}">
+                                        value="{{ $firstname }}">
                                 </div>
                                 <div class="input_wrapper">
                                     <label class="setings_label" for="user_last_name">Ваша фамилия</label>
                                     <input id="user_last_name" class="setings_input" name="user_last_name" type="text"
-                                        placeholder="{{ $lastname }}">
+                                        value="{{ $lastname }}">
                                 </div>
                             </div>
 
                             <div class="inputs_wrapper">
                                 <div class="input_wrapper">
                                     <label class="setings_label" for="birth_date">Дата рождения</label>
-                                    <input id="user_birth_date" class="setings_input" name="user_birth_date" type="date" value="{{$birthdate->format('Y-m-d')}}">
+                                    <input id="user_birth_date" class="setings_input" name="user_birth_date" type="date" value="{{empty(!$birthdate)?$birthdate->format('Y-m-d'):''}}">
                                     
                                 </div>
                                 <div class="input_wrapper">
                                     <label class="setings_label" for="your_gender">Пол</label>
                                     <div class="check_chose_send_gender_wrapper ">
                                         <div class="radio_container">
-                                            <input class="check_chose_send" type="radio" value="Мужской" id="male"
+                                            <input class="check_chose_send" type="radio" value="1" id="male"
                                                 name="chose_gender" {{ $gender ? 'checked' : '' }}>
                                             <label class="radio_contact_user" for="male">мужской</label>
                                         </div>
                                         <div class="radio_container">
-                                            <input class="check_chose_send" type="radio" value="female" id="female"
+                                            <input class="check_chose_send" type="radio" value="0" id="female"
                                                 name="chose_gender" {{ !$gender  ? 'checked' : '' }}>
                                             <label class="radio_contact_user" for="female">Женский</label>
                                         </div>
@@ -80,12 +85,12 @@
                                 <div class="input_wrapper">
                                     <label class="setings_label" for="user_email_change">Эл. почта</label>
                                     <input id="user_email_change" name="user_email_change" class="setings_input"
-                                        type="email" placeholder="d.a.baholdin@yandex.ru">
+                                        type="email" placeholder="Ваша почта" value="{{auth()->user()->email}}">
                                 </div>
                                 <div class="input_wrapper">
                                     <label class="setings_label" for="user_tel">Телефон</label>
                                     <input id="user_tel" name="user_tel" class="setings_input" type="tel"
-                                        placeholder="Введите номер телефона">
+                                        placeholder="Введите номер телефона" value="{{auth()->user()->phone}}">
                                 </div>
                             </div>
 

@@ -13,9 +13,16 @@ return new class extends Migration
     {
         Schema::create('treining_activitis', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('training_id')->constrained();
+            $table->foreignId('treining_id')->constrained();
+            $table->string('treining_title')->nullable();
+            $table->string('treining_method')->nullable();
+
             $table->foreignId('user_id')->constrained();
+
             $table->foreignId('cort_id')->constrained()->nullable();
+            $table->string('cort_name')->nullable();
+
+            $table->unsignedInteger('price');
             $table->date('date_start');
             $table->string('day_period');
             $table->string('status');

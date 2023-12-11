@@ -1,6 +1,12 @@
 // Header fix
 $(document).ready(function () {
 
+    $('.request-trening').click(function(){
+        console.log(this)
+    })
+
+
+
     // Preview фото при добавлении в input
     $('.input_file[type="file"]').change(function (e) {
         let file = $(this)[0].files[0]
@@ -56,7 +62,7 @@ $(document).ready(function () {
             //processData:false,
             data: a,
             success: function (data) {
-                console.log(data);
+                // console.log(data);
             }
         })
     })
@@ -98,7 +104,6 @@ $(document).ready(function () {
             }
 
         })
-        console.log(no_empty)
         if (no_empty != 0) {
             $('button[name="addNewChild"]').prop('disabled', false)
         } else {
@@ -108,7 +113,6 @@ $(document).ready(function () {
 
     $('.change_user_data').change(function (e) {
         let inputs = $('.change_user_data input[type="text"], input[type="file"], input[type="data"], input[type="tel"], input[type="email"]');
-        console.log(inputs)
         let no_empty = 0;
         $.each(inputs, function (i, el) {
             if (el.value != '') {
@@ -116,7 +120,6 @@ $(document).ready(function () {
             }
 
         })
-        console.log(no_empty)
         if (no_empty != 0) {
             $('button[name="changeUserInfo"]').prop('disabled', false)
         } else {
@@ -124,6 +127,7 @@ $(document).ready(function () {
         }
     })
 
+    // Обновление данных пользователя
     $('.change_user_data').submit(function (e) {
         e.preventDefault();
 
@@ -140,11 +144,13 @@ $(document).ready(function () {
             success: function (data) {
                 if (data.changed) {
                     window.location.reload();
+                    
                 }
             }
         })
     })
-
+    // Обновление данных пользователя
+    
 
     $('button[data-func="addChild"]').click(function () {
         if (!$('.user_children_edit_wrapper').hasClass('opening')) {

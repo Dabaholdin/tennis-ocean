@@ -2,39 +2,45 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use App\Models\UserChildren;
-use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Foundation\Auth\User as AuthUser;
-use Illuminate\Http\Request;
 use Response;
+use Carbon\Carbon;
+use App\Models\User;
+use App\Models\Training;
+use Spatie\Backtrace\File;
+use App\Models\UserChildren;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
-use Spatie\Backtrace\File;
+use Illuminate\Foundation\Auth\User as AuthUser;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class SessionController extends Controller
 {
     public function index()
     {
-        $mytr = Auth()->user()->Trenings;
+        $trenings = Auth()->user()->Trenings;
+        //dd($trenings);
+
+
+        $trening_info =[];
         $trenigs_activiti=[];
-        foreach($mytr as $trening){
+        foreach($trenings as $trening){
+            
             $trenigs_activiti[]=[
                 'day'=> $trening->date_start->format('d'),
                 'month'=> $trening->date_start->format('m'),
                 'year'=> $trening->date_start->format('Y'),
                 'status'=> $trening->status,
             ];
-            //array_push($trenigs_act,$trenigs_act);
+            
         };
         $trenigs_activiti = json_encode($trenigs_activiti);
         
         //dd($trenigs_activiti);
     //dd($mytr[0]->date_start->format('Y'));
-       return view('cabinet.index',compact('trenigs_activiti'));
+       return view('cabinet.index',compact('trenigs_activiti' , 'trenings'));
        
     }
 
@@ -143,7 +149,6 @@ class SessionController extends Controller
     
     public function edit(Request $request, $id)
     {
-
         $path = '';
         if($request->hasFile('user_image')){
             $file = $request->file('user_image');
@@ -153,11 +158,20 @@ class SessionController extends Controller
         $user = User::find($id);
 
         $user->firstname = ($request->user_first_name != $user->firstname && $request->user_first_name !='')?$request->user_first_name : $user->firstname;
-        $user->lastname = ($request->user_last_name != $request->user_last_name) ? $request->user_last_name : $user->lastname;
-        $user->birthdate = ($request->user_birth_date != $request->user_birth_date) ? $request->user_birth_date : $user->birthdate;
-        $user->gender = ($request->chose_gender != $request->chose_gender) ? $request->chose_gender : $user->gender;
-        $user->email = ($request->user_email_change != $request->user_email_change) ? $request->user_email_change : $user->email;
-        $user->phone = ($request->user_tel != $request->user_tel) ? $request->user_tel : $user->phone;
+        $user->lastname = ($request->user_last_name != $user->user_last_name) ? $request->user_last_name : $user->lastname;
+        $user->birthdate = ($request->user_birth_date != $user->user_birth_date) ? $request->user_birth_date : $user->birthdate;
+        $user->gender = ($request->chose_gender != $user->chose_gender) ? $request->chose_gender : $user->gender;
+        $user->email = ($request->user_email_change != $user->user_email_change) ? $request->user_email_change : $user->email;
+        
+
+        if(isset($request->user_tel)){
+            
+            $user->phone = ($request->user_tel != $user->user_tel) ? $request->user_tel : $user->phone;
+            
+        }else {
+            $user->phone = null;
+        }
+        
         if($request->hasFile('user_image')){
             if($user->avatar !=''){
                 Storage::delete($user->avatar);
@@ -170,7 +184,15 @@ class SessionController extends Controller
         if($user){
             return response()->json([
                 'status'=>200,
-                'changed'=>true
+                'changed'=>true,
+                'data'=>[
+                    'firstname' => $request->user_first_name ,
+                    'lastname' => $request->user_last_name,
+                    'birthdate' => $request->user_birth_date,
+                    'gender' => $request->chose_gender ,
+                    'email' => $request->user_email_change,
+                    'phone' => $request->user_tel,
+                ]
             ]);
         }
         

@@ -11,17 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('trainings', function (Blueprint $table) {
+        Schema::create('treinings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')->constrained('trening_categories');
-            $table->string('name');
-            $table->string('name_description');
+            $table->string('title');
+            $table->string('title_description');
             $table->text('description');
-            $table->string('type');
+            $table->string('trening_method');
+            $table->string('trening_type');
             $table->text('traning_img');
             $table->integer('price');
             $table->string('price_prefix')->default('от');
-            $table->string('free_type')->default('от');
+            $table->string('free_type')->default('img');
             $table->text('free_description');
             $table->text('free_video_url');
             $table->timestamps();

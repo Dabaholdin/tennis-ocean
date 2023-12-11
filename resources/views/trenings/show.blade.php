@@ -46,10 +46,10 @@
                                     </div>
                                     <div class="col-12 col-lg-6 d-flex flex-column">
                                         <div class="row">
-                                            <h2 class="fs-16 grey-text">{{ $trening->name_description }}</h2>
+                                            <h2 class="fs-16 grey-text">{{ $trening->title_description }}</h2>
                                         </div>
                                         <div class="row">
-                                            <h2 class="fs-24 black-text">{{ $trening->name }}</h2>
+                                            <h2 class="fs-24 black-text">{{ $trening->title }}</h2>
                                         </div>
                                         <div class="row">
                                             <div class="col-12">
@@ -124,7 +124,7 @@
             @endif
         </div>
     </section>
-    <div class="modal-background">
+    <div class="modal-background" style="display:none">
         <div class="row">
             <div class="col">
                 <div class="modal-dialog">
