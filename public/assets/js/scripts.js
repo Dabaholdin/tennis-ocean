@@ -1,9 +1,6 @@
 // Header fix
 $(document).ready(function () {
 
-    $('.request-trening').click(function(){
-        console.log(this)
-    })
 
 
 

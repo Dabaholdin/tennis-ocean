@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/default.css">
     <link rel="stylesheet" href="/assets/css/old_default.css">
+    <link rel="stylesheet" href="/assets/css/popup-modal.css">
     <link rel="stylesheet" href="/assets/css/air-datepicker.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     

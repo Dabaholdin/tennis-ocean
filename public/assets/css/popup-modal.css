@@ -1,0 +1,33 @@
+
+.flex{
+    display: flex;
+}
+.trening-modal-content{
+    padding: 50px 110px;
+    height: fit-content;
+}
+.jcc{
+    justify-content: center !important;
+}
+.aic{
+    align-items: center;
+}
+.chose-date{
+    position: relative;
+    cursor: pointer;
+
+}
+.chose-date::after{
+    content: '';
+    background-image: url(/assets/img/icons/opendtp.png);
+	background-color: rgb(23, 155, 232);
+	background-position: center center;
+	background-repeat: no-repeat;
+    border-radius: 0px 2px 2px 0px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    
+}

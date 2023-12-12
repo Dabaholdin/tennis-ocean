@@ -124,17 +124,75 @@
             @endif
         </div>
     </section>
-    <div class="modal-background" style="display:none">
-        <div class="row">
-            <div class="col">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        mlfkdlsankd
+    <div class="modal-background" style="display:none;" >
+        <div class="modal-wrapper h-100 flex jcc aic">
+            
+            <div class="trening-modal-content position-relative bgw">
+                <div class="button_close_form_course"></div>
+                <h3 class="mb-3">Запись на обучение</h3>
+                <form class="add-to-trening">
+                    <div class="mb-3">
+                        <div class="grey-text mb-1 bold">Кто идёт</div>
+                        <div class="input">{{auth()->user()->firstname}} {{auth()->user()->lastname}}</div>
                     </div>
-                </div>
+                    <div class="mb-3">
+                        <div class="grey-text mb-1 bold">Тренировка</div>
+                        <div class="input">Индивидуальная</div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="grey-text mb-1 bold">Время</div>
+                        <div class="input chose-date"></div>
+                        <div class="chose-idate-wrapper" style="display: none">
+                            <input class="chose-idate" name="chose-idate" type="hidden" >
+                            <input class="alt-idate" name="alt-idate" type="hidden" >
+                        </div>
+                        
+                    </div>
+                    <div class="mb-3">
+                        <div class="grey-text mb-1 bold">Корт</div>
+                        <div class="input">Мегаспорт-теннис</div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="text-center">
+                            <span>Итого: 8000Р</span>
+                        </div>
+                    </div>
+
+                    <div class="check_chose_send_wrapper">
+                        <div class="radio_container">
+                            <input class="check_chose_send" type="radio" value="call_me" id="call_me" name="chose_send">
+                            <label class="radio_contact_user" for="call_me">Перезвонить мне</label> 
+                        </div>
+                        <div class="radio_container">
+                            <input class="check_chose_send" type="radio" value="sms" id="sms" name="chose_send">
+                            <label class="radio_contact_user" for="sms">Ответить по СМС</label>	
+                        </div>
+                        <input type="text" name="select-trener" class="select_input-hiden trener_id" value="">
+                    </div>
+                    <div class="text-center">
+                        <input class="button" type="submit" value="Отправить">
+                    </div>
+                    <input class="txt" type="text">
+                </form>
             </div>
         </div>
     </div>
+    <script src="/assets/js/air-datepicker.js"></script>
+<script>
+    new AirDatepicker('.chose-idate',{
+        inline: true,
+        altField: '.alt-idate', 
+        altFieldDateFormat:'EEEE, d MMMM',
+    
+        onSelect({date, formattedDate, datepicker}){
+            if($('.chose-idate-wrapper').hasClass('Opened')){
+            $('.chose-idate-wrapper').slideUp(800).removeClass('Opened') 
+            $('.chose-date').html($('.alt-idate').val());
+            }
+        }
+    });
+    
+</script>
 
-
+                       
 @endsection

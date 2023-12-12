@@ -2393,7 +2393,7 @@ ul#menu-osnovnoe-header {
 }
 
 .cours_enter_popup_background {
-	display: none;
+	/* display: none; */
 	top: 0;
 	left: 0;
 	position: fixed;
