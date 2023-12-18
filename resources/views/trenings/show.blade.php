@@ -66,7 +66,7 @@
                                             <div class="col-12 mb-4 mb-lg-0 col-lg-6">
                                                 @auth
                                                     <button class="button mb-4 mb-lg-0 white-ball pr-50 position-relative request-trening"
-                                                        data-trening="{{ $trening->id }}">
+                                                        data-trening="{{ $trening->id }}" data-uid="{{auth()->user()->id}}">
                                                         Записаться
                                                     </button>
                                                 @else
@@ -131,6 +131,7 @@
                 <div class="button_close_form_course"></div>
                 <h3 class="mb-3">Запись на обучение</h3>
                 <form class="add-to-trening">
+                    @csrf
                     <div class="mb-3">
                         <div class="grey-text mb-1 bold">Кто идёт</div>
                         <div class="input">{{auth()->user()->firstname}} {{auth()->user()->lastname}}</div>
@@ -172,7 +173,6 @@
                     <div class="text-center">
                         <input class="button" type="submit" value="Отправить">
                     </div>
-                    <input class="txt" type="text">
                 </form>
             </div>
         </div>

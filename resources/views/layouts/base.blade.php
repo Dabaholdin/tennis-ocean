@@ -7,7 +7,7 @@
     <meta http-equiv="Expires" content="-1" />
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=e8f80dd6-6709-49c9-9d22-9bd35053ee89"
         type="text/javascript"></script>
-    <link rel="icon" href="{{ url('assets/img/icons/image16.ico') }}">
+    <link rel="icon" href="{{ url('assets/img/icons/image16Traced.ico') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">

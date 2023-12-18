@@ -2,19 +2,23 @@
 
 namespace App\Models;
 
-use App\Models\Training;
+use App\Models\Trening;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class TreiningActiviti extends Model
+class TreningActiviti extends Model
 {
     use HasFactory;
 
     protected $fillable = [    
             'id',
-            'training_id',
+            'treining_id',
+            'treining_title',
+            'treining_method',
             'user_id',
             'cort_id',
+            'cort_name',
+            'price',
             'date_start',
             'day_period',
             'status',
@@ -27,6 +31,6 @@ class TreiningActiviti extends Model
         'date_start',
     ];
     public function TreningInfo(){
-        return $this->belongsTo(Training::class);
+        return $this->belongsTo(Trening::class);
     }
 }

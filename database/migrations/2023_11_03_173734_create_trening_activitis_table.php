@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('treining_activitis', function (Blueprint $table) {
+        Schema::create('trening_activitis', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('treining_id')->constrained();
-            $table->string('treining_title')->nullable();
-            $table->string('treining_method')->nullable();
+            $table->foreignId('trening_id')->constrained();
+            $table->string('trening_title')->nullable();
+            $table->string('trening_method')->nullable();
 
             $table->foreignId('user_id')->constrained();
 

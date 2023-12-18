@@ -1,16 +1,17 @@
 <?php
 
-use App\Http\Controllers\AboutUsController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ChildrenController;
-use App\Http\Controllers\CourtController;
-use App\Http\Controllers\FeesController;
-use App\Http\Controllers\GalleryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FeesController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CourtController;
+use Illuminate\Contracts\Session\Session;
+use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TreningController;
-use Illuminate\Contracts\Session\Session;
+use App\Http\Controllers\ChildrenController;
+use App\Http\Controllers\TreningActivitiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +62,9 @@ Route::prefix('/user')->group(function(){
     Route::controller(ChildrenController::class)->group(function(){
         Route::post('/cabinet/setings/addchildren','create')->name('children.create');
         Route::patch('/cabinet/setings/children/{id}','update')->name('children.update');
+    });
+    Route::controller(TreningActivitiController::class)->group(function(){
+        Route::post('invite','store')->name('invite.create')->middleware('auth');
     });
 });
 Route::prefix('/admin')->middleware(['auth'])->group(function(){

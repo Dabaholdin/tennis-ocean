@@ -13,16 +13,12 @@ return new class extends Migration
     {
         Schema::create('corts', function (Blueprint $table) {
             $table->id();
-            $table->string('tile');
+            $table->string('title');
             $table->string('description')->nullable();
-            $table->string('addreas')->nullable();
+            $table->string('address')->nullable();
             $table->string('coating')->nullable();
             $table->string('additionally')->nullable();
             $table->string('raiting')->nullable();
-            $table->string('img_cort_one')->nullable();
-            $table->string('img_cort_two')->nullable();
-            $table->string('img_cort_three')->nullable();
-            $table->string('img_cort_four')->nullable();
             $table->timestamps();
         });
     }

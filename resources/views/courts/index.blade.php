@@ -62,122 +62,71 @@
             </div>
         </div>
 
-        <div class="row p-30 bw mb-30">
-            <div class="col-5 plr-0 ">
-                <div id="carouselExampleIndicators1" class="carousel slide" data-bs-ride="false">
-                    <div class="carousel-indicators m-0 w-100">
-                        <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="0" class="corusel-button active" aria-current="true" aria-label="Slide 1">
-                        </button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="1" class="corusel-button " aria-current="true" aria-label="Slide 2">
-                        </button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="2" class="corusel-button " aria-current="true" aria-label="Slide 3">
-                        </button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="3" class="corusel-button " aria-current="true" aria-label="Slide 4">
-                        </button>
-                    </div>
-                    <div class="carousel-inner carusel-inner-img  ">
 
-                        <div class="carousel-item carousel-item-c position-relative carousel-img-wrapper active">
-                            <img src="https://tennis-ocean.ru/wp-content/uploads/2022/09/lb.png" class="d-block w-100" alt="...">
+        @foreach ($all_corts as $cort)
+            <div class="row p-30 bw mb-30">
+                <div class="col-5 plr-0 ">
+                    
+                    <div id="carouselExampleIndicators{{ $loop->iteration }}" class="carousel slide" data-bs-ride="false">
+                        <div class="carousel-indicators m-0 w-100">
+
+                            @foreach($cort->images as $image)
+                                <button 
+                                type="button"
+                                 data-bs-target="#carouselExampleIndicators{{$cort->id}}"
+                                 data-bs-slide-to="{{$loop->iteration -1}}"  
+                                 class="corusel-button {{$loop->iteration == 1?'active':''}}" 
+                                 
+                                 aria-label="Slide {{$loop->iteration}}">
+                                </button>
+                            @endforeach
+
                         </div>
-                        <div class="carousel-item carousel-item-c position-relative carousel-img-wrapper ">
-                            <img src="https://tennis-ocean.ru/wp-content/uploads/2022/09/rt.png" class="d-block w-100" alt="...">
+                        <div class="carousel-inner carusel-inner-img  ">
+                            @foreach($cort->images as $image)
+                                <div class="carousel-item carousel-item-c position-relative carousel-img-wrapper {{$loop->iteration == 1 ?'active':''}}">
+                                    <img src="{{@asset('storage/cort').'/'.$image->path}}" alt="" class="d-block w-100">
+                                </div>
+                            @endforeach
+
                         </div>
-                        <div class="carousel-item carousel-item-c position-relative carousel-img-wrapper ">
-                            <img src="https://tennis-ocean.ru/wp-content/uploads/2022/09/rb.png" class="d-block w-100" alt="...">
+                    </div>
+
+                </div>
+                <div class="col-7 plr-0 pl-30">
+                    <div class="row mb-20">
+                        <div class="col-8  me-auto">
+                            <h3 class="fs-24">{{$cort->title}}</h3>
                         </div>
-                        <div class="carousel-item carousel-item-c position-relative carousel-img-wrapper ">
-                            <img src="https://tennis-ocean.ru/wp-content/uploads/2022/09/test.jpg" class="d-block w-100" alt="...">
+                        <div class="col-4">
+                            <p class="fs-20 grey-text">От 1000000 ₽/час</p>
                         </div>
+                    </div>
+                    <div class="row">
+                        <p class="fs-16"><b>Адрес: </b>{{$cort->address}}</p>
+                    </div>
+                    <div class="row">
+                        <p class="fs-16"><b>Покрытие: </b>{{$cort->coating}}</p>
+                    </div>
+                    <div class="row">
+                        <p class="fs-16"><b>Дополнительно: </b>{{$cort->additionally}}</p>
+                    </div>
+                    <div class="row">
+                        <p class="fs-16"><b>Рейтинг (Яндекс): </b>@for ($i = 0; $i < $cort->raiting; $i++)
+                            <img src="{{@asset('assets/img/icons/Star.png')}}" alt="">
+                        @endfor</p>
+
+
+                    </div>
+                    <div class="row m-auto">
+                        <div class="col"><button class="button white-ball pr-50 position-relative">Записаться на тренировку</button></div>
+                        <div class="col"><button class="btn-transparent-blue text-end lock-at-map-button "> Показать на карте</button></div>
                     </div>
                 </div>
             </div>
-            <div class="col-7 plr-0 pl-30">
-                <div class="row mb-20">
-                    <div class="col-8  me-auto">
-                        <h3 class="fs-24">Нахабино</h3>
-                    </div>
-                    <div class="col-4">
-                        <p class="fs-20 grey-text">От 1000000 ₽/час</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <p class="fs-16"><b>Адрес: </b>г. Мытищи, ул. 4 Парковая, д.7Б</p>
-                </div>
-                <div class="row">
-                    <p class="fs-16"><b>Покрытие: </b>5 закрытых харда, 4 открытых грунта</p>
-                </div>
-                <div class="row">
-                    <p class="fs-16"><b>Дополнительно: </b>Раздевалка, душ</p>
-                </div>
-                <div class="row">
-                    <p class="fs-16"><b>Рейтинг (Яндекс): </b>*****</p>
-                </div>
-                <div class="row m-auto">
-                    <div class="col"><button class="button white-ball pr-50 position-relative">Записаться на тренировку</button></div>
-                    <div class="col"><button class="btn-transparent-blue text-end lock-at-map-button "> Показать на карте</button></div>
-                </div>
-            </div>
+        @endforeach
 
-        </div>
-        <div class="row p-30 bw mb-30">
-            <div class="col-5 plr-0 ">
-                <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="false">
-                    <div class="carousel-indicators m-0 w-100">
-                        <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="corusel-button active" aria-current="true" aria-label="Slide 1">
-                        </button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" class="corusel-button " aria-current="true" aria-label="Slide 2">
-                        </button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2" class="corusel-button " aria-current="true" aria-label="Slide 3">
-                        </button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="3" class="corusel-button " aria-current="true" aria-label="Slide 4">
-                        </button>
-                    </div>
-                    <div class="carousel-inner carusel-inner-img  ">
 
-                        <div class="carousel-item carousel-item-c position-relative carousel-img-wrapper active">
-                            <img src="https://tennis-ocean.ru/wp-content/uploads/2022/09/image-10-e1667305623588.png" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item carousel-item-c position-relative carousel-img-wrapper ">
-                            <img src="https://tennis-ocean.ru/wp-content/uploads/2022/09/cc.png" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item carousel-item-c position-relative carousel-img-wrapper ">
-                            <img src="https://tennis-ocean.ru/wp-content/uploads/2022/09/lt.png" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item carousel-item-c position-relative carousel-img-wrapper ">
-                            <img src="https://tennis-ocean.ru/wp-content/uploads/2022/09/lb.png" class="d-block w-100" alt="...">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-7 plr-0 pl-30">
-                <div class="row mb-20">
-                    <div class="col-8  me-auto">
-                        <h3 class="fs-24">Импульс</h3>
-                    </div>
-                    <div class="col-4">
-                        <p class="fs-20 grey-text">От 1700 ₽/час</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <p class="fs-16"><b>Адрес: </b>г. Мытищи, ул. 4 Парковая, д.7Б</p>
-                </div>
-                <div class="row">
-                    <p class="fs-16"><b>Покрытие: </b>5 закрытых харда, 4 открытых грунта</p>
-                </div>
-                <div class="row">
-                    <p class="fs-16"><b>Дополнительно: </b>Раздевалка, душ, сауна, тренажерный зал, парковка бесплатно,кафе</p>
-                </div>
-                <div class="row">
-                    <p class="fs-16"><b>Рейтинг (Яндекс): </b>*****</p>
-                </div>
-                <div class="row m-auto">
-                    <div class="col"><button class="button white-ball pr-50 position-relative">Записаться на тренировку</button></div>
-                    <div class="col"><button class="btn-transparent-blue text-end lock-at-map-button "> Показать на карте</button></div>
-                </div>
-            </div>
-
-        </div>
         <div class="row p-30 bbg">
             <div class="col-8">
                 <div class="row mb-20">
@@ -194,6 +143,7 @@
         </div>
     </div>
 </section>
+
 <section class="corts-map">
     <div class="container">
         <div class="row text-center mb-80">
@@ -281,6 +231,7 @@
             </div>
         </div>
     </div>
+
     <div id="map">
         <ymaps class="ymaps-2-1-79-map">
             <ymaps class="ymaps-2-1-79-map ymaps-2-1-79-i-ua_js_yes ymaps-2-1-79-map-bg ymaps-2-1-79-islets_map-lang-ru">
@@ -356,5 +307,6 @@
             </ymaps>
         </ymaps>
     </div>
+
 </section>
 @endsection

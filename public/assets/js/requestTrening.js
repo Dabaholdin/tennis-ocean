@@ -1,7 +1,35 @@
 ﻿$('.request-trening').click(function(req){
+    $uid = $(this).data('uid');
     $trening_id = $(this).data('trening');
+
     $('.modal-background').fadeIn(500);
 })
+
+$('.add-to-trening').submit(function(e){
+    e.preventDefault();
+    form_data = {
+        'trening_id': $trening_id,
+        'call_method': $('input[name="chose_send"]:checked').val(),
+        'user_id':$uid,
+        'chosed_date':$('.chose-idate').val(),
+    }
+    $.ajaxSetup({
+        headers: {
+            "X-CSRF-TOKEN": $('.add-to-trening input[name="_token"]').val()
+        }
+    })
+    $.ajax({
+        method: 'post',
+        url: '/user/invite' ,
+        dataType: 'json',
+        data: form_data,
+        success: function (data) {
+            console.log(data)
+        }
+    })
+    console.log(form_data);
+})
+
 $(document).ready(function(){
     
     $('.chose-date').click(function(e){

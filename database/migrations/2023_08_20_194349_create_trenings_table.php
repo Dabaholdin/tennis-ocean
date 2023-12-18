@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('treinings', function (Blueprint $table) {
+        Schema::create('trenings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')->constrained('trening_categories');
             $table->string('title');
@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('trening_method');
             $table->string('trening_type');
-            $table->text('traning_img');
+            $table->text('trening_img');
             $table->integer('price');
             $table->string('price_prefix')->default('от');
             $table->string('free_type')->default('img');
