@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cort;
-use App\Models\Treining;
+use App\Models\Trening;
 use Illuminate\Http\Request;
-use App\Models\TreiningActiviti;
+use App\Models\TreningActiviti;
 
 class TreningActivitiController extends Controller
 {
@@ -30,22 +30,28 @@ class TreningActivitiController extends Controller
      */
     public function store(Request $request)
     {
-        $trening = Treining::query()->get(['id','title','price','trening_type'])->where('id','=',$request->trening_id)->first();
+        $trening = Trening::query()->get(['id','title','price','trening_type'])->where('id','=',$request->trening_id)->first();
         $cort = Cort::query()->get()->where('id','=',1)->first();
-        // dd($trening->trening_type);
-        $new_activiti = TreiningActiviti::query()->create([
-            'treining_id' => $trening->id,
-            'treining_title' => $trening->title,
-            'treining_method' => $trening->trening_type,
+        
+        $new_activiti = TreningActiviti::query()->create([
+            'trening_id' => $trening->id,
+            'trening_title' => $trening->title,
+            'trening_type' => $trening->trening_type,
             'user_id' => $request->user_id,
             'cort_id' => 1,
             'cort_name' => $cort->title,
             'price' => $trening->price,
             'date_start' => $request->chosed_date,
-            'day_period' => 'Первая половина',
+            'day_period' => $request->interval,
             'status' => 'new'
         ]);
-       return $new_activiti;
+        if($new_activiti){
+            return response()->json([
+                'code'=>200,
+                'reload'=>true
+            ]);;
+        }
+       
     }
 
     /**

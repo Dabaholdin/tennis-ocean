@@ -9,77 +9,81 @@
             <div class="row">
                 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ol class="breadcrumb  mb-20">
-                        <li class="breadcrumb-item"><a href="#">Главная</a></li>
+                        <li class="breadcrumb-item"><a href="{{@route('home.index')}}">Главная</a></li>
                         <li class="breadcrumb-item" aria-current="page">Галерея</li>
                     </ol>
                 </nav>
             </div>
             <div class="row">
                 <h1 class="text-center counter_text mb-80">
-                    О нас
+                    @yield('title')
                 </h1>
             </div>
+            
             <div class="row justify-content-center">
+
                 <div class="col-lg-3 d-flex flex-row flex-lg-column justify-content-around mb-3 mb-lg-0">
                     <div class="row mb-3">
-                        <div class="card card-c p-0" style="width: 26rem;">
-                            <a class="text-decoration-none popup_gallery" data-name="56" href="#">
-                                <img src="https://tennis-ocean.ru/wp-content/themes/tennisocean/assets/img/lt.png"
+                        <div class="card card-c p-0" >
+                            <a class="text-decoration-none popup_gallery" data-id="{{$albums[0]->id}}" href="#">
+                                <img src="{{@asset('storage/albums').'/'.$albums[0]->path_preview}}"
                                     class="img-fluid card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title black-text text-center">Детские группы</h5>
+                                    <h5 class="card-title black-text text-center">{{$albums[0]->title}}</h5>
                                 </div>
                             </a>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="card card-c p-0 mt-auto" style="width: 26rem;">
-                            <a class="text-decoration-none popup_gallery" data-name="58" href="#">
-                                <img src="https://tennis-ocean.ru/wp-content/themes/tennisocean/assets/img/lb.png"
+                        <div class="card card-c p-0 mt-auto" >
+                            <a class="text-decoration-none popup_gallery" data-id="{{$albums[1]->id}}" href="#">
+                                <img src="{{@asset('storage/albums').'/'.$albums[1]->path_preview}}"
                                     class="img-fluid card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title black-text text-center">Сборы</h5>
+                                    <h5 class="card-title black-text text-center">{{$albums[1]->title}}</h5>
                                 </div>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 p-0 d-flex justify-content-center mb-4 mb-lg-0">
-                    <div class="card card-cc p-0" style="width: 26rem;">
-                        <a class="text-decoration-none popup_gallery" data-name="54" href="#">
-                            <img src="https://tennis-ocean.ru/wp-content/themes/tennisocean/assets/img/cc.png"
+                    <div class="card card-cc p-0" >
+                        <a class="text-decoration-none popup_gallery" data-id="{{$albums[4]->id}}" href="#">
+                            <img src="{{@asset('storage/albums').'/'.$albums[4]->path_preview}}"
                                 class="img-fluid card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title black-text text-center">Тренировки</h5>
+                                <h5 class="card-title black-text text-center">{{$albums[4]->title}}</h5>
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-3 d-flex flex-row flex-lg-column justify-content-around mb-3 mb-lg-0">
                     <div class="row mb-3">
-                        <div class="card card-c p-0" style="width: 26rem;">
-                            <a class="text-decoration-none popup_gallery" data-name="60" href="#">
-                                <img src="https://tennis-ocean.ru/wp-content/themes/tennisocean/assets/img/rt.png"
+                        <div class="card card-c p-0" >
+                            <a class="text-decoration-none popup_gallery" data-id="{{$albums[3]->id}}" href="#">
+                                <img src="{{@asset('storage/albums').'/'.$albums[3]->path_preview}}"
                                     class="img-fluid card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title black-text text-center">Тренеры</h5>
+                                    <h5 class="card-title black-text text-center">{{$albums[3]->title}}</h5>
                                 </div>
                             </a>
                         </div>
                     </div>
                     <div class="row mt-auto ">
-                        <div class="card card-c p-0 " style="width: 26rem;">
-                            <a class="text-decoration-none popup_gallery" data-name="62" href="#">
-                                <img src="https://tennis-ocean.ru/wp-content/themes/tennisocean/assets/img/rb.png"
+                        <div class="card card-c p-0 " >
+                            <a class="text-decoration-none popup_gallery" data-id="{{$albums[2]->id}}" href="#">
+                                <img src="{{@asset('storage/albums').'/'.$albums[2]->path_preview}}"
                                     class="img-fluid card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title black-text text-center">Фитнес</h5>
+                                    <h5 class="card-title black-text text-center">{{$albums[2]->title}}</h5>
                                 </div>
                             </a>
                         </div>
                     </div>
                 </div>
+
             </div>
+
             <div class="row">
                 <a href="" class="button_g mx-auto my-4">Все фото</a>
             </div>

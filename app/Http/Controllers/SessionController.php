@@ -21,7 +21,6 @@ class SessionController extends Controller
     public function index()
     {
         $trenings = Auth()->user()->Trenings;
-        //dd($trenings);
 
 
         $trening_info =[];

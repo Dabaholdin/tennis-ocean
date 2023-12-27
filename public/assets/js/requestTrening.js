@@ -12,6 +12,7 @@ $('.add-to-trening').submit(function(e){
         'call_method': $('input[name="chose_send"]:checked').val(),
         'user_id':$uid,
         'chosed_date':$('.chose-idate').val(),
+        'interval':$('.alt-interval').val(),
     }
     $.ajaxSetup({
         headers: {
@@ -25,9 +26,12 @@ $('.add-to-trening').submit(function(e){
         data: form_data,
         success: function (data) {
             console.log(data)
+            if(data['reload']){
+                window.location.reload()
+            }
+
         }
     })
-    console.log(form_data);
 })
 
 $(document).ready(function(){

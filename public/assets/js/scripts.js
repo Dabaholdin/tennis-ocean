@@ -165,6 +165,32 @@ $(document).ready(function () {
     })
 
 
+    // Выбор интервала времени
+    let list_open = 0;
+    $('.chose-interval').click(function(){
+        console.log(this)
+        //console.log($('.interval-list').hasClass('active'))
+        if(!list_open){
+            list_open = 1;
+            $('.interval-list').addClass('active');
+            $('.interval-list').toggle();
+        }
+        
+    })
+    // alt-interval
+    $('li.interval-list-item').click(function(){
+        if(list_open){
+            list_open = 0;
+            $('.interval-list').removeClass('active');
+            $('.interval-list').toggle();
+            $('.chose-interval').html($(this).html())
+            $('.chosed-interval').html($(this).html())
+            $('.alt-interval').val($(this).html())
+            
+        }
+        // console.log($(this).html())
+        
+    })
 
 })
 

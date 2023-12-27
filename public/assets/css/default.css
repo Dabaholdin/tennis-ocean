@@ -26,14 +26,26 @@
 	color: grey;
 }
 
+.await-pay{
+	border: 1px solid #79C95F;
+    border-radius: 100px !important;
+}
 .status-await-pay {
 	color: #79C95F;
 }
 
+.not-confirmed{
+	border: 1px solid #E94F4F;
+    border-radius: 100px !important;
+}
 .status-not-confirmed {
 	color: #E94F4F;
 }
 
+.confirmed{
+	border: 1px solid #189AE5;
+    border-radius: 100px !important;
+}
 .status-confirmed {
 	color: #189AE5;
 }
@@ -121,14 +133,25 @@ button:focus {
 }
 
 .input {
+	min-height: 52px;
 	padding: 12px 10px 12px 14px;
-	border: 2px solid #8E8E8E;
+	border: 2px solid #189AE5;
 	outline: none;
 	border-radius: 5px;
 }
 .input:focus{
 	border: 2px solid #189AE5;
 }
+
+.interval-list {
+	display: none;
+    position: absolute;
+    background: white;
+    top: 53px;
+    left: 0;
+	z-index: 999;
+}
+
 body,
 html {
 	height: 100%;

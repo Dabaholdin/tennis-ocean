@@ -87,28 +87,36 @@
                                                 <div class="col-10 p-0">
                                                     <div class="row">
                                                         <span class="trening-title">
-                                                            Групповая тренировка
+                                                            {{$trening->trening_type}}
                                                         </span>
                                                     </div>
                                                     <div class="row">
                                                         <span>
-                                                            Суббота, 30 апреля, 15:50. Tennis Siti (Крокус сити)
+                                                            {{$trening->date_start->translatedFormat('l, d F')}}<br>
+                                                            
                                                         </span>
                                                     </div>
                                                 </div>
                                                 <div class="col-2 p-0">
                                                     <div class="status-wrapper h-100 d-flex align-items-center justify-content-end">
-                                                        <p class="p-0 m-0 fs-14 bold status-new">
-                                                            Новый
+                                                        <p class="p-0 m-0 fs-14 bold status-{{$trening->status}}">
+                                                            @if ($trening->status =='new')
+                                                                Новый
+                                                            @elseif($trening->status =='not-confirmed')
+                                                                Не подтверждено
+                                                            @elseif($trening->status =='confirmed')
+                                                                Подтверждено
+                                                            @elseif($trening->status =='await-pay')
+                                                                Ожидает оплаты
+                                                            @endif
                                                         </p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            {{$trening->id}}
                                         @endforeach
                                             
                                                 
-                                                <div class="row p-2 blue-border mb-2 todo-item">
+                                                {{-- <div class="row p-2 blue-border mb-2 todo-item">
                                                     <div class="col-10 p-0">
                                                         <div class="row">
                                                             <span class="trening-title">
@@ -191,7 +199,7 @@
                                                             </p>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             
                                         
                                     </div>

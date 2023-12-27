@@ -9,12 +9,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class TreningActiviti extends Model
 {
     use HasFactory;
-
+   
     protected $fillable = [    
             'id',
-            'treining_id',
-            'treining_title',
-            'treining_method',
+            'trening_id',
+            'trening_title',
+            'trening_type',
             'user_id',
             'cort_id',
             'cort_name',

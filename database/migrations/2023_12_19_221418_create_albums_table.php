@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cort_images', function (Blueprint $table) {
+        Schema::create('albums', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('cort_id')->constrained();
-            $table->string('image_path');
-            $table->string('path');
+            $table->string('title');
+            $table->string('description');
+            $table->string('path_preview');
+            $table->timestamps();
         });
     }
 
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cort_images');
+        Schema::dropIfExists('albums');
     }
 };

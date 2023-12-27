@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('trening_id')->constrained();
             $table->string('trening_title')->nullable();
-            $table->string('trening_method')->nullable();
+            $table->string('trening_type')->nullable();
 
             $table->foreignId('user_id')->constrained();
 

@@ -66,7 +66,7 @@
         @foreach ($all_corts as $cort)
             <div class="row p-30 bw mb-30">
                 <div class="col-5 plr-0 ">
-                    
+                    @if (count($cort->images) != 0)
                     <div id="carouselExampleIndicators{{ $loop->iteration }}" class="carousel slide" data-bs-ride="false">
                         <div class="carousel-indicators m-0 w-100">
 
@@ -91,7 +91,11 @@
 
                         </div>
                     </div>
-
+                    @else
+                    <div class="position-relative carousel-img-wrapper">
+                        <img class="img-fluid d-block mx-auto" src="{{asset('assets/img/logo/imgH.png')}}" alt="">
+                    </div>
+                    @endif
                 </div>
                 <div class="col-7 plr-0 pl-30">
                     <div class="row mb-20">
