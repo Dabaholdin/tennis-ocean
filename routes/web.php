@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FeesController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CourtController;
 use Illuminate\Contracts\Session\Session;
@@ -73,6 +74,16 @@ Route::prefix('/admin')->middleware(['auth'])->group(function(){
         Route::get('/users','users')->name('admin.users');
         Route::get('/trenings','trenings')->name('admin.trenings');
         Route::get('/corts','corts')->name('admin.corts');
+
+    });
+    Route::controller(UserController::class)->middleware(['admin'])->group(function(){
+
+    });
+    Route::controller(TreningController::class)->middleware(['admin'])->group(function(){
+        Route::get('/trenings/create','create')->name('admin.create.trening');
+        Route::post('/trenings/store','store')->name('admin.store.trening');
+    });
+    Route::controller(CortController::class)->middleware(['admin'])->group(function(){
 
     });
 });

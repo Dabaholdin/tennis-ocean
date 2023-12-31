@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="row mb-3">
-  <a href="#" class="button txt-bold link-td-none">Добавить тренировку</a>
+  <a href="{{route('admin.create.trening')}}" class="button txt-bold link-td-none">Добавить тренировку</a>
 </div>
 <div class="row">
   <div class="col-12">
@@ -17,7 +17,6 @@
             <th scope="col">Категория</th>
             <th scope="col">Описание</th>
             <th scope="col">Стоимость</th>
-            <th scope="col">Префикс стоимости</th>
             <th scope="col">Бесплатный контент</th>
           </tr>
         </thead>
@@ -29,11 +28,10 @@
               @else
               <td>Фото не установлено</td>
               @endif
-              <td>{{$training ->name}}</td>
+              <td>{{$training ->title}}</td>
               <td>{{$training ->category_id}}</td>
-              <td>{{$training ->name_description}}</td>
-              <td>{{$training ->price}}</td>
-              <td>{{$training ->price_prefix}}</td>
+              <td>{{$training ->title_description}}</td>
+              <td>{{$training ->price_prefix}} {{$training ->price}}₽</td>
               <td>
               oekdoed
               </td>

@@ -19,13 +19,13 @@ class TreningController extends Controller
     
     public function create()
     {
-        
+        return view('admin.trenings.create');
     }
 
    
     public function store(Request $request)
     {
-        
+        return 'dd($request)';
     }
 
     public function show( $category , $type)

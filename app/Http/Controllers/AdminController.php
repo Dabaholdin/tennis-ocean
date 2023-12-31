@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Training;
 use App\Models\User;
+use App\Models\Trening;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,7 +23,7 @@ class AdminController extends Controller
         return view('admin.users.index',compact('users'));
     }
 
-    public function trenings(Training $trainings){
+    public function trenings(Trening $trainings){
         $trainings = $trainings->query()->get()->all();
         return view('admin.trenings.index', compact('trainings'));
     }
