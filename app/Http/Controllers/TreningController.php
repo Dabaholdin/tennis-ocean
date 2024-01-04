@@ -25,14 +25,32 @@ class TreningController extends Controller
    
     public function store(Request $request)
     {
-        return 'dd($request)';
+        // if($request->hasFile('trening_img')){
+        //     dd('glaswd');
+        // };
+        $new_t = Trening::create([
+            'category_id' => $request->trening_category,
+            'title' => $request->trening_title,
+            'title_description' =>$request->trening_description  ,
+            'description' => $request->trening_description ,
+            'trening_method' => $request->trening_method,
+            'trening_type' => $request->trening_type,
+            'trening_img' => $request->trening_img,
+            'price' => $request->trening_price ,
+            'price_prefix' => $request->prefix_price,
+            'free_type' => $request->free_content_type ,
+            'free_description' => $request->free_content_description ,
+            'free_video_url' => $request->url,
+        ]);
+        return redirect()->route('admin.trenings');
     }
 
     public function show( $category , $type)
     {
-        $Trening_categorys = Trening_category::query()->get()
-        
+        $Trening_categorys = Trening_category::query()
+        ->get()
         ->where('name',$category)->first();
+
         $trenings = Trening::query()->get()
         ->where('trening_method','=',$type)
         ->where('category_id','=',$Trening_categorys->id);
@@ -50,8 +68,9 @@ class TreningController extends Controller
         
     }
 
-    public function destroy(Role $role)
+    public function destroy(Trening $Trening)
     {
-        
+        $Trening->delete();
+        return redirect()->route('admin.trenings');
     }
 }

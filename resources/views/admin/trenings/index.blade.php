@@ -18,6 +18,7 @@
             <th scope="col">Описание</th>
             <th scope="col">Стоимость</th>
             <th scope="col">Бесплатный контент</th>
+            <th scope="col">Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -34,6 +35,13 @@
               <td>{{$training ->price_prefix}} {{$training ->price}}₽</td>
               <td>
               oekdoed
+              </td>
+              <td>
+                <form action="{{route('admin.destroy.trening' , $training->id)}}" method="post">
+                  @csrf
+                  @method('delete')
+                <input type="submit" class="delete_button" value="X">
+                </form>  
               </td>
             </tr>
               

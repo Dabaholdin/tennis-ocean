@@ -82,6 +82,7 @@ Route::prefix('/admin')->middleware(['auth'])->group(function(){
     Route::controller(TreningController::class)->middleware(['admin'])->group(function(){
         Route::get('/trenings/create','create')->name('admin.create.trening');
         Route::post('/trenings/store','store')->name('admin.store.trening');
+        Route::delete('/trenings/delete/{Trening}','destroy')->name('admin.destroy.trening');
     });
     Route::controller(CortController::class)->middleware(['admin'])->group(function(){
 
