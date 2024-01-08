@@ -22,22 +22,22 @@
           </tr>
         </thead>
         <tbody>
-          @foreach ($trainings as $training)
+          @foreach ($trenings as $trening)
             <tr>
-              @if ($training ->training_img !='')
-                  <td><img class="img-circle elevation-2" width="35px" height="35px" src="{{@asset("storage/" . $training ->training_img)}}" alt="training_img".{{$training->id}}></td>
+              @if ($trening ->trening_img !='')
+                  <td><img class="img-circle elevation-2" width="35px" height="35px" src="{{@asset("storage/" . $trening ->trening_img)}}" alt="trening_img".{{$trening->id}}></td>
               @else
               <td>Фото не установлено</td>
               @endif
-              <td>{{$training ->title}}</td>
-              <td>{{$training ->category_id}}</td>
-              <td>{{$training ->title_description}}</td>
-              <td>{{$training ->price_prefix}} {{$training ->price}}₽</td>
+              <td>{{$trening ->title}}</td>
+              <td>{{$trening ->category_id}}</td>
+              <td>{{$trening ->title_description}}</td>
+              <td>{{$trening ->price_prefix}} {{$trening ->price}}₽</td>
               <td>
               oekdoed
               </td>
               <td>
-                <form action="{{route('admin.destroy.trening' , $training->id)}}" method="post">
+                <form action="{{route('admin.destroy.trening' , $trening->id)}}" method="post">
                   @csrf
                   @method('delete')
                 <input type="submit" class="delete_button" value="X">

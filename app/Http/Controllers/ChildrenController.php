@@ -21,7 +21,7 @@ class ChildrenController extends Controller
         $path = '';
         if($request->hasFile('children_add_img')){
             $file = $request->file('children_add_img');
-            $path = $file->store('children');
+            $path = $file->store('images/children');
         };
 
         $child = UserChildren::Create([

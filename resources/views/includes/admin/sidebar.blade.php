@@ -29,7 +29,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="{{ @route('admin.corts') }}" class="nav-link white-text">
+            <a href="{{ @route('admin.tactiviti') }}" class="nav-link white-text">
                 <i class="nav-icon fa-solid fa-map-location-dot"></i>
                 <p>
                     Записи на тренировку

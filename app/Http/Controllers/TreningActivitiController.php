@@ -22,7 +22,7 @@ class TreningActivitiController extends Controller
      */
     public function create()
     {
-        
+        return view('admin.trening-activiti.create');
     }
 
     /**
@@ -65,9 +65,10 @@ class TreningActivitiController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(TreningActiviti $trening_activiti ,string $id)
     {
-        //
+        
+        return view('admin.trening-activiti.edit',compact('id'));
     }
 
     /**

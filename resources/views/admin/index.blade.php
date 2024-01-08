@@ -1,6 +1,6 @@
-@extends('layouts.admin');
+@extends('layouts.admin')
 
-@section('title','Адимн панель');
+@section('title','Адимн панель')
 
 @section('content')
 <div class="content-wrapper">

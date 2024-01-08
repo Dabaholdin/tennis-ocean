@@ -151,7 +151,7 @@ class SessionController extends Controller
         $path = '';
         if($request->hasFile('user_image')){
             $file = $request->file('user_image');
-            $path = $file->store('user');
+            $path = $file->store('images/user');
         };
         
         $user = User::find($id);

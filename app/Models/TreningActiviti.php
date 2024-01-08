@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use App\Models\Trening;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -30,7 +31,14 @@ class TreningActiviti extends Model
     protected $dates=[
         'date_start',
     ];
+
+    protected $with = ['GetUser','TreningInfo'];
+
     public function TreningInfo(){
-        return $this->belongsTo(Trening::class);
+        return $this->belongsTo(Trening::class,'trening_id');
+    }
+
+    public function GetUser(){
+        return $this->belongsTo(User::class,'user_id');
     }
 }

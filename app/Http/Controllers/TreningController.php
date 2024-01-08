@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Trening;
 use Illuminate\Http\Request;
 use App\Models\Trening_category;
+use Illuminate\Support\Facades\Storage;
 
 class TreningController extends Controller
 {
@@ -28,6 +29,10 @@ class TreningController extends Controller
         // if($request->hasFile('trening_img')){
         //     dd('glaswd');
         // };
+        if($request->hasFile('trening_img')){
+            $file = $request->file('trening_img');
+            $path = $file->store('images/trenings');
+        };
         $new_t = Trening::create([
             'category_id' => $request->trening_category,
             'title' => $request->trening_title,
@@ -35,7 +40,7 @@ class TreningController extends Controller
             'description' => $request->trening_description ,
             'trening_method' => $request->trening_method,
             'trening_type' => $request->trening_type,
-            'trening_img' => $request->trening_img,
+            'trening_img' => $path,
             'price' => $request->trening_price ,
             'price_prefix' => $request->prefix_price,
             'free_type' => $request->free_content_type ,
@@ -70,6 +75,8 @@ class TreningController extends Controller
 
     public function destroy(Trening $Trening)
     {
+
+        Storage::delete($Trening->trening_img);
         $Trening->delete();
         return redirect()->route('admin.trenings');
     }

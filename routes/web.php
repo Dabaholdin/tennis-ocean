@@ -74,6 +74,7 @@ Route::prefix('/admin')->middleware(['auth'])->group(function(){
         Route::get('/users','users')->name('admin.users');
         Route::get('/trenings','trenings')->name('admin.trenings');
         Route::get('/corts','corts')->name('admin.corts');
+        Route::get('/trening_activiti','trening_activiti')->name('admin.tactiviti');
 
     });
     Route::controller(UserController::class)->middleware(['admin'])->group(function(){
@@ -86,5 +87,9 @@ Route::prefix('/admin')->middleware(['auth'])->group(function(){
     });
     Route::controller(CortController::class)->middleware(['admin'])->group(function(){
 
+    });
+    Route::controller(TreningActivitiController::class)->middleware(['admin'])->group(function(){
+        Route::get('/trening_activiti/create','create')->name('admin.create.tactiviti');
+        Route::get('/trening_activiti/{id}/edit','edit')->name('admin.edit.tactiviti');
     });
 });
