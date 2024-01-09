@@ -808,18 +808,16 @@ section {
 }
 
 .card-c-w {
+	object-fit: contain;
 	border: none;
 	border-radius: 0;
 	padding: 0;
 	width: 282px !important;
-	height: 100%;
 }
 
-.card-c-w img {
-	object-fit: cover;
-	max-width: 282px;
-	height: 309px;
-	border-radius: 0;
+.aimage-container{
+	height:200px !important;
+	object-fit: contain;
 }
 
 .card-c,

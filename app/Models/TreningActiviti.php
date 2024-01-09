@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Cort;
 use App\Models\User;
 use App\Models\Trening;
 use Illuminate\Database\Eloquent\Model;
@@ -32,7 +33,7 @@ class TreningActiviti extends Model
         'date_start',
     ];
 
-    protected $with = ['GetUser','TreningInfo'];
+    protected $with = ['GetUser','TreningInfo','GetCort'];
 
     public function TreningInfo(){
         return $this->belongsTo(Trening::class,'trening_id');
@@ -40,5 +41,8 @@ class TreningActiviti extends Model
 
     public function GetUser(){
         return $this->belongsTo(User::class,'user_id');
+    }
+    public function GetCort(){
+        return $this->belongsTo(Cort::class,'cort_id');
     }
 }

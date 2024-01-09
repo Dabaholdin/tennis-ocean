@@ -3,14 +3,18 @@
 @section('title','Пользователи')
 
 @section('content')
-<div class="row mb-3">
-  <a href="#" class="button txt-bold link-td-none">Добавить пользователя</a>
-</div>
+
     
     <div class="row">
       <div class="col-12">
-        <div class="table-responsive">
-          <table class="table table-hover">
+        <div class="card">
+          <div class="card-header">
+              <h3 class="card-title mr-3">Пользователи</h3>
+              <a href="{{ route('admin.create.tactiviti') }}" class="button txt-bold link-td-none p-2">Добавить пользователя</a>
+          </div>
+
+          <div class="card-body table-responsive p-0">
+              <table class="table table-hover text-nowrap">
 
             <thead>
               <tr>
@@ -33,7 +37,7 @@
                 @endif
                 <td><p>{{$user ->lastname}}</p></td>
                 <td>{{$user ->firstname}}</td>
-                <td>{{$user ->gender}}</td>
+                <td>{{$user->gender == 1?'Муж':'Жен'}}</td>
                 <td>{{$user ->phone}}</td>
                 <td>{{$user ->email}}</td>
                 <td>{{$user ->role->name}}</td>
@@ -42,6 +46,7 @@
             @endforeach
           </tbody>
             </table>
+          </div>
         </div>
     </div>   
   </div>

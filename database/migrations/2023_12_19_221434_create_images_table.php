@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->id();
             $table->string('alt')->nullable();
+            $table->string('path');
             $table->boolean('is_public')->default(1);
             $table->foreignId('album_id')->constrained()->nullable()->onDelete('cascade');
             $table->timestamps();

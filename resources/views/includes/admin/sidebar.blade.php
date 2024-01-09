@@ -6,7 +6,6 @@
                 <i class="nav-icon fa-solid fa-users"></i>
                 <p>
                     Пользователи
-                    <span class="badge badge-info right">2</span>
                 </p>
             </a>
         </li>
@@ -15,7 +14,6 @@
                 <i class="nav-icon fa-solid fa-table-list"></i>
                 <p>
                     Тренировки
-                    <span class="badge badge-info right">2</span>
                 </p>
             </a>
         </li>
@@ -24,7 +22,6 @@
                 <i class="nav-icon fa-solid fa-map-location-dot"></i>
                 <p>
                     Корты
-                    <span class="badge badge-info right">2</span>
                 </p>
             </a>
         </li>
@@ -33,7 +30,6 @@
                 <i class="nav-icon fa-solid fa-map-location-dot"></i>
                 <p>
                     Записи на тренировку
-                    <span class="badge badge-info right">2</span>
                 </p>
             </a>
         </li>

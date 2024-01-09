@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Album;
+use App\Models\Image;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -12,7 +13,13 @@ class GalleryController extends Controller
         return view('gallery.index',compact('albums'));
     }
 
-    public function show(){
-
+    public function show($album ='all'){
+        if($album === 'all'){
+            $albums = Album::query()->get()->all();
+        }else{
+            $albums = Album::query()->get()->where('id','=',$album);
+        }
+        //dd($images);
+        return view('gallery.show',compact('albums'));
     }
 }

@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CortController;
 use App\Http\Controllers\FeesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\CourtController;
 use Illuminate\Contracts\Session\Session;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\GalleryController;
@@ -29,8 +29,10 @@ Route::get('/', [HomeController::class,'index'])->name('home.index');
 
 Route::get('/fees', [FeesController::class,'index'])->name('fees.index');
 Route::get('/gallery', [GalleryController::class,'index'])->name('gallery.index');
-Route::get('/courts', [CourtController::class,'index'])->name('courts.index');
+Route::get('/corts', [CortController::class,'index'])->name('courts.index');
 Route::get('/about-us', [AboutUsController::class , 'index'])->name('aboutus.index');
+
+Route::get('/gallery/albums/{album?}',[GalleryController::class,'show'])->name('gallery.show');
 
 Route::prefix('/')->group(function(){
     Route::controller(TreningController::class)->group(function(){
@@ -42,9 +44,9 @@ Route::prefix('/')->group(function(){
 
 Route::prefix('/')->group(function(){
     Route::controller(SessionController::class)->group(function(){
-        Route::post('/registration','create')->name('register.create'); //Регистрация
-        Route::post('/login','login')->name('login.login'); //Аторизация
-        Route::post('/activation','activation')->name('login.activation'); //Активация уз
+        Route::post('/registration','create')->name('register.create'); 
+        Route::post('/login','login')->name('login.login'); 
+        Route::post('/activation','activation')->name('login.activation'); 
         Route::get('/logout','logout')->name('login.logout')->middleware('auth');
     });
 });

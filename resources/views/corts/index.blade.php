@@ -85,7 +85,7 @@
                         <div class="carousel-inner carusel-inner-img  ">
                             @foreach($cort->images as $image)
                                 <div class="carousel-item carousel-item-c position-relative carousel-img-wrapper {{$loop->iteration == 1 ?'active':''}}">
-                                    <img src="{{@asset('storage/cort').'/'.$image->path}}" alt="" class="d-block w-100">
+                                    <img src="{{@asset('storage/images/cort').'/'.$image->path}}" alt="" class="d-block w-100">
                                 </div>
                             @endforeach
 

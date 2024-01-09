@@ -4,6 +4,6 @@
 
 @section('content')
 <div class="content-wrapper">
-  Hello world!!!
+  Добро пожаловать в админку сайта.
 </div>    
 @endsection
