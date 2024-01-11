@@ -77,7 +77,9 @@ $(document).ready(function () {
                             })
                         }
                         else {
-                            new_user = data.id;
+                            console.log("Регистрация")
+                            console.log(data)
+                            new_user = data['user'].id;
                             $('.registration').fadeOut(600);
                             $('.activation').fadeIn(600);
                         }

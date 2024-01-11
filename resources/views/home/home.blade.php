@@ -16,11 +16,11 @@
                 <div class="row w-100">
                     <div class="button_get_tich_wrapper p-0 my-0 text-center mb-3 ms-md-0 col-7  col-lg-6">
                         @auth
-                        <a  class="white-ball pr-50 position-relative z-0 button button-link fw-bold d-inline-block" href="{{ @route('trenings.index') }}">Начать
+                        <a  class="white-ball pr-50 position-relative z-0 button button-link fw-bold d-inline-block" href="{{ route('trenings.index') }}">Начать
                             обучение</a>
                         @else 
-                        <button data-href="/trenirovki" class="white-ball pr-50 position-relative z-0 button button-link fw-bold d-inline-block button button-fn" data-target="open-popup">Начать
-                            обучение</button>   
+                        <a href="{{route('trenings.index')}}" class="white-ball pr-50 position-relative z-0 button button-link fw-bold d-inline-block button button-fn" data-target="open-popup">Начать
+                            обучение</a>   
                         @endauth
                         
                     </div>

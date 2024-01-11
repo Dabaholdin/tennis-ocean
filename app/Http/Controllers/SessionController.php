@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Response;
 use Carbon\Carbon;
 use App\Models\User;
+use App\Mail\regMail;
 use App\Models\Training;
 use Spatie\Backtrace\File;
 use App\Models\UserChildren;
@@ -21,7 +22,7 @@ class SessionController extends Controller
     public function index()
     {
         $trenings = Auth()->user()->Trenings;
-
+        $user = Auth()->user();
 
         $trening_info =[];
         $trenigs_activiti=[];
@@ -39,7 +40,7 @@ class SessionController extends Controller
         
         //dd($trenigs_activiti);
     //dd($mytr[0]->date_start->format('Y'));
-       return view('cabinet.index',compact('trenigs_activiti' , 'trenings'));
+       return view('cabinet.index',compact('trenigs_activiti' , 'trenings','user'));
        
     }
 
@@ -80,14 +81,17 @@ class SessionController extends Controller
         $user = User::query()->create([
             'firstname'=> $request->firstname,
             'lastname' => $request->lastname,
-            'role_id'=>1,
+            'role_id'=> 2,
             'email'=> $request->email,
             'password'=> $request->password,
             'verivi_code'=> $verivicodegen,
         ]);
-        return $user;
-//        Mail::to($request->email)->send(new regMail());
-//        return redirect(Route('home.index'));
+        
+        $send_mail = Mail::to($request->email)->send(new regMail($verivicodegen));
+        return response()->json([
+            'mail'=>$send_mail,
+            'user'=>$user
+        ]);
         }
     }
 
@@ -225,7 +229,9 @@ class SessionController extends Controller
         }else{ 
             return response()->json([
                 'status'=>400,
-                'verivied_code'=>false
+                'verivied_code'=>false,
+                'user_id'=>$user_id,
+                'request'=>$request
             ]);
         }
     }

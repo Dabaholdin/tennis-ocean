@@ -13,12 +13,15 @@ class regMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $verivicodegen;
     /**
      * Create a new message instance.
+     * 
+     * @return void
      */
-    public function __construct()
+    public function __construct($verivicodegen)
     {
-        //
+        $this->verivicodegen = $verivicodegen;
     }
 
     /**
@@ -38,7 +41,7 @@ class regMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'mail.test',
+            markdown: 'mail.code',
         );
     }
 
