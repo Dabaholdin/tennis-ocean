@@ -192,7 +192,13 @@ $(document).ready(function () {
         
     })
 
-})
+    $('.m-mobile').click(function(){
+        $('.mobile-accmenu-wrapper').toggle(500,function(){
+            console.log('Good')
+        });
+        console.log('qqq')
+    })
+})// End document
 
 
 $('button[data-func="tab"]').click(function (e) {

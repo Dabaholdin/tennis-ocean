@@ -10,7 +10,7 @@
                 <div class="row">
                     @foreach ($albums as $album)
                         @foreach ($album->GetImages as $image)
-                            <div class="col-3 mb-3 d-flex aimage-container " >
+                            <div class="col-md-3 mb-3 d-flex aimage-container " >
                                 
                                     <img class="img-fluid w-100 text-center shadow" src="{{asset('storage/images/album-images/') .'/'. $image->path}}" alt="">
                                 

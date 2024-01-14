@@ -13,6 +13,7 @@
 	--color10: rgba(44, 62, 80, 1);
 	--color11: rgba(30, 31, 40, 1);
 	--color12: rgba(54, 54, 60, 1);
+	--color-fon:rgb(44, 62, 80);
 	--icon-white-ball: url(/assets/img/icons/image16.png);
 	--icon-blue-ball: url(/assets/img/icons/image16Traced.png);
 	--icon-arrow: url(/assets/img/icons/arrowtog.svg);
@@ -21,6 +22,9 @@
 .new{
 	border: 1px solid grey;
     border-radius: 100px !important;
+}
+.text-bold{
+	font-weight: 800;
 }
 .status-new{
 	color: grey;
@@ -249,8 +253,8 @@ html {
 }
 
 .plr-0 {
-	padding-left: 0;
-	padding-right: 0;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
 }
 
 .pl-0 {
@@ -507,10 +511,7 @@ a.button_about_us {
 	height: 50px;
 	padding: 13px 30px;
 	display: block;
-}
-a.button_about_us {
 	text-decoration: none;
-	
 }
 
 .button {
@@ -748,7 +749,7 @@ section {
 }
 
 .corts {
-	padding: 40px 0 85px 0;
+	padding: 80px 0 85px 0;
 }
 
 .corts-map {
@@ -814,7 +815,15 @@ section {
 	padding: 0;
 	width: 282px !important;
 }
-
+/* .card-img-top{
+	max-height: 380px;
+	border-top-left-radius:0 !important;
+	border-top-right-radius:0 !important;
+} */
+.coach-card-body{
+	min-height: 170px;
+	max-height: 170px;
+}
 .aimage-container{
 	height:200px !important;
 	object-fit: contain;
@@ -870,6 +879,7 @@ section {
 
 .coach-card-body {
 	background: var(--color-white);
+	overflow: hidden;
 }
 
 .coach-card-text {
@@ -1477,8 +1487,6 @@ button.auth-link {
 }
 
 .button_g {
-
-	width: 30%;
 	border-radius: 20px;
 	background: #189AE5;
 	font-size: 16px;
@@ -1519,6 +1527,9 @@ button.auth-link {
 }
 /* Admin Panel */
 
+.acc-menu-m{
+	display: none;
+}
 
 
 /* Mobile */
@@ -1615,9 +1626,9 @@ button.auth-link {
 	}
 
 	.text_lots_of_learning {
-		width: auto;
-		height: auto;
-		font-size: 14px;
+		width: auto !important;
+		height: auto !important;
+		font-size: 14px !important;
 	}
 
 	.what_image_wrapper {
@@ -1627,9 +1638,9 @@ button.auth-link {
 
 
 	.elips_for_center {
-		top: 200px;
-		left: 105px;
-		width: 120px;
+		top: 200px !important;
+		left: 105px !important;
+		width: 120px !important;
 	}
 
 	.group_img {
@@ -1677,37 +1688,40 @@ button.auth-link {
 	}
 
 	.elips1 {
-		top: 28px;
-		left: 10px;
-		max-width: 102px;
+		top: 28px !important;
+		left: 10px !important;
+		max-width: 102px !important;
 	}
 
 	.elips2 {
-		bottom: 24px;
-		left: 0;
-		width: 102px;
+		bottom: 24px !important;
+		left: 0 !important;
+		width: 102px !important;
 	}
 
 	.elips3 {
-		top: 90px;
-		left: 115px;
-		max-width: 164px;
+		top: 90px !important;
+		left: 115px !important;
+		max-width: 164px !important;
 	}
 
 	.elips4 {
-		top: 0;
-		right: 46px;
-		max-width: 102px;
+		top: 0 !important;
+		right: 46px !important;
+		max-width: 102px !important;
 	}
 
 	.elips5 {
-		bottom: 0;
-		right: 0;
-		max-width: 102px;
+		bottom: 0 !important;
+		right: 0 !important;
+		max-width: 102px !important;
 	}
 
 	.friendly_community_img {
-		height: 290px;
+		width: 100% !important;
+		height: 290px !important;
+		padding-right: calc(var(--bs-gutter-x) * .5);
+		padding-left: calc(var(--bs-gutter-x) * .5);
 	}
 
 	.dropdown-container {
@@ -1789,6 +1803,211 @@ button.auth-link {
 		margin-bottom: 40px;
 	}
 	.text_container_wrapper{
-		padding: 0 !important;
+		padding: 10px !important;
 	}
+
+	a.button_about_us {
+		font-size: 10px !important;
+		height: auto !important;
+		padding: 13px 30px;
+		display: block;
+		text-decoration: none;
+	}
+	/* mobile sections */
+
+section {
+	width: 100%;
+	flex: 1 1 auto;
+}
+
+.education-section {
+	padding: 40px 0 80px 0;
+}
+
+
+
+.coaching-staff-section {
+	padding-bottom: 80px !important;
+}
+.popup-form{
+	width:520px !important;
+}
+
+.trener_cabinet_section {
+	padding: 80px 0;
+
+}
+
+.section_education_page {
+	padding: 53px 0;
+}
+
+.section_title {
+	background-size: 100% 100%;
+	padding-top: 71px;
+	padding-bottom: 18px;
+}
+
+.about_us_title_section {
+	padding-top:80px !important;
+	padding-bottom: 0 !important;
+	background-size: auto 39%;
+	background-position: bottom;
+	background-repeat: no-repeat;
+}
+.fon{
+	background-color:#1c3c50 !important;
+	padding-bottom: 10px;
+}
+
+.what_section {
+	background-image: none !important;
+	background-color:var(--color-white) !important;
+	padding-bottom: 80px !important;
+	padding-top: 80px !important;
+	background-size: cover;
+}
+
+.lots_of_learning {
+	background-image: none !important;
+	background-color:var(--color-fon);
+	background-size: 100% 100%;
+	/* padding-top: 80px !important; */
+	padding-top: 0 !important;
+	padding-bottom: 80px !important;
+}
+
+.unique_system_section {
+	background-image: none !important;
+	background-color:var(--color-fon);
+	background-size: 100% 100%;
+	/* padding-top: 80px !important; */
+	padding-top: 0 !important;
+	padding-bottom: 80px !important;
+}
+
+
+.friendly_community_section {
+	background-image: none !important;
+	background-color:var(--color-fon) !important;
+	background-size: 100% 100%;
+	/* padding-top: 80px !important; */
+	padding-top: 0 !important;
+	padding-bottom: 80px !important;
+}
+
+.group_classes_for_children {
+	background-size: 100% 100%;
+	/* padding-top: 80px !important; */
+	padding-top: 0 !important;
+	padding-bottom: 80px !important;
+}
+
+.a_simple_start_to_learning {
+	background-image: none !important;
+	background-color:var(--color-fon);
+	background-size: 100% 100%;
+	/* padding-top: 80px !important; */
+	padding-top: 0 !important;
+	padding-bottom: 80px !important;
+}
+.our-team-section {
+	padding: 114px 0 240px 0;
+	background-image: none !important;
+	background-color:var(--color-fon);
+	padding-bottom: 80px !important;
+	background-size: 100%;
+}
+
+.how-to-find-us-section {
+	background-size: 100% 100%;
+	/* padding-top: 80px !important; */
+	position: relative;
+}
+
+.gallery_section {
+	position: relative;
+	/* padding-top: 80px !important; */
+	padding-bottom: 80px !important;
+
+}
+
+.fees_section {
+	padding: 40px 0 170px 0;
+}
+
+.fees_single_section_top {
+	padding-top: 40px;
+}
+
+.general_information_section {
+	padding: 120px 0 60px 0;
+}
+
+.Where_will_it_take_place_section,
+.treners_section {
+	padding: 60px 0 60px 0;
+}
+
+.fees_footer_section {
+	padding: 60px 0 120px 0;
+}
+
+.footer_content_section {
+	padding: 50px 0;
+	background: var(--color10);
+}
+
+
+
+.corts {
+	padding-top: 80px !important;
+	padding-bottom: 0 !important;
+}
+
+.corts-map {
+	padding-top: 80px !important;
+}
+
+.account-cabinet {
+	padding: 2.5rem 0 10.625rem 0;
+}
+.acmd{
+	display: none !important;
+}
+	/* mobile sections */
+	/* .menu-container {
+		padding: 0 15px 15px 15px;
+		position: absolute;
+		transition: 0.5s;
+		width: 0px;
+		height: 0px;
+		top: 0;
+		left: 0;
+	}	 */
+
+.lots_of_learning_servise_wrapper{
+	justify-content: center !important;
+}
+
+.navbar-toggler:focus{
+	box-shadow: none !important;
+}
+
+/* Mobile menu accout */
+.mobile-accmenu-wrapper  {
+	display: none;
+	position: absolute;
+	top: 104px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.acc-menu-d{
+	display: none;
+}
+.acc-menu-m{
+	display: block;
+}
+
 }

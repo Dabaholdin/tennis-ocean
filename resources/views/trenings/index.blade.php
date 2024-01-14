@@ -24,7 +24,7 @@
                     <div class="row p-30 bg-white mb-4">
                         <div class="col-xs-12 col-sm-12 col-md-7 col-lg-5 col-xl-5">
                             @if ($Trening_category->category_img != "")
-                                <img class="img-fluid" src="{{ @asset($Trening_category->category_img) }}" alt="">
+                                <img class="img-fluid" src="{{ @asset('storage/images/category-trening-img') ."/". trim($Trening_category->category_img)}}" alt="">
                             @else
                                 <img class="img-fluid" src="{{ @asset('storage/category/defimg.png') }}" alt="">
                             @endif   

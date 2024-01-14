@@ -1,8 +1,8 @@
-<div class="col-3 order-3 order-lg-3 col-xs-12 col-md-4 col-lg-2 col-xl-2 p-0">
-    <div class="row user-menu-wrap">
+
+    <div class="row acmd user-menu-wrap">
         <div class="col menu-container">
             <div class="row um">
-                <div class="col-3">
+                <div class="col-md-3">
                     <div class="round-image toggle {{ empty(auth()->user()->avatar)? 'bbg accminimg white-text bold d-flex justify-content-center align-items-center':''}}">
                         @empty(auth()->user()->avatar)
                             {{mb_substr(auth()->user()->firstname,0,1)}}{{mb_substr(auth()->user()->lastname,0,1)}}
@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 
-                <div class="col-9">
+                <div class="col-md-9">
                     <div class="cmenu">
                         <div>
                             <p class="fs-14 p-0 m-0 text-bold">{{ auth()->user()->firstname }}
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 cmenu">
+                <div class="col-md-12 cmenu">
                     <nav class="user-nav">
                         <ul class="p-0 m-0">
                             <li class="li-nav">
@@ -56,8 +56,7 @@
                         </ul>
                     </nav>
                 </div>
-
             </div>
         </div>
     </div>
-</div>
+

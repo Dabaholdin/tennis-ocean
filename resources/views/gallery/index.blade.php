@@ -20,72 +20,88 @@
                 </h1>
             </div>
             
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mb-3">
 
-                <div class="col-lg-3 d-flex flex-row flex-lg-column justify-content-around mb-3 mb-lg-0">
-                    <div class="row mb-3">
-                        <div class="card card-c p-0" >
-                            <a class="text-decoration-none popup_gallery" data-id="{{$albums[0]->id}}" href="{{route('gallery.show',$albums[0]->id)}}">
-                                <img src="{{@asset('storage/images/albums').'/'.$albums[0]->path_preview}}"
-                                    class="img-fluid card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title black-text text-center">{{$albums[0]->title}}</h5>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                <div class="col-lg-4 mb-3">
                     <div class="row">
-                        <div class="card card-c p-0 mt-auto" >
-                            <a class="text-decoration-none popup_gallery" data-id="{{$albums[1]->id}}" href="{{route('gallery.show',$albums[1]->id)}}">
-                                <img src="{{@asset('storage/images/albums').'/'.$albums[1]->path_preview}}"
-                                    class="img-fluid card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title black-text text-center">{{$albums[1]->title}}</h5>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 p-0 d-flex justify-content-center mb-4 mb-lg-0">
-                    <div class="card card-cc p-0" >
-                        <a class="text-decoration-none popup_gallery" data-id="{{$albums[4]->id}}" href="{{route('gallery.show',$albums[4]->id)}}">
-                            <img src="{{@asset('storage/images/albums').'/'.$albums[4]->path_preview}}"
-                                class="img-fluid card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title black-text text-center">{{$albums[4]->title}}</h5>
+
+                        <div class="col mb-3">
+                            <div class="card card-c p-0" >
+                                <a class="text-decoration-none popup_gallery" data-id="{{$albums[0]->id}}" href="{{route('gallery.show',$albums[0]->id)}}">
+                                    <img src="{{@asset('storage/images/albums').'/'.$albums[0]->path_preview}}"
+                                        class="img-fluid card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title black-text text-center">{{$albums[0]->title}}</h5>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
+                        </div>
+                        <div class="col">
+                            <div class="card card-c p-0 mt-auto" >
+                                <a class="text-decoration-none popup_gallery" data-id="{{$albums[1]->id}}" href="{{route('gallery.show',$albums[1]->id)}}">
+                                    <img src="{{@asset('storage/images/albums').'/'.$albums[1]->path_preview}}"
+                                        class="img-fluid card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title black-text text-center">{{$albums[1]->title}}</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
-                <div class="col-lg-3 d-flex flex-row flex-lg-column justify-content-around mb-3 mb-lg-0">
-                    <div class="row mb-3">
-                        <div class="card card-c p-0" >
-                            <a class="text-decoration-none popup_gallery" data-id="{{$albums[3]->id}}" href="{{route('gallery.show',$albums[3]->id)}}">
-                                <img src="{{@asset('storage/images/albums').'/'.$albums[3]->path_preview}}"
-                                    class="img-fluid card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title black-text text-center">{{$albums[3]->title}}</h5>
-                                </div>
-                            </a>
+                <div class="col-lg-4 mb-3">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card card-cc p-0" >
+                                <a class="text-decoration-none popup_gallery" data-id="{{$albums[4]->id}}" href="{{route('gallery.show',$albums[4]->id)}}">
+                                    <img src="{{@asset('storage/images/albums').'/'.$albums[4]->path_preview}}"
+                                        class="img-fluid card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title black-text text-center">{{$albums[4]->title}}</h5>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="row mt-auto ">
-                        <div class="card card-c p-0 " >
-                            <a class="text-decoration-none popup_gallery" data-id="{{$albums[2]->id}}" href="{{route('gallery.show',$albums[2]->id)}}">
-                                <img src="{{@asset('storage/images/albums').'/'.$albums[2]->path_preview}}"
-                                    class="img-fluid card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title black-text text-center">{{$albums[2]->title}}</h5>
-                                </div>
-                            </a>
+                    
+                </div>
+                <div class="col-lg-4 mb-3">
+                    <div class="row">
+
+                        <div class="col mb-3">
+                            <div class="card card-c p-0" >
+                                <a class="text-decoration-none popup_gallery" data-id="{{$albums[3]->id}}" href="{{route('gallery.show',$albums[3]->id)}}">
+                                    <img src="{{@asset('storage/images/albums').'/'.$albums[3]->path_preview}}"
+                                        class="img-fluid card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title black-text text-center">{{$albums[3]->title}}</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col mt-auto ">
+                            <div class="card card-c p-0 " >
+                                <a class="text-decoration-none popup_gallery" data-id="{{$albums[2]->id}}" href="{{route('gallery.show',$albums[2]->id)}}">
+                                    <img src="{{@asset('storage/images/albums').'/'.$albums[2]->path_preview}}"
+                                        class="img-fluid card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title black-text text-center">{{$albums[2]->title}}</h5>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
+
                 </div>
 
             </div>
 
             <div class="row">
-                <a href="{{route('gallery.show')}}" class="button_g mx-auto my-4">Все фото</a>
+                <div class="col-12 text-center d-flex">
+
+                    <a href="{{route('gallery.show')}}" class="button_g mx-auto w-50">Все фото</a>
+                </div>
             </div>
         </div>
         <div class="popup_wrapper_img none">

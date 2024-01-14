@@ -13,7 +13,7 @@
                     <h1 class="text_title">Современная школа <br><span class="counter_text uppercase">тенниса</span></h1>
                 </div>
                 <p class="p_text fs-4">Мы совмещаем традиции и технологии, чтобы сделать вас лучше</p>
-                <div class="row w-100">
+                <div class="row w-100 mx-auto">
                     <div class="button_get_tich_wrapper p-0 my-0 text-center mb-3 ms-md-0 col-7  col-lg-6">
                         @auth
                         <a  class="white-ball pr-50 position-relative z-0 button button-link fw-bold d-inline-block" href="{{ route('trenings.index') }}">Начать
@@ -65,8 +65,8 @@
 Там вы сможете найти тренировки по интересующим вас темам.</p>
             </div>
             <div class="col-md-3 col-12 d-flex justify-content-center">
-                <button class="button_about_us button_see_all white-text btn btn-transparent button">Посмотреть
-                    всё</button>
+                <a href="{{route('trenings.index')}}" class=" button_see_all white-text btn btn-transparent button">Посмотреть
+                    всё</a>
             </div>
         </div>
 
@@ -202,7 +202,7 @@
 
             <div class="d-flex col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 justify-content-center align-items-center">
                 <div class="button_get_tich_wrapper">
-                    <button class="button white-ball pr-50 position-relative z-0">Записаться на тренировку</button>
+                    <a href="{{route('trenings.index')}}" class="button white-ball pr-50 position-relative z-0">Записаться на тренировку</a>
                 </div>
             </div>
         </div>
@@ -300,7 +300,7 @@
         </div>
         <div class="button_center row">
             <div class="text-center col-12">
-                <button class="button white-ball pr-50 position-relative z-0">Записаться</button>
+                <a href="{{route('trenings.index')}}" class="button white-ball pr-50 position-relative z-0">Записаться</a>
             </div>
         </div>
     </div>
@@ -317,7 +317,7 @@
                     регистрации и заполните поля ввода данных</p>
             </div>
             <div class="mt-3 mt-mb-0  col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-sm-3 d-flex justify-content-center">
-                <button class="button position-relative z-0 white-ball pr-50" data-auth="false">Зарегистрироваться</button>
+                <button class="button position-relative z-0 white-ball pr-50 button-fn" data-target="open-popup">Зарегистрироваться</button>
             </div>
         </div>
         <div class="step mb-20 p-30 row d-flex align-items-center">

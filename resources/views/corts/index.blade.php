@@ -54,10 +54,10 @@
             </h1>
         </div>
         <div class="row mb-60">
-            <div class="col-9 me-auto">
+            <div class="col-md-9 me-auto">
                 <p class="fs-16 cort-title-text">В&nbsp;этом разделе представлена информация о&nbsp;теннисных кортах, на&nbsp;которых школа TennisOcean проводит занятия по&nbsp;теннису. Все&nbsp;корты проверенные. На&nbsp;них&nbsp;побывали наши тренеры, а&nbsp;на&nbsp;многих из&nbsp;них&nbsp;они проводят занятия и&nbsp;играют сами. Выбор за&nbsp;вами и&nbsp;наши тренеры с&nbsp;удовольствием помогут определится с&nbsp;удобным для&nbsp;вас&nbsp;теннисным кортом!</p>
             </div>
-            <div class="col-2">
+            <div class="col-md-2">
                 <button class="btn-transparent-blue text-end "> Карта кортов</button>
             </div>
         </div>
@@ -65,7 +65,7 @@
 
         @foreach ($all_corts as $cort)
             <div class="row p-30 bw mb-30">
-                <div class="col-5 plr-0 ">
+                <div class="col-md-5 plr-0 ">
                     @if (count($cort->images) != 0)
                     <div id="carouselExampleIndicators{{ $loop->iteration }}" class="carousel slide" data-bs-ride="false">
                         <div class="carousel-indicators m-0 w-100">
@@ -97,12 +97,12 @@
                     </div>
                     @endif
                 </div>
-                <div class="col-7 plr-0 pl-30">
+                <div class="col-md-7 plr-0 pl-30">
                     <div class="row mb-20">
-                        <div class="col-8  me-auto">
+                        <div class="col-md-8  me-auto">
                             <h3 class="fs-24">{{$cort->title}}</h3>
                         </div>
-                        <div class="col-4">
+                        <div class="col-md-4">
                             <p class="fs-20 grey-text">От 1000000 ₽/час</p>
                         </div>
                     </div>
@@ -123,8 +123,8 @@
 
                     </div>
                     <div class="row m-auto">
-                        <div class="col"><button class="button white-ball pr-50 position-relative">Записаться на тренировку</button></div>
-                        <div class="col"><button class="btn-transparent-blue text-end lock-at-map-button "> Показать на карте</button></div>
+                        <div class="col-md-6 pb-3"><button class="button white-ball w-100 pr-50 position-relative">Записаться на тренировку</button></div>
+                        <div class="col-md-5 "><button class="btn-transparent-blue text-center w-100 lock-at-map-button "> Показать на карте</button></div>
                     </div>
                 </div>
             </div>
@@ -132,7 +132,7 @@
 
 
         <div class="row p-30 bbg">
-            <div class="col-8">
+            <div class="col-md-8 pb-3">
                 <div class="row mb-20">
                     <h3 class="fs-24 white-text p-0 m-0">Приедем на ваш любимый корт!</h3>
                 </div>
@@ -141,7 +141,7 @@
                         Вы&nbsp;можете связаться с&nbsp;нами любым удобным способом. Запишитесь на тренировку прямо сейчас!</p>
                 </div>
             </div>
-            <div class="col-4 mt-auto text-end">
+            <div class="col-md-4 my-auto text-center">
                 <button class="button pr-50  position-relative white-bg blue-text blue-ball-e">Записаться на тренировку</button>
             </div>
         </div>
@@ -150,90 +150,7 @@
 
 <section class="corts-map">
     <div class="container">
-        <div class="row text-center mb-80">
-            <h3 class="counter_text">Карта кортов</h3>
-        </div>
-        <div class="row bgw p-30 position-relative z1">
-            <div class="row p-0">
-                <div class="col-9 p-0 mb-20">
-                    <div class="row how-to-find-us-text">
-                        <p class="fs-16">
-                            Для проведения тренировок мы выбираем лучшие корты с разнообразными покрытиями (грунт, хард),
-                            тренеров с высокой квалификацией, качественный спортивный инвентарь и наиболее удобное время.
-                            Выберите ближайший к вам корт и не тратьте много времени на дорогу.
-                        </p>
-                    </div>
-                    <div class="row">
-                        <b class="fs-18">Вы можете связаться с нами любым удобным способом!</b>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <button class="button">Записаться на тренировку</button>
-                </div>
-            </div>
-            <div class="row  justify-content-between pl-0 pr-0 pb-20 pt-20 btb">
-                <div class="col-2 plr-0">
-                    <div class="row mb-10 ">
-                        <b>Звоните</b>
-                    </div>
-                    <div class="row">
-                        <p>+7 (495) 777-85-15</p>
-                    </div>
-                </div>
-                <div class="col-2 plr-0">
-                    <div class="row mb-10">
-                        <b>Пишите</b>
-                    </div>
-                    <div class="row">
-                        <a class="text-decoration-none blue-text fs-16" href="mailto:tennisocean@mail.ru">tennisocean@mail.ru</a>
-                    </div>
-                </div>
-                <div class="col-3 plr-0">
-                    <div class="row mb-10">
-                        <b>Подписывайтесь</b>
-                    </div>
-                    <div class="row">
-                        <div class="col"><a class="text-decoration-none blue-text fs-16" href="#">Instagram</a></div>
-                        <div class="col"><a class="text-decoration-none blue-text fs-16" href="#">Telegram</a></div>
-                        <div class="col"><a class="text-decoration-none blue-text fs-16" href="#">TikTok</a></div>
-                    </div>
-                </div>
-                <div class="col-2 plr-0">
-                    <div class="row mb-10">
-                        <b class="fs-16">Режим работы</b>
-                    </div>
-                    <div class="row">
-                        <p class="fs-16">Ежедневно с 7:00 до 00:00</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row plr-0 pb-20 pt-20">
-                <div class="col-4 plr-0 me-auto">
-                    <p class="plr-0">Корты, где мы можем провести тренировку</p>
-                </div>
-                <div class="col-2">
-                    <a href="#">Смотреть все корты</a>
-                </div>
-            </div>
-            <div class="row">
-
-                <div class="col-3 me-auto"><button href="" class="cort-name-button">Импульс</button></div>
-                <div class="col-3 me-auto"><button href="" class="cort-name-button">Теннис-Арт</button></div>
-                <div class="col-3 me-auto"><button href="" class="cort-name-button">Лосинка теннис</button></div>
-                <div class="col-1">
-                    <a href="" class="corts-nav-button">
-                        <div>&lt;</div>
-                    </a>
-                    <a href="" class="corts-nav-button">
-                        <div>&gt;</div>
-                    </a>
-
-                </div>
-
-
-
-            </div>
-        </div>
+        @include('includes.cort-list',['title'=>'Карта кортов'])
     </div>
 
     <div id="map">

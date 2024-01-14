@@ -24,7 +24,7 @@
                             <div
                                 class="col-sm-2 blue-border circle cab-img me-auto p-0 {{ !isset($user->avatar) ? 'bbg accminimg white-text bold d-flex justify-content-center align-items-center' : '' }} ">
                                 @isset($user->avatar)
-                                    <img width="159" height="89" src="{{ @asset('storage/images' . '/' . $user->avatar) }}"
+                                    <img width="159" height="89" src="{{ @asset('storage'). '/' . $user->avatar }}"
                                         class="rounded-circle">
                                 @else
                                     <div class="fs-24">

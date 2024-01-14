@@ -5,8 +5,7 @@
                 <a class="navbar-brand d-flex justify-content-center" href="{{ @route('home.index') }}"><img
                         class="logo img-fluid" src="{{ @asset('assets/img/logo/Logo.png') }}" alt=""></a>
             </div>
-            <div
-                class="mb-0 mb-md-0 col-3 order-1 order-lg-2 col-xs-12 col-md-4  col-lg-7 d-flex justify-content-center">
+            <div class="mb-0 mb-md-0 col-3 order-1 order-lg-2 col-xs-12 col-md-4  col-lg-7 d-flex justify-content-center">
                 <nav class="navbard navbar navbar-expand-lg bg-body-tertiary ">
                     <div>
                         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
@@ -39,9 +38,16 @@
                     </div>
                 </nav>
             </div>
-
             @auth
-                @include('menu.account')
+            <div class="col-3 order-3 order-lg-3 col-xs-12 col-md-4 col-lg-2 col-xl-2 p-0 account-menu">
+                <div class="acc-menu-d">
+                    @include('menu.account')
+                </div>
+                <div class="acc-menu-m">
+                    @include('menu.mobile-account')
+                </div>
+            </div>
+                
             @else
                 <div
                     class="col-3 order-3 order-lg-3 col-xs-12 col-md-4  col-lg-2 col-xl-2 text-center position-relative p-0">
