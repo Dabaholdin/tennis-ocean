@@ -47,21 +47,21 @@
                         <div class="user_edit_form_wrapper">
                             <div class="inputs_wrapper">
                                 <div class="input_wrapper">
-                                    <label class="setings_label" for="user_first_name">Ваше имя</label>
-                                    <input id="user_first_name" class="setings_input" name="user_first_name" type="text"
+                                    <label class="setings_label" for="firstname">Ваше имя</label>
+                                    <input id="user_first_name" class="setings_input" name="firstname" type="text"
                                         value="{{ $firstname }}">
                                 </div>
                                 <div class="input_wrapper">
-                                    <label class="setings_label" for="user_last_name">Ваша фамилия</label>
-                                    <input id="user_last_name" class="setings_input" name="user_last_name" type="text"
+                                    <label class="setings_label" for="lastname">Ваша фамилия</label>
+                                    <input id="user_last_name" class="setings_input" name="lastname" type="text"
                                         value="{{ $lastname }}">
                                 </div>
                             </div>
 
                             <div class="inputs_wrapper">
                                 <div class="input_wrapper">
-                                    <label class="setings_label" for="birth_date">Дата рождения</label>
-                                    <input id="user_birth_date" class="setings_input" name="user_birth_date" type="date" value="{{empty(!$birthdate)?$birthdate->format('Y-m-d'):''}}">
+                                    <label class="setings_label" for="birthdate">Дата рождения</label>
+                                    <input id="user_birth_date" class="setings_input" name="birthdate" type="date" value="{{empty(!$birthdate)?$birthdate->format('Y-m-d'):''}}">
                                     
                                 </div>
                                 <div class="input_wrapper">
@@ -69,12 +69,12 @@
                                     <div class="check_chose_send_gender_wrapper ">
                                         <div class="radio_container">
                                             <input class="check_chose_send" type="radio" value="1" id="male"
-                                                name="chose_gender" {{ $gender ? 'checked' : '' }}>
+                                                name="gender" {{ $gender ? 'checked' : '' }}>
                                             <label class="radio_contact_user" for="male">мужской</label>
                                         </div>
                                         <div class="radio_container">
                                             <input class="check_chose_send" type="radio" value="0" id="female"
-                                                name="chose_gender" {{ !$gender  ? 'checked' : '' }}>
+                                                name="gender" {{ !$gender  ? 'checked' : '' }}>
                                             <label class="radio_contact_user" for="female">Женский</label>
                                         </div>
                                     </div>
@@ -83,13 +83,13 @@
 
                             <div class="inputs_wrapper">
                                 <div class="input_wrapper">
-                                    <label class="setings_label" for="user_email_change">Эл. почта</label>
-                                    <input id="user_email_change" name="user_email_change" class="setings_input"
+                                    <label class="setings_label" for="email">Эл. почта</label>
+                                    <input id="user_email_change" name="email" class="setings_input"
                                         type="email" placeholder="Ваша почта" value="{{auth()->user()->email}}">
                                 </div>
                                 <div class="input_wrapper">
-                                    <label class="setings_label" for="user_tel">Телефон</label>
-                                    <input id="user_tel" name="user_tel" class="setings_input" type="tel"
+                                    <label class="setings_label" for="phone">Телефон</label>
+                                    <input id="user_tel" name="phone" class="setings_input" type="tel"
                                         placeholder="Введите номер телефона" value="{{auth()->user()->phone}}">
                                 </div>
                             </div>
@@ -98,7 +98,7 @@
                                 <button class="setings_send_button button save_settings_user_info"
                                     type="submit" name="changeUserInfo" disabled> Сохранить</button>
                             </div>
-                            <input type="hidden" name="user" value="1">
+                            <input type="hidden" name="user" value="{{$user->id}}">
 
                         </div>
                     </div>
@@ -110,25 +110,27 @@
                     <h2>Смена пароля</h2>
                     <p>После смены вы автоматически выйдете из аккаунта</p>
                 </div>
-                <form name="form_changing_the_password" method="post" action="">
+                <form name="form_changing_the_password" class="form_changing_the_password">
+                    @csrf
+                    @method('PATCH')
                     <div>
                         <div class="user_edit_form_wrapper">
                             <div class="inputs_wrapper">
                                 <div class="input_wrapper">
                                     <label class="setings_label" for="your_passwor">Текущий</label>
-                                    <input id="your_passwor" class="setings_input" name="your_passwor" type="password">
+                                    <input id="your_passwor" class="setings_input" name="last_password" type="password">
                                     <p class="err_input"></p>
                                 </div>
                             </div>
                             <div class="inputs_wrapper">
                                 <div class="input_wrapper">
                                     <label class="setings_label" for="new_pass">Новый пароль</label>
-                                    <input id="new_pass" name="new_pass" class="setings_input" type="password">
+                                    <input id="new_pass" name="new_password" class="setings_input" type="password">
                                     <p class="err_input"></p>
                                 </div>
                                 <div class="input_wrapper">
                                     <label class="setings_label" for="new_pass_confirm">Повторите новый пароль</label>
-                                    <input id="new_pass_confirm" name="new_pass_confirm" class="setings_input"
+                                    <input id="new_password_confirm" name="new_password_confirm" class="setings_input"
                                         type="password">
                                     <p class="err_input"></p>
                                 </div>
@@ -154,6 +156,7 @@
                 </div>
                 <form class="edit-child">
                     @csrf
+                    @method('POST')
                     @foreach ($userchilds as $child)
                         <div class="children_wrapper">
                             <input type="hidden" name="uid" value="{{ $child->id }}">
@@ -219,7 +222,7 @@
                     @csrf
                     <input type="hidden" name="uid" value="{{$uid}}">
                     <div class="user_children_edit_wrapper row">
-                        <div class="change_image_user_container col-2 m-0">
+                        <div class="change_image_user_container col-md-2 m-0">
                             <div class="change_image_user_wrapper">
                                 <div class="image_wrapper">
 
@@ -234,7 +237,7 @@
                                     name="children_add_img" type="file" accept="image/*,image/jpeg">
                             </div>
                         </div>
-                        <div class="user_edit_form_wrapper col-8">
+                        <div class="user_edit_form_wrapper col-md-8">
                             <div class="inputs_wrapper">
                                 <div class="input_wrapper">
                                     <label class="setings_label" for="add_children_first_name">Ваше имя</label>

@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\ChangePasswordRequest;
 use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
@@ -21,6 +22,7 @@ class SessionController extends Controller
 {
     public function index()
     {
+        
         $trenings = Auth()->user()->Trenings;
         $user = Auth()->user();
 
@@ -109,18 +111,19 @@ class SessionController extends Controller
             }
             else{ 
                 Auth::logout();
-            return response()->json([
-                'status'=>400,
-                'verivied'=>false,
-                'uid' => $uid,
-            ]);
+                return response()->json([
+                    'status'=>400,
+                    'verivied'=>false,
+                    'uid' => $uid,
+                ]);
             }
 
          
         }else{
          return response()->json([
             'status'=>400,
-            'error'=>0
+            'error'=>0,
+            'auth'=>Auth::attempt($formFields)
          ]);
          }
          
@@ -152,62 +155,72 @@ class SessionController extends Controller
     
     public function edit(Request $request, $id)
     {
-        $path = '';
-        if($request->hasFile('user_image')){
-            $file = $request->file('user_image');
-            $path = $file->store('images/user');
-        };
         
-        $user = User::find($id);
-
-        $user->firstname = ($request->user_first_name != $user->firstname && $request->user_first_name !='')?$request->user_first_name : $user->firstname;
-        $user->lastname = ($request->user_last_name != $user->user_last_name) ? $request->user_last_name : $user->lastname;
-        $user->birthdate = ($request->user_birth_date != $user->user_birth_date) ? $request->user_birth_date : $user->birthdate;
-        $user->gender = ($request->chose_gender != $user->chose_gender) ? $request->chose_gender : $user->gender;
-        $user->email = ($request->user_email_change != $user->user_email_change) ? $request->user_email_change : $user->email;
-        
-
-        if(isset($request->user_tel)){
-            
-            $user->phone = ($request->user_tel != $user->user_tel) ? $request->user_tel : $user->phone;
-            
-        }else {
-            $user->phone = null;
-        }
-        
-        if($request->hasFile('user_image')){
-            if($user->avatar !=''){
-                Storage::delete($user->avatar);
-            }
-            $user->avatar = $path ;
-        }
-        
-        $user->save();
-
-        if($user){
-            return response()->json([
-                'status'=>200,
-                'changed'=>true,
-                'data'=>[
-                    'firstname' => $request->user_first_name ,
-                    'lastname' => $request->user_last_name,
-                    'birthdate' => $request->user_birth_date,
-                    'gender' => $request->chose_gender ,
-                    'email' => $request->user_email_change,
-                    'phone' => $request->user_tel,
-                ]
-            ]);
-        }
         
     }
 
     
     public function update(Request $request, string $id)
     {
-        //
+        $path = '';
+        $user = User::find($id);
+        if($request->hasFile('user_image')){
+            if($user->avatar !=''){
+                Storage::delete($user->avatar);
+            }
+            $user->avatar = $path ;
+        }
+        if($request->hasFile('user_image')){
+            $file = $request->file('user_image');
+            $path = $file->store('images/user');
+        };
+        
+        
+        $user->update([
+            'firstname'=> $request->firstname,
+            'lastname'=> $request->lastname,
+            'email'=> ($request->email == $user->email)?$user->email:$request->email,
+            'phone'=> $request->phone,
+            'birthdate'=> $request->birthdate,
+            'gender'=> $request->gender,
+            'avatar'=> $path,
+        ]);
+
+        
+        
+        
+        if($user){
+            return response()->json([
+                'status'=>200,
+                'changed'=>true,
+                'user'=>$user,
+                'data'=>[
+                    'ID'=>$request->id,
+                    'firstname' => $request->firstname ,
+                    'lastname' => $request->lastname,
+                    'birthdate' => $request->birthdate,
+                    'gender' => $request->gender ,
+                    'email' => $request->email,
+                    'phone' => $request->phone,
+                ]
+            ]);
+        }
     }
 
-    
+    public function changepassword(ChangePasswordRequest $request, string $id){
+        if(Auth::check()){
+            $user = User::find($id);
+            $data = $request->validated();
+            $user->update([
+                'password'=>$request->new_password_confirm,
+            ]);
+            return response()->json([
+                'link'=>Route('login.logout')
+            ]);
+            }
+        
+    }
+
     public function destroy(string $id)
     {
         //

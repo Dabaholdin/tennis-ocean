@@ -20,9 +20,9 @@
             <div class="row">
                 <div class="tab-content">
                     <div class="mb-4 p-30 bg-white basic" role="tabpanel" aria-labelledby="tofline-tab">
-                        <div class="row">
+                        <div class="row justify-content-center">
                             <div
-                                class="col-sm-2 blue-border circle cab-img me-auto p-0 {{ !isset($user->avatar) ? 'bbg accminimg white-text bold d-flex justify-content-center align-items-center' : '' }} ">
+                                class="col-md-2 blue-border circle cab-img  p-0 {{ !isset($user->avatar) ? 'bbg accminimg white-text bold d-flex justify-content-center align-items-center' : '' }} ">
                                 @isset($user->avatar)
                                     <img width="159" height="89" src="{{ @asset('storage'). '/' . $user->avatar }}"
                                         class="rounded-circle">
@@ -31,44 +31,44 @@
                                         {{ mb_substr($user->firstname, 0, 1) }}{{ mb_substr($user->lastname, 0, 1) }}</div>
                                 @endisset
                             </div>
-                            <div class="col-sm-10 p-0">
+                            <div class="col-md-10 p-0">
                                 <div class="row ">
-                                    <div class="col-sm-11 title-acc mb-3">
+                                    <div class="col-md-11 title-acc mb-3">
                                         <div class="row">
-                                            <div class="col-sm-9 me-auto">
+                                            <div class="col-md-9 me-auto">
                                                 <span class="name_user_text">{{ $user->firstname }}
                                                     {{ $user->lastname }}</span>
                                             </div>
-                                            <div class="col-sm-3 w-auto">
+                                            <div class="col-md-3 w-auto">
                                                 <span class="text_parent_name">Взрослый</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-1 w-auto">
+                                    <div class="col-md-1 w-auto">
                                         <div class="add_button_wrapper">
                                             <img src="{{ asset('/assets/img/icons/add.png') }}" alt="">
                                         </div>
                                     </div>
 
-                                    <div class="col-sm-4 mb-2"><b>Возраст:</b>
+                                    <div class="col-md-4 mb-2"><b>Возраст:</b>
                                         {{ isset($user->birthdate) ? $user->birthdate->diffInYears() . ' лет' : '*' }}
                                     </div>
-                                    <div class="col-sm-3 mb-2"><b>Дата регистрации:</b>
+                                    <div class="col-md-3 mb-2"><b>Дата регистрации:</b>
                                         {{ isset($user->created_at) ? $user->created_at->format('d.m.Y') : '*' }}
                                     </div>
-                                    <div class="col-sm-3 mb-2">{{-- <b>Активность:</b> --}}</div>
-                                    <div class="col-sm-2 mb-2">{{-- <b>Скидка</b> 10% --}}</div>
+                                    <div class="col-md-3 mb-2">{{-- <b>Активность:</b> --}}</div>
+                                    <div class="col-md-2 mb-2">{{-- <b>Скидка</b> 10% --}}</div>
 
-                                    <div class="col-sm-4 mb-2"><b>Эл. почта:</b> {{ $user->email }}</div>
-                                    <div class="col-sm-3 mb-2"><b>Кол-во тренировок:</b> {{ $trenings->count() }}</div>
-                                    <div class="col-sm-3 mb-2">{{-- <b>Постоянная скидка:</b> 5% --}}</div>
-                                    <div class="col-sm-2 mb-2"></div>
+                                    <div class="col-md-4 mb-2"><b>Эл. почта:</b> {{ $user->email }}</div>
+                                    <div class="col-md-3 mb-2"><b>Кол-во тренировок:</b> {{ $trenings->count() }}</div>
+                                    <div class="col-md-3 mb-2">{{-- <b>Постоянная скидка:</b> 5% --}}</div>
+                                    <div class="col-md-2 mb-2"></div>
 
-                                    <div class="col-sm-4 mb-2"><b>Телефон:</b> {{ isset($user->phone) ? $user->phone : '*' }}
+                                    <div class="col-md-4 mb-2"><b>Телефон:</b> {{ isset($user->phone) ? $user->phone : '*' }}
                                     </div>
-                                    <div class="col-sm-3 mb-2">{{-- <b>Пройдено обучений:</b> 5 --}}</div>
-                                    <div class="col-sm-3 mb-2"></div>
-                                    <div class="col-sm-2 mb-2"></div>
+                                    <div class="col-md-3 mb-2">{{-- <b>Пройдено обучений:</b> 5 --}}</div>
+                                    <div class="col-md-3 mb-2"></div>
+                                    <div class="col-md-2 mb-2"></div>
                                 </div>
                             </div>
                         </div>
@@ -76,19 +76,19 @@
 
                     <div class="mb-4 training" style="display: none" role="tabpanel" aria-labelledby="tofline-tab">
                         <div class="row bgw p-4">
-                            <div class="col-sm-4 p-0">
+                            <div class="col-md-4 p-0">
                                 <div id="calendar"></div>
                             </div>
                             <div class="col-8">
                                 <div class="row mb-4">
-                                    <div class="col-sm-3">
+                                    <div class="col-md-3">
                                         <input type="text" class="input w-100" value="За всё время">
                                     </div>
-                                    <div class="col-sm-5">
+                                    <div class="col-md-5">
                                         <input type="text" class="input w-100"
                                             value="{{ $user->firstname }} {{ $user->lastname }}">
                                     </div>
-                                    <div class="col-sm-4"></div>
+                                    <div class="col-md-4"></div>
                                 </div>
                                 <div class="row">
                                     <div class="todo-list pe-4">

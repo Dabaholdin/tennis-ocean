@@ -59,7 +59,8 @@ Route::prefix('/user')->group(function(){
         Route::get('/cabinet/setings','show')->name('cabinet.setings')->middleware('auth');
 
         
-        Route::patch('/cabinet/setings/edit/{id}','edit')->name('cabinet.edit');
+        Route::patch('/cabinet/setings/update/{id}','update')->name('cabinet.update');
+        Route::patch('/cabinet/setings/change-password/{id}','changepassword')->name('cabinet.change.password');
         
     });
     Route::controller(ChildrenController::class)->group(function(){

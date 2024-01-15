@@ -59,7 +59,7 @@ $(document).ready(function () {
             //processData:false,
             data: a,
             success: function (data) {
-                // console.log(data);
+                 console.log(data);
             }
         })
     })
@@ -119,33 +119,57 @@ $(document).ready(function () {
         })
         if (no_empty != 0) {
             $('button[name="changeUserInfo"]').prop('disabled', false)
+            $('button[name="changeUserInfo"]').removeClass('setings_send_button')
+
         } else {
             $('button[name="changeUserInfo"]').prop('disabled', true)
         }
     })
 
     // Обновление данных пользователя
-    $('.change_user_data').submit(function (e) {
-        e.preventDefault();
+        // Редактирование личных данных
+        $('.change_user_data').submit(function (e) {
+            e.preventDefault();
 
-        let form_data = new FormData(this);
-        let user_id = $('.change_user_data input[name="user"]').val()
+            let form_data = new FormData(this);
+            let user_id = $('.change_user_data input[name="user"]').val()
 
-        $.ajax({
-            method: 'post',
-            url: 'setings/edit/' + user_id,
-            dataType: 'json',
-            contentType: false,
-            processData: false,
-            data: form_data,
-            success: function (data) {
-                if (data.changed) {
-                    window.location.reload();
-                    
+            $.ajax({
+                method: 'post',
+                url: 'setings/update/' + user_id,
+                dataType: 'json',
+                contentType: false,
+                processData: false,
+                data: form_data,
+                success: function (data) {
+                    if (data.changed) {
+                        window.location.reload();
+                        console.log(data)
+                        
+                    }
                 }
-            }
+            })
         })
-    })
+        // Изменение пароля
+        $('.form_changing_the_password').submit(function(e){
+            e.preventDefault();
+            let user_id = $('.change_user_data input[name="user"]').val()
+    
+            let form_data = new FormData(this);
+            $.ajax({
+                method:'post',
+                url: 'setings/change-password/'+user_id,
+                dataType:'json',
+                contentType: false,
+                processData: false,
+                data: form_data,
+                success:function(data){
+                    console.log(data);
+                    window.location.replace(data['link']);
+                }
+            })
+            
+        })
     // Обновление данных пользователя
     
 

@@ -13,59 +13,67 @@
 	--color10: rgba(44, 62, 80, 1);
 	--color11: rgba(30, 31, 40, 1);
 	--color12: rgba(54, 54, 60, 1);
-	--color-fon:rgb(44, 62, 80);
+	--color-fon: rgb(44, 62, 80);
 	--icon-white-ball: url(/assets/img/icons/image16.png);
 	--icon-blue-ball: url(/assets/img/icons/image16Traced.png);
 	--icon-arrow: url(/assets/img/icons/arrowtog.svg);
 }
+
 /* Status */
-.new{
+.new {
 	border: 1px solid grey;
-    border-radius: 100px !important;
+	border-radius: 100px !important;
 }
-.text-bold{
+
+.text-bold {
 	font-weight: 800;
 }
-.status-new{
+
+.status-new {
 	color: grey;
 }
 
-.await-pay{
+.await-pay {
 	border: 1px solid #79C95F;
-    border-radius: 100px !important;
+	border-radius: 100px !important;
 }
+
 .status-await-pay {
 	color: #79C95F;
 }
 
-.not-confirmed{
+.not-confirmed {
 	border: 1px solid #E94F4F;
-    border-radius: 100px !important;
+	border-radius: 100px !important;
 }
+
 .status-not-confirmed {
 	color: #E94F4F;
 }
 
-.confirmed{
+.confirmed {
 	border: 1px solid #189AE5;
-    border-radius: 100px !important;
+	border-radius: 100px !important;
 }
+
 .status-confirmed {
 	color: #189AE5;
 }
 
 /* Status */
-a{
+a {
 	text-decoration: none;
 }
-.link-td-none{
+
+.link-td-none {
 	text-decoration: none !important;
 }
-.link-td-none:hover{
- color: #ffffff;
+
+.link-td-none:hover {
+	color: #ffffff;
 }
 
-.txt-bold{
+.txt-bold {
 	font-weight: bold !important;
 }
 
@@ -143,16 +151,17 @@ button:focus {
 	outline: none;
 	border-radius: 5px;
 }
-.input:focus{
+
+.input:focus {
 	border: 2px solid #189AE5;
 }
 
 .interval-list {
 	display: none;
-    position: absolute;
-    background: white;
-    top: 53px;
-    left: 0;
+	position: absolute;
+	background: white;
+	top: 53px;
+	left: 0;
 	z-index: 999;
 }
 
@@ -231,7 +240,8 @@ html {
 .grey-text {
 	color: var(--color8) !important;
 }
-.white-text{
+
+.white-text {
 	color: var(--color-white);
 }
 
@@ -459,9 +469,10 @@ body {
 	font-family: 'Open Sans';
 }
 
-.container{
+.container {
 	flex-grow: 1;
 }
+
 .none {
 	display: none !important;
 }
@@ -815,17 +826,19 @@ section {
 	padding: 0;
 	width: 282px !important;
 }
+
 /* .card-img-top{
 	max-height: 380px;
 	border-top-left-radius:0 !important;
 	border-top-right-radius:0 !important;
 } */
-.coach-card-body{
+.coach-card-body {
 	min-height: 170px;
 	max-height: 170px;
 }
-.aimage-container{
-	height:200px !important;
+
+.aimage-container {
+	height: 200px !important;
 	object-fit: contain;
 }
 
@@ -1052,7 +1065,8 @@ section {
 
 /* Popup start */
 
-.popub-background, .modal-background {
+.popub-background,
+.modal-background {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -1314,6 +1328,7 @@ section {
 }
 
 .cab-img {
+	margin-right: auto;
 	overflow: hidden;
 	width: 159px;
 	height: 159px;
@@ -1501,6 +1516,7 @@ button.auth-link {
 .step-progress {
 	display: flex;
 }
+
 .user_children_edit_wrapper {
 	max-height: 185px;
 	overflow: hidden;
@@ -1508,9 +1524,11 @@ button.auth-link {
 	display: none;
 	border-bottom: 1px solid #C6C9CE;
 }
-.disabled{
+
+.disabled {
 	display: none;
 }
+
 /*erors*/
 .input-error {
 	border: 1px solid red;
@@ -1520,14 +1538,15 @@ button.auth-link {
 
 
 /* Admin Panel */
-.fo{
+.fo {
 	width: 34px;
 	height: 34px;
 	display: flex;
 }
+
 /* Admin Panel */
 
-.acc-menu-m{
+.acc-menu-m {
 	display: none;
 }
 
@@ -1802,7 +1821,8 @@ button.auth-link {
 	.mb-80 {
 		margin-bottom: 40px;
 	}
-	.text_container_wrapper{
+
+	.text_container_wrapper {
 		padding: 10px !important;
 	}
 
@@ -1813,168 +1833,174 @@ button.auth-link {
 		display: block;
 		text-decoration: none;
 	}
+
 	/* mobile sections */
 
-section {
-	width: 100%;
-	flex: 1 1 auto;
-}
+	section {
+		width: 100%;
+		flex: 1 1 auto;
+	}
 
-.education-section {
-	padding: 40px 0 80px 0;
-}
-
-
-
-.coaching-staff-section {
-	padding-bottom: 80px !important;
-}
-.popup-form{
-	width:520px !important;
-}
-
-.trener_cabinet_section {
-	padding: 80px 0;
-
-}
-
-.section_education_page {
-	padding: 53px 0;
-}
-
-.section_title {
-	background-size: 100% 100%;
-	padding-top: 71px;
-	padding-bottom: 18px;
-}
-
-.about_us_title_section {
-	padding-top:80px !important;
-	padding-bottom: 0 !important;
-	background-size: auto 39%;
-	background-position: bottom;
-	background-repeat: no-repeat;
-}
-.fon{
-	background-color:#1c3c50 !important;
-	padding-bottom: 10px;
-}
-
-.what_section {
-	background-image: none !important;
-	background-color:var(--color-white) !important;
-	padding-bottom: 80px !important;
-	padding-top: 80px !important;
-	background-size: cover;
-}
-
-.lots_of_learning {
-	background-image: none !important;
-	background-color:var(--color-fon);
-	background-size: 100% 100%;
-	/* padding-top: 80px !important; */
-	padding-top: 0 !important;
-	padding-bottom: 80px !important;
-}
-
-.unique_system_section {
-	background-image: none !important;
-	background-color:var(--color-fon);
-	background-size: 100% 100%;
-	/* padding-top: 80px !important; */
-	padding-top: 0 !important;
-	padding-bottom: 80px !important;
-}
-
-
-.friendly_community_section {
-	background-image: none !important;
-	background-color:var(--color-fon) !important;
-	background-size: 100% 100%;
-	/* padding-top: 80px !important; */
-	padding-top: 0 !important;
-	padding-bottom: 80px !important;
-}
-
-.group_classes_for_children {
-	background-size: 100% 100%;
-	/* padding-top: 80px !important; */
-	padding-top: 0 !important;
-	padding-bottom: 80px !important;
-}
-
-.a_simple_start_to_learning {
-	background-image: none !important;
-	background-color:var(--color-fon);
-	background-size: 100% 100%;
-	/* padding-top: 80px !important; */
-	padding-top: 0 !important;
-	padding-bottom: 80px !important;
-}
-.our-team-section {
-	padding: 114px 0 240px 0;
-	background-image: none !important;
-	background-color:var(--color-fon);
-	padding-bottom: 80px !important;
-	background-size: 100%;
-}
-
-.how-to-find-us-section {
-	background-size: 100% 100%;
-	/* padding-top: 80px !important; */
-	position: relative;
-}
-
-.gallery_section {
-	position: relative;
-	/* padding-top: 80px !important; */
-	padding-bottom: 80px !important;
-
-}
-
-.fees_section {
-	padding: 40px 0 170px 0;
-}
-
-.fees_single_section_top {
-	padding-top: 40px;
-}
-
-.general_information_section {
-	padding: 120px 0 60px 0;
-}
-
-.Where_will_it_take_place_section,
-.treners_section {
-	padding: 60px 0 60px 0;
-}
-
-.fees_footer_section {
-	padding: 60px 0 120px 0;
-}
-
-.footer_content_section {
-	padding: 50px 0;
-	background: var(--color10);
-}
+	.education-section {
+		padding: 40px 0 80px 0;
+	}
 
 
 
-.corts {
-	padding-top: 80px !important;
-	padding-bottom: 0 !important;
-}
+	.coaching-staff-section {
+		padding-bottom: 80px !important;
+	}
 
-.corts-map {
-	padding-top: 80px !important;
-}
+	.popup-form {
+		width: 520px !important;
+	}
 
-.account-cabinet {
-	padding: 2.5rem 0 10.625rem 0;
-}
-.acmd{
-	display: none !important;
-}
+	.trener_cabinet_section {
+		padding: 80px 0;
+
+	}
+
+	.section_education_page {
+		padding: 53px 0;
+	}
+
+	.section_title {
+		background-size: 100% 100%;
+		padding-top: 71px;
+		padding-bottom: 18px;
+	}
+
+	.about_us_title_section {
+		padding-top: 80px !important;
+		padding-bottom: 0 !important;
+		background-size: auto 39%;
+		background-position: bottom;
+		background-repeat: no-repeat;
+	}
+
+	.fon {
+		background-color: #1c3c50 !important;
+		padding-bottom: 10px;
+	}
+
+	.what_section {
+		background-image: none !important;
+		background-color: var(--color-white) !important;
+		padding-bottom: 80px !important;
+		padding-top: 80px !important;
+		background-size: cover;
+	}
+
+	.lots_of_learning {
+		background-image: none !important;
+		background-color: var(--color-fon);
+		background-size: 100% 100%;
+		/* padding-top: 80px !important; */
+		padding-top: 0 !important;
+		padding-bottom: 80px !important;
+	}
+
+	.unique_system_section {
+		background-image: none !important;
+		background-color: var(--color-fon);
+		background-size: 100% 100%;
+		/* padding-top: 80px !important; */
+		padding-top: 0 !important;
+		padding-bottom: 80px !important;
+	}
+
+
+	.friendly_community_section {
+		background-image: none !important;
+		background-color: var(--color-fon) !important;
+		background-size: 100% 100%;
+		/* padding-top: 80px !important; */
+		padding-top: 0 !important;
+		padding-bottom: 80px !important;
+	}
+
+	.group_classes_for_children {
+		background-size: 100% 100%;
+		/* padding-top: 80px !important; */
+		padding-top: 0 !important;
+		padding-bottom: 80px !important;
+	}
+
+	.a_simple_start_to_learning {
+		background-image: none !important;
+		background-color: var(--color-fon);
+		background-size: 100% 100%;
+		/* padding-top: 80px !important; */
+		padding-top: 0 !important;
+		padding-bottom: 80px !important;
+	}
+
+	.our-team-section {
+		padding: 114px 0 240px 0;
+		background-image: none !important;
+		background-color: var(--color-fon);
+		padding-bottom: 80px !important;
+		background-size: 100%;
+	}
+
+	.how-to-find-us-section {
+		background-size: 100% 100%;
+		/* padding-top: 80px !important; */
+		position: relative;
+	}
+
+	.gallery_section {
+		position: relative;
+		/* padding-top: 80px !important; */
+		padding-bottom: 80px !important;
+
+	}
+
+	.fees_section {
+		padding: 40px 0 170px 0;
+	}
+
+	.fees_single_section_top {
+		padding-top: 40px;
+	}
+
+	.general_information_section {
+		padding: 120px 0 60px 0;
+	}
+
+	.Where_will_it_take_place_section,
+	.treners_section {
+		padding: 60px 0 60px 0;
+	}
+
+	.fees_footer_section {
+		padding: 60px 0 120px 0;
+	}
+
+	.footer_content_section {
+		padding: 50px 0;
+		background: var(--color10);
+	}
+
+
+
+	.corts {
+		padding-top: 80px !important;
+		padding-bottom: 0 !important;
+	}
+
+	.corts-map {
+		padding-top: 80px !important;
+	}
+
+	.account-cabinet {
+		padding: 2.5rem 0 10.625rem 0;
+	}
+
+	.acmd {
+		display: none !important;
+	}
+
 	/* mobile sections */
 	/* .menu-container {
 		padding: 0 15px 15px 15px;
@@ -1986,28 +2012,75 @@ section {
 		left: 0;
 	}	 */
 
-.lots_of_learning_servise_wrapper{
-	justify-content: center !important;
-}
+	.lots_of_learning_servise_wrapper {
+		justify-content: center !important;
+	}
 
-.navbar-toggler:focus{
-	box-shadow: none !important;
-}
+	.navbar-toggler:focus {
+		box-shadow: none !important;
+	}
 
-/* Mobile menu accout */
-.mobile-accmenu-wrapper  {
-	display: none;
-	position: absolute;
-	top: 104px;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-.acc-menu-d{
-	display: none;
-}
-.acc-menu-m{
-	display: block;
-}
+	/* Mobile menu accout */
+	.mobile-accmenu-wrapper {
+		display: none;
+		position: absolute;
+		top: 104px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
 
+	.acc-menu-d {
+		display: none;
+	}
+
+	.acc-menu-m {
+		display: block;
+	}
+	.user_edit_wrapper {
+		flex-direction: column !important;
+	}
+	.user_edit_form_wrapper input {
+		width: 100% !important;
+	}
+	.check_chose_send_gender_wrapper {
+		flex-direction: column !important;
+		align-items: start !important;
+	}
+	.setings_tab_wrapper {
+		display: flex !important;
+		margin-bottom: 40px;
+	}
+	.setings_tab_wrapper button{
+			font-size: 14px !important;
+		
+	} 
+	.change_image_user_container {
+		justify-content: center !important;
+		display: flex !important;
+		margin-right: 0 !important;
+		margin-bottom: 15px !important;
+	}
+	.inputs_wrapper {
+		flex-direction: column !important;
+		display: flex !important;
+		margin-bottom: 0 !important;
+	}
+	.user_children_edit_wrapper {
+		flex-direction: column !important;
+		height: auto !important;
+		max-height:none !important;
+	}
+	.input_wrapper:first-child{
+		margin-right: 0 !important;
+	}
+	.cab-img {
+		margin-right: 0 !important;
+	}
+	.add_button_wrapper{
+		display: none !important;
+	}
+	.name_user_text{
+		margin-left: 0 !important;
+	}
 }

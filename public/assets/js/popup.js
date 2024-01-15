@@ -131,9 +131,11 @@ $(document).ready(function () {
                         if (data.status == 200) {
                             window.location.replace(data.link)
                         }
-                        if (!data.verivied) {
+                        else if(!data.verivied && data.auth) {
                             $('.login').fadeOut(600);
                             $('.activation').fadeIn(600);
+                        }else{
+                            alert('SHIT')
                         }
 
                     }
