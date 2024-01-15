@@ -2083,4 +2083,7 @@ button.auth-link {
 	.name_user_text{
 		margin-left: 0 !important;
 	}
+	.save_settings_user_info {
+		margin: 15px auto !important;
+	}
 }
